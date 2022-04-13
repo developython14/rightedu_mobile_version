@@ -265,7 +265,16 @@ class _signupState extends State<signup> {
                   SizedBox(height: 20),
                   GFButton(
                     onPressed: () {
-                        var datatosend = {'name':name,'email':email,'password':password,'level':level,'phone':phone,'spiciality':spiciality,'gender':gender,'country':country}
+                      var datatosend = {
+                        'name': name,
+                        'email': email,
+                        'password': password,
+                        'level': level,
+                        'phone': phone,
+                        'spiciality': spiciality,
+                        'gender': gender,
+                        'country': country
+                      };
 
                       print(datatosend);
                     },
