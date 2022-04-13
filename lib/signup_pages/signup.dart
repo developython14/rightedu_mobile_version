@@ -3,7 +3,6 @@ import 'package:getwidget/getwidget.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 
-
 class signup extends StatefulWidget {
   const signup({Key? key}) : super(key: key);
 
@@ -12,21 +11,20 @@ class signup extends StatefulWidget {
 }
 
 class _signupState extends State<signup> {
+  final list_countries = ["Bac+1"];
+  final list_faculties = ["Bac+1"];
+  final list_levels = ["Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"];
+  final list_spicialities = ["Bac+1"];
   String? country = '';
   String? email = '';
   String? faculty = '';
   bool? gender = true;
   bool is_pass = true;
   String? level = '';
-  final list_countries = ["Bac+1"];
-  final list_faculties = ["Bac+1"];
-  final list_levels = ["Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"];
-  final list_spicialities = ["Bac+1"];
   String? name = '';
   String? password = '';
   String? phone = '';
   String? spiciality = '';
-
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -266,7 +264,11 @@ class _signupState extends State<signup> {
                   ),
                   SizedBox(height: 20),
                   GFButton(
-                    onPressed: () {},
+                    onPressed: () {
+                        var datatosend = {'name':name,'email':email,'password':password,'level':level,'phone':phone,'spiciality':spiciality,'gender':gender,'country':country}
+
+                      print(datatosend);
+                    },
                     text: "Signup",
                     shape: GFButtonShape.pills,
                     fullWidthButton: true,
