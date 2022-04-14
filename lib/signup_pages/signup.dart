@@ -18,7 +18,7 @@ class _signupState extends State<signup> {
   String? country = '';
   String? email = '';
   String? faculty = '';
-  bool? gender = true;
+  String? gender = "";
   bool is_pass = true;
   String? level = '';
   String? name = '';
@@ -136,28 +136,29 @@ class _signupState extends State<signup> {
                     ],
                   ),
                   SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Text("Male"),
-                      Radio(
-                          groupValue: 25,
-                          value: true,
-                          onChanged: (text) {
-                            setState(() {});
-                          })
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text("Female"),
-                      Radio(
-                          groupValue: 14,
-                          value: false,
-                          onChanged: (text) {
-                            setState(() {});
-                          })
-                    ],
-                  ),
+                  ListTile(
+                      title: Text('Male'),
+                      leading: Radio(
+                          value: "Male",
+                          groupValue: gender,
+                          onChanged: (String? text) {
+                            setState(() {
+                              gender = text;
+                            });
+                            print('gender is $gender');
+                          })),
+                  SizedBox(height: 10),
+                  ListTile(
+                      title: Text('Female'),
+                      leading: Radio(
+                          value: "Female",
+                          groupValue: gender,
+                          onChanged: (String? text) {
+                            setState(() {
+                              gender = text;
+                            });
+                            print('gender is $gender');
+                          })),
                   SizedBox(height: 20),
                   Row(
                     children: [
@@ -272,7 +273,7 @@ class _signupState extends State<signup> {
                   ),
                   SizedBox(height: 20),
                   GFButton(
-                    onPressed: () {
+                    onPressed: () async {
                       savedata();
                       var datatosend = {
                         'name': name,
@@ -286,6 +287,7 @@ class _signupState extends State<signup> {
                       };
 
                       print(datatosend);
+                      final url = '';
                     },
                     text: "Signup",
                     shape: GFButtonShape.pills,
