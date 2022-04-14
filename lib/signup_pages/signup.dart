@@ -117,184 +117,200 @@ class _signupState extends State<signup> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
               child: Form(
+                  key: _formKey,
                   child: Column(
-                children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'Name complete',
-                        prefixIcon: Icon(Icons.person),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      name = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text("Select Gender:"),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  ListTile(
-                      title: Text('Male'),
-                      leading: Radio(
-                          value: "Male",
-                          groupValue: gender,
-                          onChanged: (String? text) {
-                            setState(() {
-                              gender = text;
-                            });
-                            print('gender is $gender');
-                          })),
-                  SizedBox(height: 10),
-                  ListTile(
-                      title: Text('Female'),
-                      leading: Radio(
-                          value: "Female",
-                          groupValue: gender,
-                          onChanged: (String? text) {
-                            setState(() {
-                              gender = text;
-                            });
-                            print('gender is $gender');
-                          })),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Select country"),
-                      DropdownButton(
-                          hint: Text('$country'),
-                          items: list_countries.map(buildmen).toList(),
-                          onChanged: (String? text) {
-                            setState(() {
-                              country = text ?? "";
-                            });
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Select Faculty"),
-                      DropdownButton(
-                          hint: Text('$faculty'),
-                          items: list_faculties.map(buildmen).toList(),
-                          onChanged: (String? text) {
-                            setState(() {
-                              faculty = text ?? "";
-                            });
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Select Speciality "),
-                      DropdownButton(
-                          hint: Text('$spiciality'),
-                          items: list_spicialities.map(buildmen).toList(),
-                          onChanged: (String? text) {
-                            setState(() {
-                              spiciality = text ?? "";
-                            });
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Select Level"),
-                      DropdownButton(
-                          hint: Text('$level'),
-                          items: list_levels.map(buildmen).toList(),
-                          onChanged: (String? text) {
-                            setState(() {
-                              level = text ?? "";
-                            });
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'Email',
-                        prefixIcon: Icon(Icons.email),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      email = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    obscureText: is_pass,
-                    decoration: InputDecoration(
-                        hintText: 'Password',
-                        prefixIcon: Icon(Icons.lock),
-                        suffixIcon: IconButton(
-                          icon: Icon(Icons.password),
-                          onPressed: () {
-                            setState(() {
-                              is_pass = !is_pass;
-                            });
-                          },
-                        ),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      password = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    obscureText: is_pass,
-                    decoration: InputDecoration(
-                        hintText: 'Repeat Password',
-                        prefixIcon: Icon(Icons.lock),
-                        suffixIcon: IconButton(
-                          icon: Icon(Icons.password),
-                          onPressed: () {
-                            setState(() {
-                              is_pass = !is_pass;
-                            });
-                          },
-                        ),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {},
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'Phone number',
-                        prefixIcon: Icon(Icons.phone),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      phone = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  GFButton(
-                    onPressed: () async {
-                      savedata();
-                      var datatosend = {
-                        'name': name,
-                        'email': email,
-                        'password': password,
-                        'level': level,
-                        'phone': phone,
-                        'spiciality': spiciality,
-                        'gender': gender,
-                        'country': country
-                      };
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: 'Name complete',
+                            prefixIcon: Icon(Icons.person),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          name = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text("Select Gender:"),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      ListTile(
+                          title: Text('Male'),
+                          leading: Radio(
+                              value: "Male",
+                              groupValue: gender,
+                              onChanged: (String? text) {
+                                setState(() {
+                                  gender = text;
+                                });
+                                print('gender is $gender');
+                              })),
+                      SizedBox(height: 10),
+                      ListTile(
+                          title: Text('Female'),
+                          leading: Radio(
+                              value: "Female",
+                              groupValue: gender,
+                              onChanged: (String? text) {
+                                setState(() {
+                                  gender = text;
+                                });
+                                print('gender is $gender');
+                              })),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text("Select country"),
+                          DropdownButton(
+                              hint: Text('$country'),
+                              items: list_countries.map(buildmen).toList(),
+                              onChanged: (String? text) {
+                                setState(() {
+                                  country = text ?? "";
+                                });
+                              })
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text("Select Faculty"),
+                          DropdownButton(
+                              hint: Text('$faculty'),
+                              items: list_faculties.map(buildmen).toList(),
+                              onChanged: (String? text) {
+                                setState(() {
+                                  faculty = text ?? "";
+                                });
+                              })
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text("Select Speciality "),
+                          DropdownButton(
+                              hint: Text('$spiciality'),
+                              items: list_spicialities.map(buildmen).toList(),
+                              onChanged: (String? text) {
+                                setState(() {
+                                  spiciality = text ?? "";
+                                });
+                              })
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text("Select Level"),
+                          DropdownButton(
+                              hint: Text('$level'),
+                              items: list_levels.map(buildmen).toList(),
+                              onChanged: (String? text) {
+                                setState(() {
+                                  level = text ?? "";
+                                });
+                              })
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: 'Email',
+                            prefixIcon: Icon(Icons.email),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          email = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        obscureText: is_pass,
+                        decoration: InputDecoration(
+                            hintText: 'Password',
+                            prefixIcon: Icon(Icons.lock),
+                            suffixIcon: IconButton(
+                              icon: Icon(Icons.password),
+                              onPressed: () {
+                                setState(() {
+                                  is_pass = !is_pass;
+                                });
+                              },
+                            ),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          password = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        obscureText: is_pass,
+                        decoration: InputDecoration(
+                            hintText: 'Repeat Password',
+                            prefixIcon: Icon(Icons.lock),
+                            suffixIcon: IconButton(
+                              icon: Icon(Icons.password),
+                              onPressed: () {
+                                setState(() {
+                                  is_pass = !is_pass;
+                                });
+                              },
+                            ),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {},
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: 'Phone number',
+                            prefixIcon: Icon(Icons.phone),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          phone = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      GFButton(
+                        onPressed: () async {
+                          savedata();
+                          final datatosend = {
+                            'name': name,
+                            'email': email,
+                            'password': password,
+                            'level': level,
+                            'phone': phone,
+                            'spiciality': spiciality,
+                            'gender': gender,
+                            'country': country
+                          };
 
-                      print(datatosend);
-                      final url = '';
-                    },
-                    text: "Signup",
-                    shape: GFButtonShape.pills,
-                    fullWidthButton: true,
-                  ),
-                ],
-              )),
+                          print(datatosend);
+                          final url = Uri.parse(
+                              'https://evening-savannah-43647.herokuapp.com//api/signup_student');
+                          final respone = await http.post(url,
+                              body: convert.JsonEncoder(datatosend));
+
+                          var test = Uri.parse(
+                              'https://evening-savannah-43647.herokuapp.com//api/signup_student');
+                          var response = await http.get(test);
+                          if (response.statusCode == 200) {
+                            var jsonResponse =
+                                convert.jsonDecode(response.body);
+                            print(jsonResponse);
+                          } else {
+                            print(
+                                'Request failed with status: ${response.statusCode}.');
+                          }
+                        },
+                        text: "Signup",
+                        shape: GFButtonShape.pills,
+                        fullWidthButton: true,
+                      ),
+                    ],
+                  )),
             )
           ],
         ),
