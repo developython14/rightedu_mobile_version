@@ -8,7 +8,7 @@ import 'package:right/signup_pages/signup_mod.dart';
 import 'package:right/test.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'right Hacker', initialRoute: '/signup', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/signup', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),

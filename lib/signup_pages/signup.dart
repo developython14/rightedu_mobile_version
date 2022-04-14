@@ -37,6 +37,14 @@ class _signupState extends State<signup> {
     super.initState();
   }
 
+  Future<void> savedata() async {
+    final valid = _formKey.currentState!.validate();
+    if (!valid) {
+      return;
+    }
+    _formKey.currentState!.save();
+  }
+
   getdatacountries() async {
     var test = Uri.parse(
         'https://evening-savannah-43647.herokuapp.com/api/list_countries');
@@ -265,6 +273,7 @@ class _signupState extends State<signup> {
                   SizedBox(height: 20),
                   GFButton(
                     onPressed: () {
+                      savedata();
                       var datatosend = {
                         'name': name,
                         'email': email,
