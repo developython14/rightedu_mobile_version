@@ -282,16 +282,15 @@ class _signupState extends State<signup> {
                             'password': password,
                             'level': level,
                             'phone': phone,
-                            'spiciality': spiciality,
+                            'speciality': spiciality,
                             'gender': gender,
                             'country': country
                           };
 
-                          print(datatosend);
                           final url = Uri.parse(
                               'https://evening-savannah-43647.herokuapp.com//api/signup_student');
-                          final respone = await http.post(url,
-                              body: convert.JsonEncoder(datatosend));
+                          final respone =
+                              await http.post(url, body: datatosend);
 
                           var test = Uri.parse(
                               'https://evening-savannah-43647.herokuapp.com//api/signup_student');
@@ -299,6 +298,7 @@ class _signupState extends State<signup> {
                           if (response.statusCode == 200) {
                             var jsonResponse =
                                 convert.jsonDecode(response.body);
+                            print("top free fire");
                             print(jsonResponse);
                           } else {
                             print(
