@@ -291,16 +291,12 @@ class _signupState extends State<signup> {
                               'https://evening-savannah-43647.herokuapp.com//api/signup_student');
                           final response0 = await http.post(url,
                               body: convert.jsonEncode(datatosend));
-                          print('Response status: ${response0.statusCode}');
-                          print('Response body: ${response0.body}');
                           var test = Uri.parse(
                               'https://evening-savannah-43647.herokuapp.com//api/signup_student');
                           var response = await http.get(test);
                           if (response.statusCode == 200) {
                             var jsonResponse =
                                 convert.jsonDecode(response.body);
-                            print("top free Fire");
-                            print(jsonResponse);
                           } else {
                             print(
                                 'Request failed with status: ${response.statusCode}.');

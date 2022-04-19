@@ -28,8 +28,8 @@ class signupmod extends StatefulWidget {
 class _signupmodState extends State<signupmod> {
   final _formKey = GlobalKey<FormState>();
   static List<Service> _services = [];
-  List _selectedservices = [];
   final _multiSelectKey = GlobalKey<FormFieldState>();
+  List _selectedservices = [];
   String? name = '';
   String? gender = '';
   String? country = '';
@@ -57,6 +57,14 @@ class _signupmodState extends State<signupmod> {
   final list_levels = ["Moderator", "Professeur"];
   final list_services = ["Moderator", "Professeur"];
 
+  Future<void> savedata() async {
+    final valid = _formKey.currentState!.validate();
+    if (!valid) {
+      return;
+    }
+    _formKey.currentState!.save();
+  }
+
   getdatacountries() async {
     var test = Uri.parse(
         'https://evening-savannah-43647.herokuapp.com/api/list_countries');
@@ -78,7 +86,6 @@ class _signupmodState extends State<signupmod> {
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i++) {
-        print(jsonResponse[i]);
         Service serv = Service(id: i, name: jsonResponse[i]);
         _services.add(serv);
       }
@@ -145,7 +152,7 @@ class _signupmodState extends State<signupmod> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('Signup',
+                  Text('Join Us',
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
                 ],
@@ -155,445 +162,466 @@ class _signupmodState extends State<signupmod> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
               child: Form(
+                  key: _formKey,
                   child: Column(
-                children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'Name complete',
-                        prefixIcon: Icon(Icons.person),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      name = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text('Date Of Birth : '),
-                      Text("${data.year}/${data.month}/${data.day}"),
-                    ],
-                  ),
-                  ElevatedButton(
-                      onPressed: () async {
-                        DateTime? date = await showDatePicker(
-                            context: context,
-                            initialDate: DateTime(2000),
-                            firstDate: DateTime(1950),
-                            lastDate: DateTime(2100));
-                        if (date == null) return;
-                        setState(() {
-                          data = date;
-                        });
-                      },
-                      child: Text("choose your date ")),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text("Select Gender:"),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  ListTile(
-                      title: Text('Male'),
-                      leading: Radio(
-                          value: "Male",
-                          groupValue: gender,
-                          onChanged: (String? text) {
-                            setState(() {
-                              gender = text;
-                            });
-                            print('gender is $gender');
-                          })),
-                  SizedBox(height: 10),
-                  ListTile(
-                      title: Text('Female'),
-                      leading: Radio(
-                          value: "Female",
-                          groupValue: gender,
-                          onChanged: (String? text) {
-                            setState(() {
-                              gender = text;
-                            });
-                            print('gender is $gender');
-                          })),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Select country"),
-                      DropdownButton(
-                          hint: Text('$country'),
-                          items: list_countries.map(buildmen).toList(),
-                          onChanged: (String? text) {
-                            setState(() {
-                              country = text ?? "";
-                            });
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Select City"),
-                      DropdownButton(
-                          hint: Text('$country'),
-                          items: list_countries.map(buildmen).toList(),
-                          onChanged: (String? text) {
-                            setState(() {
-                              city = text ?? "";
-                            });
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Select Faculty"),
-                      DropdownButton(
-                          hint: Text('$faculty'),
-                          items: list_faculties.map(buildmen).toList(),
-                          onChanged: (String? text) {
-                            setState(() {
-                              faculty = text ?? "";
-                            });
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Select Speciality "),
-                      DropdownButton(
-                          hint: Text('$spiciality'),
-                          items: list_spicialities.map(buildmen).toList(),
-                          onChanged: (String? text) {
-                            setState(() {
-                              spiciality = text ?? "";
-                            });
-                          })
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'Degree',
-                        prefixIcon: Icon(Icons.grade),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      degree_title = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'exaxctly spiciality',
-                        prefixIcon: Icon(Icons.science),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      name = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Participation as"),
-                      DropdownButton(
-                          hint: Text('$participation'),
-                          items: list_levels.map(buildmen).toList(),
-                          onChanged: (String? text) {
-                            setState(() {
-                              participation = text ?? "";
-                            });
-                          })
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text("Availibality:"),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  ListTile(
-                      title: Text('5H'),
-                      leading: Radio(
-                          value: "5H",
-                          groupValue: avalibality,
-                          onChanged: (String? text) {
-                            setState(() {
-                              avalibality = '5H';
-                            });
-                            print('avalibality is $avalibality');
-                          })),
-                  ListTile(
-                      title: Text('10H'),
-                      leading: Radio(
-                          value: "10H",
-                          groupValue: avalibality,
-                          onChanged: (String? text) {
-                            setState(() {
-                              avalibality = '10H';
-                            });
-                            print('avalibality is $avalibality');
-                          })),
-                  ListTile(
-                      title: Text('15H'),
-                      leading: Radio(
-                          value: "15H",
-                          groupValue: avalibality,
-                          onChanged: (String? text) {
-                            setState(() {
-                              avalibality = '15H';
-                            });
-                            print('avalibality is $avalibality');
-                          })),
-                  ListTile(
-                      title: Text('20H'),
-                      leading: Radio(
-                          value: "20H",
-                          groupValue: avalibality,
-                          onChanged: (String? text) {
-                            setState(() {
-                              avalibality = '20H';
-                            });
-                            print('avalibality is $avalibality');
-                          })),
-                  ListTile(
-                      title: Text('+25H'),
-                      leading: Radio(
-                          value: "+25H",
-                          groupValue: avalibality,
-                          onChanged: (String? text) {
-                            setState(() {
-                              avalibality = '+25H';
-                            });
-                            print('avalibality is $avalibality');
-                          })),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('File Required',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 26)),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text('your Cv'),
-                    ],
-                  ),
-                  ElevatedButton(
-                      onPressed: () async {
-                        FilePickerResult? result =
-                            await FilePicker.platform.pickFiles();
-
-                        if (result != null) {
-                          File cv = File(result.files.single.path!);
-                        } else {
-                          // User canceled the picker
-                        }
-                      },
-                      child: Column(
-                        children: [Icon(Icons.upload_file), Text('upload Cv')],
-                      )),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text('your Degree'),
-                    ],
-                  ),
-                  ElevatedButton(
-                      onPressed: () async {
-                        FilePickerResult? result =
-                            await FilePicker.platform.pickFiles();
-
-                        if (result != null) {
-                          File degree = File(result.files.single.path!);
-                        } else {
-                          // User canceled the picker
-                        }
-                      },
-                      child: Column(
-                        children: [
-                          Icon(Icons.upload_file),
-                          Text('upload degree')
-                        ],
-                      )),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text('your experience province'),
-                    ],
-                  ),
-                  ElevatedButton(
-                      onPressed: () async {
-                        FilePickerResult? result =
-                            await FilePicker.platform.pickFiles();
-
-                        if (result != null) {
-                          File experience = File(result.files.single.path!);
-                        } else {
-                          // User canceled the picker
-                        }
-                      },
-                      child: Column(
-                        children: [
-                          Icon(Icons.upload_file),
-                          Text('upload experience proove')
-                        ],
-                      )),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text('your identify card'),
-                    ],
-                  ),
-                  ElevatedButton(
-                      onPressed: () async {
-                        FilePickerResult? result =
-                            await FilePicker.platform.pickFiles();
-
-                        if (result != null) {
-                          File identity = File(result.files.single.path!);
-                        } else {
-                          // User canceled the picker
-                        }
-                      },
-                      child: Column(
-                        children: [
-                          Icon(Icons.upload_file),
-                          Text('upload identity')
-                        ],
-                      )),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text('Services your provided'),
-                    ],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Theme.of(context).primaryColor,
-                        width: 2,
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: 'Name complete',
+                            prefixIcon: Icon(Icons.person),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          name = text;
+                        },
                       ),
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        MultiSelectBottomSheetField(
-                          initialChildSize: 0.4,
-                          listType: MultiSelectListType.CHIP,
-                          searchable: true,
-                          buttonText: Text("Services Provided:"),
-                          title: Text("Services"),
-                          items: _services
-                              .map((service) => MultiSelectItem<Service>(
-                                  service, service.name))
-                              .toList(),
-                          onConfirm: (values) {
-                            _selectedservices = values;
-                            print(_selectedservices.map((e) => e.name));
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text('Date Of Birth : '),
+                          Text("${data.year}/${data.month}/${data.day}"),
+                        ],
+                      ),
+                      ElevatedButton(
+                          onPressed: () async {
+                            DateTime? date = await showDatePicker(
+                                context: context,
+                                initialDate: DateTime(2000),
+                                firstDate: DateTime(1950),
+                                lastDate: DateTime(2100));
+                            if (date == null) return;
+                            setState(() {
+                              data = date;
+                            });
                           },
-                          chipDisplay: MultiSelectChipDisplay(
-                            onTap: (value) {
-                              setState(() {
-                                _selectedservices.remove(value);
-                              });
-                            },
+                          child: Text("choose your date ")),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text("Select Gender:"),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      ListTile(
+                          title: Text('Male'),
+                          leading: Radio(
+                              value: "Male",
+                              groupValue: gender,
+                              onChanged: (String? text) {
+                                setState(() {
+                                  gender = text;
+                                });
+                                print('gender is $gender');
+                              })),
+                      SizedBox(height: 10),
+                      ListTile(
+                          title: Text('Female'),
+                          leading: Radio(
+                              value: "Female",
+                              groupValue: gender,
+                              onChanged: (String? text) {
+                                setState(() {
+                                  gender = text;
+                                });
+                                print('gender is $gender');
+                              })),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text("Select country"),
+                          DropdownButton(
+                              hint: Text('$country'),
+                              items: list_countries.map(buildmen).toList(),
+                              onChanged: (String? text) {
+                                setState(() {
+                                  country = text ?? "";
+                                });
+                              })
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text("Select City"),
+                          DropdownButton(
+                              hint: Text('$country'),
+                              items: list_countries.map(buildmen).toList(),
+                              onChanged: (String? text) {
+                                setState(() {
+                                  city = text ?? "";
+                                });
+                              })
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text("Select Faculty"),
+                          DropdownButton(
+                              hint: Text('$faculty'),
+                              items: list_faculties.map(buildmen).toList(),
+                              onChanged: (String? text) {
+                                setState(() {
+                                  faculty = text ?? "";
+                                });
+                              })
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text("Select Speciality "),
+                          DropdownButton(
+                              hint: Text('$spiciality'),
+                              items: list_spicialities.map(buildmen).toList(),
+                              onChanged: (String? text) {
+                                setState(() {
+                                  spiciality = text ?? "";
+                                });
+                              })
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: 'Degree',
+                            prefixIcon: Icon(Icons.grade),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          degree_title = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: 'exaxctly spiciality',
+                            prefixIcon: Icon(Icons.science),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          name = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text("Participation as"),
+                          DropdownButton(
+                              hint: Text('$participation'),
+                              items: list_levels.map(buildmen).toList(),
+                              onChanged: (String? text) {
+                                setState(() {
+                                  participation = text ?? "";
+                                });
+                              })
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text("Availibality:"),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      ListTile(
+                          title: Text('5H'),
+                          leading: Radio(
+                              value: "5H",
+                              groupValue: avalibality,
+                              onChanged: (String? text) {
+                                setState(() {
+                                  avalibality = '5H';
+                                });
+                              })),
+                      ListTile(
+                          title: Text('10H'),
+                          leading: Radio(
+                              value: "10H",
+                              groupValue: avalibality,
+                              onChanged: (String? text) {
+                                setState(() {
+                                  avalibality = '10H';
+                                });
+                              })),
+                      ListTile(
+                          title: Text('15H'),
+                          leading: Radio(
+                              value: "15H",
+                              groupValue: avalibality,
+                              onChanged: (String? text) {
+                                setState(() {
+                                  avalibality = '15H';
+                                });
+                              })),
+                      ListTile(
+                          title: Text('20H'),
+                          leading: Radio(
+                              value: "20H",
+                              groupValue: avalibality,
+                              onChanged: (String? text) {
+                                setState(() {
+                                  avalibality = '20H';
+                                });
+                              })),
+                      ListTile(
+                          title: Text('+25H'),
+                          leading: Radio(
+                              value: "+25H",
+                              groupValue: avalibality,
+                              onChanged: (String? text) {
+                                setState(() {
+                                  avalibality = '+25H';
+                                });
+                              })),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text('File Required',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 26)),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text('your Cv'),
+                        ],
+                      ),
+                      ElevatedButton(
+                          onPressed: () async {
+                            FilePickerResult? result =
+                                await FilePicker.platform.pickFiles();
+
+                            if (result != null) {
+                              File cv = File(result.files.single.path!);
+                            } else {
+                              // User canceled the picker
+                            }
+                          },
+                          child: Column(
+                            children: [
+                              Icon(Icons.upload_file),
+                              Text('upload Cv')
+                            ],
+                          )),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text('your Degree'),
+                        ],
+                      ),
+                      ElevatedButton(
+                          onPressed: () async {
+                            FilePickerResult? result =
+                                await FilePicker.platform.pickFiles();
+
+                            if (result != null) {
+                              File degree = File(result.files.single.path!);
+                            } else {
+                              // User canceled the picker
+                            }
+                          },
+                          child: Column(
+                            children: [
+                              Icon(Icons.upload_file),
+                              Text('upload degree')
+                            ],
+                          )),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text('your experience province'),
+                        ],
+                      ),
+                      ElevatedButton(
+                          onPressed: () async {
+                            FilePickerResult? result =
+                                await FilePicker.platform.pickFiles();
+
+                            if (result != null) {
+                              File experience = File(result.files.single.path!);
+                            } else {
+                              // User canceled the picker
+                            }
+                          },
+                          child: Column(
+                            children: [
+                              Icon(Icons.upload_file),
+                              Text('upload experience proove')
+                            ],
+                          )),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text('your identify card'),
+                        ],
+                      ),
+                      ElevatedButton(
+                          onPressed: () async {
+                            FilePickerResult? result =
+                                await FilePicker.platform.pickFiles();
+
+                            if (result != null) {
+                              File identity = File(result.files.single.path!);
+                            } else {
+                              // User canceled the picker
+                            }
+                          },
+                          child: Column(
+                            children: [
+                              Icon(Icons.upload_file),
+                              Text('upload identity')
+                            ],
+                          )),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Text('Services your provided'),
+                        ],
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                            width: 2,
                           ),
                         ),
-                        _selectedservices == null || _selectedservices.isEmpty
-                            ? Container(
-                                padding: EdgeInsets.all(10),
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  "None selected",
-                                  style: TextStyle(color: Colors.black54),
-                                ))
-                            : Container(),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'Email',
-                        prefixIcon: Icon(Icons.email),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      email = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    obscureText: is_pass,
-                    decoration: InputDecoration(
-                        hintText: 'Password',
-                        prefixIcon: Icon(Icons.lock),
-                        suffixIcon: IconButton(
-                          icon: Icon(Icons.password),
-                          onPressed: () {
-                            setState(() {
-                              is_pass = !is_pass;
-                            });
-                          },
+                        child: Column(
+                          children: <Widget>[
+                            MultiSelectBottomSheetField(
+                              initialChildSize: 0.4,
+                              listType: MultiSelectListType.CHIP,
+                              searchable: true,
+                              buttonText: Text("Services Provided:"),
+                              title: Text("Services"),
+                              items: _services
+                                  .map((service) => MultiSelectItem<Service>(
+                                      service, service.name))
+                                  .toList(),
+                              onConfirm: (values) {
+                                _selectedservices = values;
+                                print(_selectedservices.map((e) => e.name));
+                              },
+                              chipDisplay: MultiSelectChipDisplay(
+                                onTap: (value) {
+                                  setState(() {
+                                    _selectedservices.remove(value);
+                                  });
+                                },
+                              ),
+                            ),
+                            _selectedservices == null ||
+                                    _selectedservices.isEmpty
+                                ? Container(
+                                    padding: EdgeInsets.all(10),
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "None selected",
+                                      style: TextStyle(color: Colors.black54),
+                                    ))
+                                : Container(),
+                          ],
                         ),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      password = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    obscureText: is_pass,
-                    decoration: InputDecoration(
-                        hintText: 'Repeat Password',
-                        prefixIcon: Icon(Icons.lock),
-                        suffixIcon: IconButton(
-                          icon: Icon(Icons.password),
-                          onPressed: () {
-                            setState(() {
-                              is_pass = !is_pass;
-                            });
-                          },
-                        ),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {},
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'Phone number',
-                        prefixIcon: Icon(Icons.phone),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      phone = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'Second Phone number',
-                        prefixIcon: Icon(Icons.phone),
-                        border: OutlineInputBorder()),
-                    onSaved: (text) {
-                      phone_second = text;
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  GFButton(
-                    onPressed: () {},
-                    text: "Signup",
-                    shape: GFButtonShape.pills,
-                    fullWidthButton: true,
-                    size: GFSize.LARGE,
-                  ),
-                ],
-              )),
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: 'Email',
+                            prefixIcon: Icon(Icons.email),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          email = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        obscureText: is_pass,
+                        decoration: InputDecoration(
+                            hintText: 'Password',
+                            prefixIcon: Icon(Icons.lock),
+                            suffixIcon: IconButton(
+                              icon: Icon(Icons.password),
+                              onPressed: () {
+                                setState(() {
+                                  is_pass = !is_pass;
+                                });
+                              },
+                            ),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          password = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        obscureText: is_pass,
+                        decoration: InputDecoration(
+                            hintText: 'Repeat Password',
+                            prefixIcon: Icon(Icons.lock),
+                            suffixIcon: IconButton(
+                              icon: Icon(Icons.password),
+                              onPressed: () {
+                                setState(() {
+                                  is_pass = !is_pass;
+                                });
+                              },
+                            ),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {},
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: 'Phone number',
+                            prefixIcon: Icon(Icons.phone),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          phone = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: 'Second Phone number',
+                            prefixIcon: Icon(Icons.phone),
+                            border: OutlineInputBorder()),
+                        onSaved: (text) {
+                          phone_second = text;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      GFButton(
+                        onPressed: () async {
+                          savedata();
+                          final datatosend = {
+                            'name': name,
+                            'email': email,
+                            'password': password,
+                            'phone': phone,
+                            'speciality': spiciality,
+                            'gender': gender,
+                            'country': country,
+                            'faculty': faculty,
+                            "participation": participation,
+                            "degree_title": degree_title,
+                            "phone_second": phone_second,
+                            "avalibality": avalibality,
+                            "date_of_birth": date_of_birth,
+                            "services": _selectedservices
+                          };
+                          final request ,
+
+                          print(datatosend);
+                        },
+                        text: "Signup",
+                        shape: GFButtonShape.pills,
+                        fullWidthButton: true,
+                        size: GFSize.LARGE,
+                      ),
+                    ],
+                  )),
             )
           ],
         ),
