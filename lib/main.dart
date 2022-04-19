@@ -14,6 +14,6 @@ void main() {
     '/signupmod': (context) => signupmod(),
     '/intro': (context) => toma(),
     '/wait': (context) => wait(),
-    '/free': (context) => univs(), 
+    '/free': (context) => univs(),
   }));
 }

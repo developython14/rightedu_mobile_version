@@ -276,7 +276,7 @@ class _signupState extends State<signup> {
                       GFButton(
                         onPressed: () async {
                           savedata();
-                          final datatosend0 = {
+                          final datatosend = {
                             'name': name,
                             'email': email,
                             'password': password,
@@ -287,19 +287,6 @@ class _signupState extends State<signup> {
                             'country': country,
                             'faculty': faculty
                           };
-                          print(datatosend0);
-                          final datatosend = {
-                            'name': 'name',
-                            'email': 'email',
-                            'password': 'password',
-                            'level': 'level',
-                            'phone': 'phone',
-                            'speciality': 'spiciality',
-                            'gender': 'gender',
-                            'country': 'country',
-                            'faculty': 'faculty'
-                          };
-
                           final url = Uri.parse(
                               'https://evening-savannah-43647.herokuapp.com//api/signup_student');
                           final response0 = await http.post(url,
@@ -312,7 +299,7 @@ class _signupState extends State<signup> {
                           if (response.statusCode == 200) {
                             var jsonResponse =
                                 convert.jsonDecode(response.body);
-                            print("top free fire");
+                            print("top free Fire");
                             print(jsonResponse);
                           } else {
                             print(
