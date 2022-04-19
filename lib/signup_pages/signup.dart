@@ -284,13 +284,14 @@ class _signupState extends State<signup> {
                             'phone': phone,
                             'speciality': spiciality,
                             'gender': gender,
-                            'country': country
+                            'country': country,
+                            'faculty': faculty
                           };
 
                           final url = Uri.parse(
                               'https://evening-savannah-43647.herokuapp.com//api/signup_student');
-                          final response0 =
-                              await http.post(url, body: datatosend);
+                          final response0 = await http.post(url,
+                              body: convert.jsonEncode(datatosend));
                           print('Response status: ${response0.statusCode}');
                           print('Response body: ${response0.body}');
                           var test = Uri.parse(
