@@ -276,7 +276,7 @@ class _signupState extends State<signup> {
                       GFButton(
                         onPressed: () async {
                           savedata();
-                          final datatosend = {
+                          final datatosend0 = {
                             'name': name,
                             'email': email,
                             'password': password,
@@ -286,6 +286,18 @@ class _signupState extends State<signup> {
                             'gender': gender,
                             'country': country,
                             'faculty': faculty
+                          };
+                          print(datatosend0);
+                          final datatosend = {
+                            'name': 'name',
+                            'email': 'email',
+                            'password': 'password',
+                            'level': 'level',
+                            'phone': 'phone',
+                            'speciality': 'spiciality',
+                            'gender': 'gender',
+                            'country': 'country',
+                            'faculty': 'faculty'
                           };
 
                           final url = Uri.parse(
