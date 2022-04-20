@@ -44,6 +44,9 @@ class _signupmodState extends State<signupmod> {
   String? phone_second = '';
   String? avalibality = '';
   String? date_of_birth = '';
+  String? language = '';
+  String? spiciality_exacte = '';
+  String? current_job = '';
   DateTime data = DateTime(4, 17, 1998);
   File? cv;
   File? degree;
@@ -631,7 +634,9 @@ class _signupmodState extends State<signupmod> {
                           request.files.add(http.MultipartFile('identity',
                               cv!.readAsBytes().asStream(), cv!.lengthSync(),
                               filename: identity!.path.split("/").last));
-                          print(datatosend);
+
+                          //var push = await request.send();
+                          print('probalement  cest regle ');
                         },
                         text: "Signup",
                         shape: GFButtonShape.pills,
