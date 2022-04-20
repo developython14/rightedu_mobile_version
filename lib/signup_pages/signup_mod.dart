@@ -397,7 +397,10 @@ class _signupmodState extends State<signupmod> {
                                 await FilePicker.platform.pickFiles();
 
                             if (result != null) {
-                              File cv = File(result.files.single.path!);
+                              setState(() {
+                                cv = File(result.files.single.path!);
+                              });
+                              print('goog');
                             } else {
                               // User canceled the picker
                             }
@@ -420,7 +423,9 @@ class _signupmodState extends State<signupmod> {
                                 await FilePicker.platform.pickFiles();
 
                             if (result != null) {
-                              File degree = File(result.files.single.path!);
+                              setState(() {
+                                degree = File(result.files.single.path!);
+                              });
                             } else {
                               // User canceled the picker
                             }
@@ -443,7 +448,9 @@ class _signupmodState extends State<signupmod> {
                                 await FilePicker.platform.pickFiles();
 
                             if (result != null) {
-                              File experience = File(result.files.single.path!);
+                              setState(() {
+                                experience = File(result.files.single.path!);
+                              });
                             } else {
                               // User canceled the picker
                             }
@@ -466,7 +473,9 @@ class _signupmodState extends State<signupmod> {
                                 await FilePicker.platform.pickFiles();
 
                             if (result != null) {
-                              File identity = File(result.files.single.path!);
+                              setState(() {
+                                identity = File(result.files.single.path!);
+                              });
                             } else {
                               // User canceled the picker
                             }
