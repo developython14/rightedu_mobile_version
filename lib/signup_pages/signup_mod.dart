@@ -599,24 +599,24 @@ class _signupmodState extends State<signupmod> {
                         onPressed: () async {
                           savedata();
                           final datatosend = {
-                            'name': name,
-                            'email': email,
-                            'password': password,
-                            'phone': phone,
-                            'phone_second': phone_second,
-                            'speciality': spiciality,
-                            'gender': gender,
-                            'country': country,
-                            "city": city,
-                            'faculty': faculty,
-                            "participation": participation,
-                            "degree_title": degree_title,
-                            "phone_second": phone_second,
-                            "avalibality": avalibality,
-                            "date_of_birth": date_of_birth,
-                            "services": _selectedservices,
-                            "language": language,
-                            "current_job": current_job
+                            'name': "name",
+                            'email': "khasarou@gmail.com",
+                            'password': "password",
+                            'phone': "phone",
+                            'phone_second': "phone_second",
+                            'speciality': "spiciality",
+                            'gender': "gender",
+                            'country': "country",
+                            "city": "city",
+                            'faculty': "faculty",
+                            "participation": "participation",
+                            "degree_title": "degree_title",
+                            "phone_second": "phone_second",
+                            "avalibality": "avalibality",
+                            "date_of_birth": "date_of_birth",
+                            "services": "_selectedservices",
+                            "language": "language",
+                            "current_job": "current_job"
                           };
 
                           final url = Uri.parse(
