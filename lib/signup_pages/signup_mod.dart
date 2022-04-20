@@ -611,8 +611,26 @@ class _signupmodState extends State<signupmod> {
                             "date_of_birth": date_of_birth,
                             "services": _selectedservices
                           };
-                          final request ,
 
+                          final url = Uri.parse(
+                              'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
+                          var request = http.MultipartRequest('POST', url);
+                          request.files.add(http.MultipartFile('cv',
+                              cv!.readAsBytes().asStream(), cv!.lengthSync(),
+                              filename: cv!.path.split("/").last));
+                          request.files.add(http.MultipartFile(
+                              'degree',
+                              degree!.readAsBytes().asStream(),
+                              cv!.lengthSync(),
+                              filename: degree!.path.split("/").last));
+                          request.files.add(http.MultipartFile(
+                              'experience',
+                              experience!.readAsBytes().asStream(),
+                              cv!.lengthSync(),
+                              filename: experience!.path.split("/").last));
+                          request.files.add(http.MultipartFile('identity',
+                              cv!.readAsBytes().asStream(), cv!.lengthSync(),
+                              filename: identity!.path.split("/").last));
                           print(datatosend);
                         },
                         text: "Signup",
