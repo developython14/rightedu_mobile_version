@@ -302,7 +302,7 @@ class _signupmodState extends State<signupmod> {
                             prefixIcon: Icon(Icons.science),
                             border: OutlineInputBorder()),
                         onSaved: (text) {
-                          name = text;
+                          spiciality_exacte = text;
                         },
                       ),
                       SizedBox(height: 20),
