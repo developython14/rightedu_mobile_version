@@ -603,16 +603,20 @@ class _signupmodState extends State<signupmod> {
                             'email': email,
                             'password': password,
                             'phone': phone,
+                            'phone_second': phone_second,
                             'speciality': spiciality,
                             'gender': gender,
                             'country': country,
+                            "city": city,
                             'faculty': faculty,
                             "participation": participation,
                             "degree_title": degree_title,
                             "phone_second": phone_second,
                             "avalibality": avalibality,
                             "date_of_birth": date_of_birth,
-                            "services": _selectedservices
+                            "services": _selectedservices,
+                            "language": language,
+                            "current_job": current_job
                           };
 
                           final url = Uri.parse(
@@ -634,8 +638,8 @@ class _signupmodState extends State<signupmod> {
                           request.files.add(http.MultipartFile('identity',
                               cv!.readAsBytes().asStream(), cv!.lengthSync(),
                               filename: identity!.path.split("/").last));
-
-                          //var push = await request.send();
+                          request.fields.addAll(datatosend);
+                          var push = await request.send();
                           print('probalement  cest regle ');
                         },
                         text: "Signup",
