@@ -631,6 +631,10 @@ class _signupmodState extends State<signupmod> {
                           final url = Uri.parse(
                               'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
                           var request = http.MultipartRequest('POST', url);
+                          final headers = {
+                            'Content-type': 'multipart/form-data'
+                          };
+                          request.headers.addAll(headers);
                           request.files.add(http.MultipartFile('cv',
                               cv!.readAsBytes().asStream(), cv!.lengthSync(),
                               filename: cv!.path.split("/").last));
@@ -649,7 +653,7 @@ class _signupmodState extends State<signupmod> {
                               filename: identity!.path.split("/").last));
                           request.fields.addAll(datatosend);
                           var push = await request.send();
-                          print('probalement  cest regle ');
+                          print('probalement  cest 1225 ');
                         },
                         text: "Signup",
                         shape: GFButtonShape.pills,
