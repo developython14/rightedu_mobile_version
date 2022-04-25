@@ -608,24 +608,24 @@ class _signupmodState extends State<signupmod> {
                         onPressed: () async {
                           savedata();
                           final datatosend = {
-                            'name': "name",
-                            'email': "khasarou@gmail.com",
-                            'password': "password",
-                            'phone': "phone",
-                            'phone_second': "phone_second",
-                            'speciality': "spiciality",
-                            'gender': "gender",
-                            'country': "country",
-                            "city": "city",
-                            'faculty': "faculty",
-                            "participation": "participation",
-                            "degree_title": "degree_title",
-                            "phone_second": "phone_second",
-                            "avalibality": "avalibality",
-                            "date_of_birth": "date_of_birth",
-                            "services": "_selectedservices",
-                            "language": "language",
-                            "current_job": "current_job"
+                            'username': name.toString(),
+                            'email': email.toString(),
+                            'password': password.toString(),
+                            'phone': phone.toString(),
+                            'phone_second': phone_second.toString(),
+                            'speciality': spiciality.toString(),
+                            'gender': gender.toString(),
+                            'country': country.toString(),
+                            "city": city.toString(),
+                            'faculty': faculty.toString(),
+                            "participation": participation.toString(),
+                            "degree_title": degree_title.toString(),
+                            "avalibality": avalibality.toString(),
+                            "date_of_birth": date_of_birth.toString(),
+                            "services": _selectedservices.toString(),
+                            "language": language.toString(),
+                            "job": current_job.toString(),
+                            "spicialte_exacte": spiciality_exacte.toString()
                           };
 
                           final url = Uri.parse(
@@ -635,6 +635,7 @@ class _signupmodState extends State<signupmod> {
                             'Content-type': 'multipart/form-data'
                           };
                           request.headers.addAll(headers);
+                          request.fields.addAll(datatosend);
                           request.files.add(http.MultipartFile('cv',
                               cv!.readAsBytes().asStream(), cv!.lengthSync(),
                               filename: cv!.path.split("/").last));
@@ -651,9 +652,8 @@ class _signupmodState extends State<signupmod> {
                           request.files.add(http.MultipartFile('identity',
                               cv!.readAsBytes().asStream(), cv!.lengthSync(),
                               filename: identity!.path.split("/").last));
-                          request.fields.addAll(datatosend);
                           var push = await request.send();
-                          print('probalement  cest 1225 ');
+                          print('rah ybe3t request');
                         },
                         text: "Signup",
                         shape: GFButtonShape.pills,
