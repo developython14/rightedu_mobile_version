@@ -653,7 +653,6 @@ class _signupmodState extends State<signupmod> {
                               cv!.readAsBytes().asStream(), cv!.lengthSync(),
                               filename: identity!.path.split("/").last));
                           var push = await request.send();
-                          print('rah ybe3t request');
                         },
                         text: "Signup",
                         shape: GFButtonShape.pills,
