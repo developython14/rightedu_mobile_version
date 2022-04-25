@@ -10,34 +10,34 @@ class toma extends StatelessWidget {
         child: IntroductionScreen(
       pages: [
         PageViewModel(
-            title: "in small time",
+            title: "In Small Time",
             body: 'with strong quality',
             decoration: PageDecoration(),
             image: Image.asset('assets/start_app/0.jpg')),
         PageViewModel(
-            title: "top experts",
+            title: "Top Experts",
             body: 'texperts and professor from difffrent fields and domains',
             decoration: PageDecoration(),
             image: Image.asset('assets/start_app/1.jpg')),
         PageViewModel(
-            title: "best  client services",
+            title: "Best  Client Services",
             body: '24H/24 and 7days/7',
             decoration: PageDecoration(),
             image: Image.asset('assets/start_app/2.jpg')),
         PageViewModel(
-            title: "low price with best quality",
+            title: "Low Price With Best Quality",
             body: 'compotition ake the price very low',
             decoration: PageDecoration(),
             image: Image.asset('assets/start_app/3.jpg')),
         PageViewModel(
-            title: "money return",
+            title: "Money Return",
             body: 'if you are  not staisfaid we return your money',
             decoration: PageDecoration(),
             image: Image.asset('assets/start_app/4.jpg'))
       ],
       done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
-      skip: const Text("skip", style: TextStyle(fontWeight: FontWeight.w600)),
-      next: const Text("next", style: TextStyle(fontWeight: FontWeight.w600)),
+      skip: const Text("Skip", style: TextStyle(fontWeight: FontWeight.w600)),
+      next: const Text("Next", style: TextStyle(fontWeight: FontWeight.w600)),
       showSkipButton: true,
       showNextButton: true,
       onDone: () {

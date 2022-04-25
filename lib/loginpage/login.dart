@@ -151,16 +151,16 @@ class _loginState extends State<login> {
                       ),
                       SignInButton(
                         Buttons.Facebook,
-                        text: "Sign up with facebook",
+                        text: "Sign up with Facebook",
                         onPressed: () {},
                       ),
                       SignInButton(
                         Buttons.Twitter,
-                        text: "Sign up with facebook",
+                        text: "Sign up with Facebook",
                         onPressed: () {},
                       ),
                       SizedBox(height: 20),
-                      Text('your are new to right !!'),
+                      Text('your are new to Right !!'),
                       SizedBox(height: 20),
                       SizedBox(
                         width: 220,
