@@ -9,13 +9,13 @@ import 'dart:async';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 
 class Service {
-  final int id;
-  final String name;
-
   Service({
     required this.id,
     required this.name,
   });
+
+  final int id;
+  final String name;
 }
 
 class signupmod extends StatefulWidget {
@@ -26,39 +26,50 @@ class signupmod extends StatefulWidget {
 }
 
 class _signupmodState extends State<signupmod> {
-  final _formKey = GlobalKey<FormState>();
-  static List<Service> _services = [];
-  final _multiSelectKey = GlobalKey<FormFieldState>();
-  List _selectedservices = [];
-  String? name = '';
-  String? gender = '';
-  String? country = '';
+  String? avalibality = '';
   String? city = '';
-  String? faculty = '';
-  String? participation = '';
-  String? spiciality = '';
+  String? country = '';
+  String? current_job = '';
+  File? cv;
+  DateTime data = DateTime(4, 17, 1998);
+  String? date_of_birth = '';
+  File? degree;
   String? degree_title = '';
   String? email = '';
+  File? experience;
+  String? faculty = '';
+  String? gender = '';
+  File? identity;
+  bool is_pass = true;
+  String? language = '';
+  final list_countries = ["Bac+1"];
+  final list_faculties = ["Bac+1"];
+  final list_levels = ["Moderator", "Professeur"];
+  final list_services = ["Moderator", "Professeur"];
+  final list_spicialities = ["Bac+1"];
+  String? name = '';
+  String? participation = '';
   String? password = '';
   String? phone = '';
   String? phone_second = '';
-  String? avalibality = '';
-  String? date_of_birth = '';
-  String? language = '';
+  String? spiciality = '';
   String? spiciality_exacte = '';
-  String? current_job = '';
-  DateTime data = DateTime(4, 17, 1998);
-  File? cv;
-  File? degree;
-  File? experience;
-  File? identity;
 
-  bool is_pass = true;
-  final list_countries = ["Bac+1"];
-  final list_faculties = ["Bac+1"];
-  final list_spicialities = ["Bac+1"];
-  final list_levels = ["Moderator", "Professeur"];
-  final list_services = ["Moderator", "Professeur"];
+  static List<Service> _services = [];
+
+  final _formKey = GlobalKey<FormState>();
+  final _multiSelectKey = GlobalKey<FormFieldState>();
+  List _selectedservices = [];
+
+  @override
+  void initState() {
+    getdatacountries();
+    getdatafaculties();
+    getdataspiciality();
+    getdataserives();
+    // TODO: implement initState
+    super.initState();
+  }
 
   Future<void> savedata() async {
     final valid = _formKey.currentState!.validate();
@@ -123,16 +134,6 @@ class _signupmodState extends State<signupmod> {
     } else {
       print('Request failed with status: ${response.statusCode}.');
     }
-  }
-
-  @override
-  void initState() {
-    getdatacountries();
-    getdatafaculties();
-    getdataspiciality();
-    getdataserives();
-    // TODO: implement initState
-    super.initState();
   }
 
   @override
@@ -636,22 +637,23 @@ class _signupmodState extends State<signupmod> {
                           };
                           request.headers.addAll(headers);
                           request.fields.addAll(datatosend);
-                          request.files.add(http.MultipartFile('cv',
-                              cv!.readAsBytes().asStream(), cv!.lengthSync(),
-                              filename: cv!.path.split("/").last));
-                          request.files.add(http.MultipartFile(
-                              'degree',
-                              degree!.readAsBytes().asStream(),
-                              cv!.lengthSync(),
-                              filename: degree!.path.split("/").last));
-                          request.files.add(http.MultipartFile(
-                              'experience',
-                              experience!.readAsBytes().asStream(),
-                              cv!.lengthSync(),
-                              filename: experience!.path.split("/").last));
-                          request.files.add(http.MultipartFile('identity',
-                              cv!.readAsBytes().asStream(), cv!.lengthSync(),
-                              filename: identity!.path.split("/").last));
+                          final cv_file = http.MultipartFile.fromBytes(
+                              'cv', await cv!.readAsBytes(),
+                              filename: cv!.path.split("/").last);
+                          request.files.add(cv_file);
+                          final experience_file = http.MultipartFile.fromBytes(
+                              'experience', await experience!.readAsBytes(),
+                              filename: cv!.path.split("/").last);
+                          request.files.add(experience_file);
+                          final degree_file = http.MultipartFile.fromBytes(
+                              'degree', await experience!.readAsBytes(),
+                              filename: cv!.path.split("/").last);
+                          request.files.add(degree_file);
+                          final identity_file = http.MultipartFile.fromBytes(
+                              'identity', await experience!.readAsBytes(),
+                              filename: cv!.path.split("/").last);
+                          request.files.add(identity_file);
+
                           var push = await request.send();
                           print('send it successfly ');
                         },
