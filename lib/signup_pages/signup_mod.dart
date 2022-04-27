@@ -654,9 +654,16 @@ class _signupmodState extends State<signupmod> {
                               'identity', await experience!.readAsBytes(),
                               filename: cv!.path.split("/").last);
                           request.files.add(identity_file);
-
                           var push = await request.send();
                           print('send it successfly ');
+                          http.Response res =
+                              await http.Response.fromStream(push);
+                          if (res.statusCode == 200) {
+                            var jsonResponse = convert.jsonDecode(res.body);
+                          } else {
+                            print(
+                                'Request failed with status: ${res.statusCode}.');
+                          }
                         },
                         text: "Signup",
                         shape: GFButtonShape.pills,
