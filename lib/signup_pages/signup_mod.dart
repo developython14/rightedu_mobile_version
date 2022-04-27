@@ -628,6 +628,7 @@ class _signupmodState extends State<signupmod> {
                             "job": current_job.toString(),
                             "spicialte_exacte": spiciality_exacte.toString()
                           };
+                          print(datatosend);
 
                           final url = Uri.parse(
                               'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
