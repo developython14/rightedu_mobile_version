@@ -18,19 +18,25 @@ class _intersignupState extends State<intersignup> {
             mainAxisSize: MainAxisSize.min,
             children: [
               GFButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
                 text: "signup as student",
                 icon: Icon(Icons.school),
                 type: GFButtonType.transparent,
               ),
               GFButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
                 text: "signup as moderator",
                 icon: Icon(Icons.school),
                 type: GFButtonType.transparent,
               ),
               GFButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
                 text: "signup as professeur",
                 icon: Icon(Icons.school),
                 type: GFButtonType.transparent,
