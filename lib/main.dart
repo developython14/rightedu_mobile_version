@@ -7,7 +7,7 @@ import 'package:right/signup_pages/signup.dart';
 import 'package:right/signup_pages/signup_mod.dart';
 import 'package:right/test.dart';
 
-void main() {  
+void main() {
   runApp(
       MaterialApp(title: 'Right Hacker', initialRoute: '/signupmod', routes: {
     '/login': (context) => login(),
@@ -18,4 +18,3 @@ void main() {
     '/free': (context) => univs(),
   }));
 }
-  

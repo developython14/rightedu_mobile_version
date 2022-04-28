@@ -655,14 +655,17 @@ class _signupmodState extends State<signupmod> {
                               filename: cv!.path.split("/").last);
                           request.files.add(identity_file);
                           var push = await request.send();
-                          print('send it successfly ');
-                          http.Response res =
-                              await http.Response.fromStream(push);
-                          if (res.statusCode == 200) {
-                            var jsonResponse = convert.jsonDecode(res.body);
+                          print('send it successfly');
+                          var test = Uri.parse(
+                              'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
+                          var response = await http.get(test);
+                          if (response.statusCode == 200) {
+                            var jsonResponse =
+                                convert.jsonDecode(response.body);
+                            print(jsonResponse);
                           } else {
                             print(
-                                'Request failed with status: ${res.statusCode}.');
+                                'Request failed with status: ${response.statusCode}.');
                           }
                         },
                         text: "Signup",
