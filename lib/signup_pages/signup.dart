@@ -49,6 +49,33 @@ class _signupState extends State<signup> {
     _formKey.currentState!.save();
   }
 
+  Future<void> _showMyDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Message'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('salam alikom something is error'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Approve'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   getdatacountries() async {
     var test = Uri.parse(
         'https://evening-savannah-43647.herokuapp.com/api/list_countries');
@@ -308,7 +335,7 @@ class _signupState extends State<signup> {
                       SizedBox(height: 20),
                       GFButton(
                         onPressed: () async {
-                          if (5 == 2) {
+                          if (2 == 2) {
                             savedata();
                             final datatosend = {
                               'name': name,
@@ -335,6 +362,8 @@ class _signupState extends State<signup> {
                               print(
                                   'Request failed with status: ${response.statusCode}.');
                             }
+                          } else {
+                            _showMyDialog();
                           }
                         },
                         text: "Signup",

@@ -6,6 +6,7 @@ import 'package:right/intro_screen/wait.dart';
 import 'package:right/signup_pages/signup.dart';
 import 'package:right/signup_pages/signup_mod.dart';
 import 'package:right/test.dart';
+import 'package:right/intro_screen/intersec_signup.dart';
 
 void main() {
   runApp(
@@ -16,5 +17,6 @@ void main() {
     '/intro': (context) => toma(),
     '/wait': (context) => wait(),
     '/free': (context) => univs(),
+    '/intersignup': (context) => intersignup(),
   }));
 }
