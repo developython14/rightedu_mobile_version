@@ -63,7 +63,6 @@ class _signupmodState extends State<signupmod> {
   final _formKey = GlobalKey<FormState>();
   final _multiSelectKey = GlobalKey<FormFieldState>();
   List _selectedservices = [];
-  var pass_is_match = password == rpassword;
 
   @override
   void initState() {
@@ -614,7 +613,6 @@ class _signupmodState extends State<signupmod> {
                               onPressed: () {
                                 setState(() {
                                   is_pass = !is_pass;
-
                                 });
                               },
                             ),
@@ -647,7 +645,7 @@ class _signupmodState extends State<signupmod> {
                       GFButton(
                         onPressed: () async {
                           print('hada small test');
-                          print(pass_is_match);
+                          print(password == rpassword);
                           savedata();
                           final datatosend = {
                             'username': name.toString(),
