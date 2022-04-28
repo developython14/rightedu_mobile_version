@@ -7,6 +7,7 @@ import 'package:file_picker/file_picker.dart';
 import 'dart:io';
 import 'dart:async';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
+import 'package:email_validator/email_validator.dart';
 
 class Service {
   Service({
@@ -216,7 +217,6 @@ class _signupmodState extends State<signupmod> {
                                 setState(() {
                                   gender = text;
                                 });
-                                print('gender is $gender');
                               })),
                       SizedBox(height: 10),
                       ListTile(
@@ -228,7 +228,6 @@ class _signupmodState extends State<signupmod> {
                                 setState(() {
                                   gender = text;
                                 });
-                                print('gender is $gender');
                               })),
                       SizedBox(height: 20),
                       Row(
@@ -401,7 +400,6 @@ class _signupmodState extends State<signupmod> {
                               setState(() {
                                 cv = File(result.files.single.path!);
                               });
-                              print('goog');
                             } else {
                               // User canceled the picker
                             }
@@ -546,6 +544,12 @@ class _signupmodState extends State<signupmod> {
                             border: OutlineInputBorder()),
                         onSaved: (text) {
                           email = text;
+                        },
+                        validator: (value) {
+                          if (EmailValidator.validate(value)) {
+                            return null;
+                          }
+                          return 'Please enter a valid email';
                         },
                       ),
                       SizedBox(height: 20),
