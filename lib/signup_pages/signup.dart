@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
+import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 
 class signup extends StatefulWidget {
   const signup({Key? key}) : super(key: key);
@@ -25,6 +26,8 @@ class _signupState extends State<signup> {
   String? password = '';
   String? phone = '';
   String? spiciality = '';
+  final pwcontroller = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -228,6 +231,7 @@ class _signupState extends State<signup> {
                       ),
                       SizedBox(height: 20),
                       TextFormField(
+                        controller: pwcontroller,
                         obscureText: is_pass,
                         decoration: InputDecoration(
                             hintText: 'Password',
@@ -245,6 +249,16 @@ class _signupState extends State<signup> {
                           password = text;
                         },
                       ),
+                      SizedBox(height: 20),
+                      FlutterPwValidator(
+                          controller: pwcontroller,
+                          minLength: 6,
+                          uppercaseCharCount: 2,
+                          numericCharCount: 3,
+                          specialCharCount: 1,
+                          width: 400,
+                          height: 150,
+                          onSuccess: () {}),
                       SizedBox(height: 20),
                       TextFormField(
                         obscureText: is_pass,
