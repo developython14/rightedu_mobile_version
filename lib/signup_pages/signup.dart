@@ -3,6 +3,7 @@ import 'package:getwidget/getwidget.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 import 'package:flutter_pw_validator/flutter_pw_validator.dart';
+import 'package:email_validator/email_validator.dart';
 
 class signup extends StatefulWidget {
   const signup({Key? key}) : super(key: key);
@@ -221,6 +222,12 @@ class _signupState extends State<signup> {
                       ),
                       SizedBox(height: 20),
                       TextFormField(
+                        validator: (value) {
+                          if (EmailValidator.validate(value)) {
+                            return null;
+                          }
+                          return 'Please enter a valid email';
+                        },
                         decoration: InputDecoration(
                             hintText: 'Email',
                             prefixIcon: Icon(Icons.email),
