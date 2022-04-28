@@ -25,6 +25,8 @@ class _waitState extends State<wait> {
     return Scaffold(
         body: Center(
             child: SpinKitWanderingCubes(
+      color: Colors.blue,
+      shape: BoxShape.rectangle,
       size: 150,
     )));
   }

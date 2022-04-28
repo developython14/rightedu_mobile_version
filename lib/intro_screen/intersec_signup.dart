@@ -23,7 +23,9 @@ class _intersignupState extends State<intersignup> {
                 },
                 text: "signup as student",
                 icon: Icon(Icons.school),
-                type: GFButtonType.transparent,
+              ),
+              SizedBox(
+                height: 25,
               ),
               GFButton(
                 onPressed: () {
@@ -31,7 +33,9 @@ class _intersignupState extends State<intersignup> {
                 },
                 text: "signup as moderator",
                 icon: Icon(Icons.school),
-                type: GFButtonType.transparent,
+              ),
+              SizedBox(
+                height: 25,
               ),
               GFButton(
                 onPressed: () {
@@ -39,7 +43,6 @@ class _intersignupState extends State<intersignup> {
                 },
                 text: "signup as professeur",
                 icon: Icon(Icons.school),
-                type: GFButtonType.transparent,
               ),
             ]),
       ),
