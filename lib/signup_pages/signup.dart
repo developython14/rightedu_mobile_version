@@ -308,31 +308,33 @@ class _signupState extends State<signup> {
                       SizedBox(height: 20),
                       GFButton(
                         onPressed: () async {
-                          savedata();
-                          final datatosend = {
-                            'name': name,
-                            'email': email,
-                            'password': password,
-                            'level': level,
-                            'phone': phone,
-                            'speciality': spiciality,
-                            'gender': gender,
-                            'country': country,
-                            'faculty': faculty
-                          };
-                          final url = Uri.parse(
-                              'https://evening-savannah-43647.herokuapp.com//api/signup_student');
-                          final response0 = await http.post(url,
-                              body: convert.jsonEncode(datatosend));
-                          var test = Uri.parse(
-                              'https://evening-savannah-43647.herokuapp.com//api/signup_student');
-                          var response = await http.get(test);
-                          if (response.statusCode == 200) {
-                            var jsonResponse =
-                                convert.jsonDecode(response.body);
-                          } else {
-                            print(
-                                'Request failed with status: ${response.statusCode}.');
+                          if (5 == 2) {
+                            savedata();
+                            final datatosend = {
+                              'name': name,
+                              'email': email,
+                              'password': password,
+                              'level': level,
+                              'phone': phone,
+                              'speciality': spiciality,
+                              'gender': gender,
+                              'country': country,
+                              'faculty': faculty
+                            };
+                            final url = Uri.parse(
+                                'https://evening-savannah-43647.herokuapp.com//api/signup_student');
+                            final response0 = await http.post(url,
+                                body: convert.jsonEncode(datatosend));
+                            var test = Uri.parse(
+                                'https://evening-savannah-43647.herokuapp.com//api/signup_student');
+                            var response = await http.get(test);
+                            if (response.statusCode == 200) {
+                              var jsonResponse =
+                                  convert.jsonDecode(response.body);
+                            } else {
+                              print(
+                                  'Request failed with status: ${response.statusCode}.');
+                            }
                           }
                         },
                         text: "Signup",
