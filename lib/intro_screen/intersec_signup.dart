@@ -19,7 +19,7 @@ class _intersignupState extends State<intersignup> {
             children: [
               GFButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/login');
+                  Navigator.pushNamed(context, '/signup');
                 },
                 text: "signup as student",
                 icon: Icon(Icons.school),
@@ -27,7 +27,7 @@ class _intersignupState extends State<intersignup> {
               ),
               GFButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/login');
+                  Navigator.pushNamed(context, '/signupmod');
                 },
                 text: "signup as moderator",
                 icon: Icon(Icons.school),
@@ -35,7 +35,7 @@ class _intersignupState extends State<intersignup> {
               ),
               GFButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/login');
+                  Navigator.pushNamed(context, '/signupmod');
                 },
                 text: "signup as professeur",
                 icon: Icon(Icons.school),
