@@ -8,6 +8,7 @@ import 'dart:io';
 import 'dart:async';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 
 class Service {
   Service({
@@ -55,7 +56,7 @@ class _signupmodState extends State<signupmod> {
   String? phone_second = '';
   String? spiciality = '';
   String? spiciality_exacte = '';
-
+  final pwcontroller = TextEditingController();
   static List<Service> _services = [];
 
   final _formKey = GlobalKey<FormState>();
@@ -171,6 +172,12 @@ class _signupmodState extends State<signupmod> {
                   child: Column(
                     children: [
                       TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid username';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(
                             hintText: 'Name complete',
                             prefixIcon: Icon(Icons.person),
@@ -287,6 +294,12 @@ class _signupmodState extends State<signupmod> {
                       ),
                       SizedBox(height: 20),
                       TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid name of degree';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(
                             hintText: 'Degree',
                             prefixIcon: Icon(Icons.grade),
@@ -297,8 +310,14 @@ class _signupmodState extends State<signupmod> {
                       ),
                       SizedBox(height: 20),
                       TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid name of spiciality';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(
-                            hintText: 'exaxctly spiciality',
+                            hintText: 'exactly spiciality',
                             prefixIcon: Icon(Icons.science),
                             border: OutlineInputBorder()),
                         onSaved: (text) {
@@ -555,6 +574,7 @@ class _signupmodState extends State<signupmod> {
                       SizedBox(height: 20),
                       TextFormField(
                         obscureText: is_pass,
+                        controller: pwcontroller,
                         decoration: InputDecoration(
                             hintText: 'Password',
                             prefixIcon: Icon(Icons.lock),
@@ -571,6 +591,16 @@ class _signupmodState extends State<signupmod> {
                           password = text;
                         },
                       ),
+                      SizedBox(height: 20),
+                      FlutterPwValidator(
+                          controller: pwcontroller,
+                          minLength: 6,
+                          uppercaseCharCount: 2,
+                          numericCharCount: 3,
+                          specialCharCount: 1,
+                          width: 400,
+                          height: 150,
+                          onSuccess: () {}),
                       SizedBox(height: 20),
                       TextFormField(
                         obscureText: is_pass,
