@@ -20,17 +20,20 @@ class _intersignupState extends State<intersignup> {
               GFButton(
                 onPressed: () {},
                 text: "signup as student",
-                shape: GFButtonShape.pills,
+                icon: Icon(Icons.school),
+                type: GFButtonType.transparent,
               ),
               GFButton(
                 onPressed: () {},
                 text: "signup as moderator",
-                shape: GFButtonShape.pills,
+                icon: Icon(Icons.school),
+                type: GFButtonType.transparent,
               ),
               GFButton(
                 onPressed: () {},
                 text: "signup as professeur",
-                shape: GFButtonShape.pills,
+                icon: Icon(Icons.school),
+                type: GFButtonType.transparent,
               ),
             ]),
       ),
