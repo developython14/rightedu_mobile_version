@@ -125,6 +125,12 @@ class _signupState extends State<signup> {
                   child: Column(
                     children: [
                       TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid username';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(
                             hintText: 'Name complete',
                             prefixIcon: Icon(Icons.person),
@@ -285,6 +291,12 @@ class _signupState extends State<signup> {
                       ),
                       SizedBox(height: 20),
                       TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid number';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(
                             hintText: 'Phone number',
                             prefixIcon: Icon(Icons.phone),
