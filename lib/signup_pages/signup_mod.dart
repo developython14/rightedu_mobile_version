@@ -52,6 +52,7 @@ class _signupmodState extends State<signupmod> {
   String? name = '';
   String? participation = '';
   String? password = '';
+  String? rpassword = '';
   String? phone = '';
   String? phone_second = '';
   String? spiciality = '';
@@ -62,6 +63,7 @@ class _signupmodState extends State<signupmod> {
   final _formKey = GlobalKey<FormState>();
   final _multiSelectKey = GlobalKey<FormFieldState>();
   List _selectedservices = [];
+  var pass_is_match = password == rpassword;
 
   @override
   void initState() {
@@ -612,11 +614,14 @@ class _signupmodState extends State<signupmod> {
                               onPressed: () {
                                 setState(() {
                                   is_pass = !is_pass;
+
                                 });
                               },
                             ),
                             border: OutlineInputBorder()),
-                        onSaved: (text) {},
+                        onSaved: (text) {
+                          rpassword = text;
+                        },
                       ),
                       SizedBox(height: 20),
                       TextFormField(
@@ -641,6 +646,8 @@ class _signupmodState extends State<signupmod> {
                       SizedBox(height: 20),
                       GFButton(
                         onPressed: () async {
+                          print('hada small test');
+                          print(pass_is_match);
                           savedata();
                           final datatosend = {
                             'username': name.toString(),
@@ -662,7 +669,6 @@ class _signupmodState extends State<signupmod> {
                             "job": current_job.toString(),
                             "spicialte_exacte": spiciality_exacte.toString()
                           };
-                          print(datatosend);
 
                           final url = Uri.parse(
                               'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
