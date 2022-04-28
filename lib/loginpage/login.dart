@@ -167,7 +167,7 @@ class _loginState extends State<login> {
                         child: ElevatedButton(
                           child: Text('registre'),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/signupmod');
+                            Navigator.pushNamed(context, '/intersignup');
                           },
                         ),
                       )
