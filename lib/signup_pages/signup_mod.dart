@@ -82,6 +82,33 @@ class _signupmodState extends State<signupmod> {
     _formKey.currentState!.save();
   }
 
+  Future<void> _showMyDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Message'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('salam alikom something is error'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Approve'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   getdatacountries() async {
     var test = Uri.parse(
         'https://evening-savannah-43647.herokuapp.com/api/list_countries');
@@ -644,69 +671,71 @@ class _signupmodState extends State<signupmod> {
                       SizedBox(height: 20),
                       GFButton(
                         onPressed: () async {
-                          print('hada small test');
-                          print(password == rpassword);
-                          savedata();
-                          final datatosend = {
-                            'username': name.toString(),
-                            'email': email.toString(),
-                            'password': password.toString(),
-                            'phone': phone.toString(),
-                            'phone_second': phone_second.toString(),
-                            'speciality': spiciality.toString(),
-                            'gender': gender.toString(),
-                            'country': country.toString(),
-                            "city": city.toString(),
-                            'faculty': faculty.toString(),
-                            "participation": participation.toString(),
-                            "degree_title": degree_title.toString(),
-                            "avalibality": avalibality.toString(),
-                            "date_of_birth": date_of_birth.toString(),
-                            "services": _selectedservices.toString(),
-                            "language": language.toString(),
-                            "job": current_job.toString(),
-                            "spicialte_exacte": spiciality_exacte.toString()
-                          };
-
-                          final url = Uri.parse(
-                              'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
-                          var request = http.MultipartRequest('POST', url);
-                          final headers = {
-                            'Content-type': 'multipart/form-data'
-                          };
-                          request.headers.addAll(headers);
-                          request.fields.addAll(datatosend);
-                          final cv_file = http.MultipartFile.fromBytes(
-                              'cv', await cv!.readAsBytes(),
-                              filename: cv!.path.split("/").last);
-                          request.files.add(cv_file);
-                          final experience_file = http.MultipartFile.fromBytes(
-                              'experience', await experience!.readAsBytes(),
-                              filename: cv!.path.split("/").last);
-                          request.files.add(experience_file);
-                          final degree_file = http.MultipartFile.fromBytes(
-                              'degree', await experience!.readAsBytes(),
-                              filename: cv!.path.split("/").last);
-                          request.files.add(degree_file);
-                          final identity_file = http.MultipartFile.fromBytes(
-                              'identity', await experience!.readAsBytes(),
-                              filename: cv!.path.split("/").last);
-                          request.files.add(identity_file);
-                          var push = await request.send();
-                          print('send it successfly');
-                          var test = Uri.parse(
-                              'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
-                          var response = await http.get(test);
-                          if (response.statusCode == 200) {
-                            var jsonResponse =
-                                convert.jsonDecode(response.body);
-                            print(jsonResponse);
+                          if (password == rpassword) {
+                            savedata();
+                            final datatosend = {
+                              'username': name.toString(),
+                              'email': email.toString(),
+                              'password': password.toString(),
+                              'phone': phone.toString(),
+                              'phone_second': phone_second.toString(),
+                              'speciality': spiciality.toString(),
+                              'gender': gender.toString(),
+                              'country': country.toString(),
+                              "city": city.toString(),
+                              'faculty': faculty.toString(),
+                              "participation": participation.toString(),
+                              "degree_title": degree_title.toString(),
+                              "avalibality": avalibality.toString(),
+                              "date_of_birth": date_of_birth.toString(),
+                              "services": _selectedservices.toString(),
+                              "language": language.toString(),
+                              "job": current_job.toString(),
+                              "spicialte_exacte": spiciality_exacte.toString()
+                            };
+                            final url = Uri.parse(
+                                'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
+                            var request = http.MultipartRequest('POST', url);
+                            final headers = {
+                              'Content-type': 'multipart/form-data'
+                            };
+                            request.headers.addAll(headers);
+                            request.fields.addAll(datatosend);
+                            final cv_file = http.MultipartFile.fromBytes(
+                                'cv', await cv!.readAsBytes(),
+                                filename: cv!.path.split("/").last);
+                            request.files.add(cv_file);
+                            final experience_file =
+                                http.MultipartFile.fromBytes('experience',
+                                    await experience!.readAsBytes(),
+                                    filename: cv!.path.split("/").last);
+                            request.files.add(experience_file);
+                            final degree_file = http.MultipartFile.fromBytes(
+                                'degree', await experience!.readAsBytes(),
+                                filename: cv!.path.split("/").last);
+                            request.files.add(degree_file);
+                            final identity_file = http.MultipartFile.fromBytes(
+                                'identity', await experience!.readAsBytes(),
+                                filename: cv!.path.split("/").last);
+                            request.files.add(identity_file);
+                            var push = await request.send();
+                            print('send it successfly');
+                            var test = Uri.parse(
+                                'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
+                            var response = await http.get(test);
+                            if (response.statusCode == 200) {
+                              var jsonResponse =
+                                  convert.jsonDecode(response.body);
+                              print(jsonResponse);
+                            } else {
+                              print(
+                                  'Request failed with status: ${response.statusCode}.');
+                            }
                           } else {
-                            print(
-                                'Request failed with status: ${response.statusCode}.');
+                            _showMyDialog();
                           }
                         },
-                        text: "Signup",
+                        text: "Sign Up",
                         shape: GFButtonShape.pills,
                         fullWidthButton: true,
                         size: GFSize.LARGE,
