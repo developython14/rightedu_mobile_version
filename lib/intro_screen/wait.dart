@@ -24,16 +24,8 @@ class _waitState extends State<wait> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: SpinKitFadingCircle(
+            child: SpinKitWanderingCubes(
       size: 150,
-      itemBuilder: (BuildContext context, int index) {
-        return DecoratedBox(
-          decoration: BoxDecoration(
-            color:
-                index.isEven ? Colors.red : Color.fromARGB(255, 229, 255, 81),
-          ),
-        );
-      },
     )));
   }
 }
