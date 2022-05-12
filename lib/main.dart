@@ -7,6 +7,8 @@ import 'package:right/signup_pages/signup.dart';
 import 'package:right/signup_pages/signup_mod.dart';
 import 'package:right/test.dart';
 import 'package:right/intro_screen/intersec_signup.dart';
+import 'package:right/test/test_push.dart';
+import 'package:right/test/test_send.dart';
 
 void main() {
   runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/testsend', routes: {
@@ -18,5 +20,6 @@ void main() {
     '/free': (context) => univs(),
     '/intersignup': (context) => intersignup(),
     '/testsend': (context) => testsend(),
+    '/testpush': (context) => testpush(),
   }));
 }
