@@ -15,6 +15,24 @@ class testpush extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {
+          // When the user taps the button,
+          // navigate to a named route and
+          // provide the arguments as an optional
+          // parameter.
+          Navigator.pushNamed(
+            context,
+            "/testsend",
+            arguments: ScreenArguments(
+              'mustapha belkassem',
+              'big developperu and data scienctist from the great algeria .',
+            ),
+          );
+        },
+        child: const Text('try send the data '),
+      ),
+    );
   }
 }

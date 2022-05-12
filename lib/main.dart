@@ -11,7 +11,7 @@ import 'package:right/test/test_push.dart';
 import 'package:right/test/test_send.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/testsend', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/testpush', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),

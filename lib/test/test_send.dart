@@ -21,7 +21,14 @@ class testsend extends StatelessWidget {
         title: Text(args.title),
       ),
       body: Center(
-        child: Text(args.message),
+        child: Column(
+          children: [
+            Text("hada first messge"),
+            Text(args.title),
+            Text("hada second messge"),
+            Text(args.message),
+          ],
+        ),
       ),
     );
   }
