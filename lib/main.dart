@@ -9,7 +9,7 @@ import 'package:right/test.dart';
 import 'package:right/intro_screen/intersec_signup.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/wait', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/testsend', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -17,5 +17,6 @@ void main() {
     '/wait': (context) => wait(),
     '/free': (context) => univs(),
     '/intersignup': (context) => intersignup(),
+    '/testsend': (context) => intersignup(),
   }));
 }
