@@ -17,6 +17,6 @@ void main() {
     '/wait': (context) => wait(),
     '/free': (context) => univs(),
     '/intersignup': (context) => intersignup(),
-    '/testsend': (context) => intersignup(),
+    '/testsend': (context) => testsend(),
   }));
 }
