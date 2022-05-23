@@ -22,7 +22,7 @@ class testpush extends StatelessWidget {
           ElevatedButton(
             onPressed: () async {
               final prefs = await SharedPreferences.getInstance();
-              await prefs.setBool('deja', true);
+              await prefs.setString('deja', "hada belkassem mustapha");
 
               // When the user taps the button,
               // navigate to a named route and

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:right/test/test_push.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 // You can pass any object to the arguments parameter.
 // In this example, create a class that contains both
 // a customizable title and message.
@@ -21,6 +23,13 @@ class testsend extends StatelessWidget {
             Text((args.title + args.message).toString()),
             Text("hada le produit"),
             Text((args.title * args.message).toString()),
+            ElevatedButton(
+                child: Text('get user data'),
+                onPressed: () async {
+                  final prefs = await SharedPreferences.getInstance();
+                  final mus = await prefs.getString('deja');
+                  print(mus);
+                }),
           ],
         ),
       ),
