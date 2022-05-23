@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // You can pass any object to the arguments parameter.
 // In this example, create a class that contains both
@@ -19,7 +20,10 @@ class testpush extends StatelessWidget {
       child: Column(
         children: [
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
+              final prefs = await SharedPreferences.getInstance();
+              await prefs.setBool('deja', true);
+
               // When the user taps the button,
               // navigate to a named route and
               // provide the arguments as an optional
