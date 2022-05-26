@@ -15,15 +15,20 @@ class home extends StatefulWidget {
 
 class _homeState extends State<home> {
   int selected_index = 0;
-  List texts = [];
+  List widgets = [
+    start(),
+    discover(),
+    messages(),
+    profile(),
+    notification(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('mustapha test'),
         ),
-        body: Center(
-            child: Text("doka rana f index $texts.elementAt(selected_index)")),
+        body: widgets.elementAt(selected_index),
         bottomNavigationBar: ConvexAppBar(
           items: [
             TabItem(icon: Icons.home, title: 'Home'),
