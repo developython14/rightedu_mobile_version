@@ -30,14 +30,17 @@ class _startState extends State<start> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(width: 10),
-                Text("Hi Mustapha ? Lets",
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold)),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(width: 25),
+                  Text("Hi Mustapha ? Lets Start",
+                      style: const TextStyle(
+                          fontSize: 25, fontWeight: FontWeight.bold)),
+                ],
+              ),
             ),
             GFSearchBar(
               searchList: list,
@@ -62,13 +65,13 @@ class _startState extends State<start> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(width: 5),
+                SizedBox(width: 25),
                 Text("Explore Our Services:",
                     style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold)),
+                        fontSize: 25, fontWeight: FontWeight.bold)),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 25),
             GFCarousel(
               items: imageList.map(
                 (url) {
@@ -91,13 +94,13 @@ class _startState extends State<start> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(width: 5),
+                SizedBox(width: 25),
                 Text("Explore Our Blogs :",
                     style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold)),
+                        fontSize: 25, fontWeight: FontWeight.bold)),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 25),
             GFCarousel(
               items: imageList.map(
                 (url) {

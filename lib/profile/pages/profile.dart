@@ -10,8 +10,10 @@ class profile extends StatefulWidget {
 class _profileState extends State<profile> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('hena rah ndir te3 profile'),
+    return Center(
+      child: Container(
+        child: Text('hena rah ndir te3 profile'),
+      ),
     );
   }
 }

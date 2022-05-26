@@ -10,8 +10,10 @@ class discover extends StatefulWidget {
 class _discoverState extends State<discover> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('hena rah ndir te3 discovery'),
+    return Center(
+      child: Container(
+        child: Text('hena rah ndir te3 discovery'),
+      ),
     );
   }
 }

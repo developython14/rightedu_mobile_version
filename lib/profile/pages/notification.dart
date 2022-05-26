@@ -10,8 +10,10 @@ class notification extends StatefulWidget {
 class _notificationState extends State<notification> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('hena rah ndir te3 notification'),
+    return Center(
+      child: Container(
+        child: Text('hena rah ndir te3 notification'),
+      ),
     );
   }
 }
