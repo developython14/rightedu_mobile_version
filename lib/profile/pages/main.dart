@@ -20,6 +20,9 @@ class _startState extends State<start> {
     return SingleChildScrollView(
       child: Column(
         children: [
+          Text("Hi Mustapha ? Lets",
+              style:
+                  const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           GFSearchBar(
             searchList: list,
             searchQueryBuilder: (query, list) {
@@ -40,6 +43,9 @@ class _startState extends State<start> {
               });
             },
           ),
+          Text("Explore Our Services:",
+              style:
+                  const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
         ],
       ),
     );
