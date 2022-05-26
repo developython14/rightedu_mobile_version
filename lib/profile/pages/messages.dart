@@ -9,16 +9,36 @@ class messages extends StatefulWidget {
 }
 
 class _messagesState extends State<messages> {
-  List list = [
-    "Flutter",
-    "React",
-    "Ionic",
-    "Xamarin",
-  ];
   @override
   Widget build(BuildContext context) {
+    List list = [
+      "Flutter",
+      "React",
+      "Ionic",
+      "Xamarin",
+    ];
     return ListView(
       children: [
+        GFSearchBar(
+          searchList: list,
+          searchQueryBuilder: (query, list) {
+            return list;
+          },
+          overlaySearchListItemBuilder: (item) {
+            return Container(
+              padding: const EdgeInsets.all(8),
+              child: Text(
+                "mustapha",
+                style: const TextStyle(fontSize: 18),
+              ),
+            );
+          },
+          onItemSelected: (item) {
+            setState(() {
+              print('$item');
+            });
+          },
+        ),
         Card(
           child: ListTile(
             leading: ClipRRect(
