@@ -27,13 +27,18 @@ class _startState extends State<start> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      top:true,
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Text("Hi Mustapha ? Lets",
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(width: 10),
+                Text("Hi Mustapha ? Lets",
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
+              ],
+            ),
             GFSearchBar(
               searchList: list,
               searchQueryBuilder: (query, list) {
@@ -71,7 +76,8 @@ class _startState extends State<start> {
                     margin: EdgeInsets.all(8.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                      child: Image.network(url, fit: BoxFit.cover, width: 1000.0),
+                      child:
+                          Image.network(url, fit: BoxFit.cover, width: 1000.0),
                     ),
                   );
                 },
@@ -99,7 +105,8 @@ class _startState extends State<start> {
                     margin: EdgeInsets.all(8.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                      child: Image.network(url, fit: BoxFit.cover, width: 1000.0),
+                      child:
+                          Image.network(url, fit: BoxFit.cover, width: 1000.0),
                     ),
                   );
                 },
@@ -112,8 +119,6 @@ class _startState extends State<start> {
             ),
           ],
         ),
-      ),
-    )   ),
       ),
     );
   }
