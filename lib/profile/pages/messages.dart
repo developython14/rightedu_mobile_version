@@ -86,7 +86,7 @@ class _messagesState extends State<messages> {
         ),
         Card(
           child: ListTile(
-            leading: FlutterLogo(size: 56.0),
+            leading: Image.asset('assets/start_app/0.jpg'),
             title: Text('Mustapha Belkassem'),
             subtitle: Text(
                 'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
