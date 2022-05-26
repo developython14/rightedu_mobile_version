@@ -27,7 +27,7 @@ class _homeState extends State<home> {
     return Scaffold(
         body: widgets.elementAt(selected_index),
         bottomNavigationBar: ConvexAppBar.badge(
-          {3: "+99"},
+          {1: "6", 3: "+99"},
           items: [
             TabItem(icon: Icons.home, title: 'Home'),
             TabItem(icon: Icons.notifications, title: 'Notifications'),
