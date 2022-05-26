@@ -22,7 +22,7 @@ class _startState extends State<start> {
         children: [
           Text("Hi Mustapha ? Lets",
               style:
-                  const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  const TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
           GFSearchBar(
             searchList: list,
             searchQueryBuilder: (query, list) {
@@ -45,7 +45,7 @@ class _startState extends State<start> {
           ),
           Text("Explore Our Services:",
               style:
-                  const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  const TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
         ],
       ),
     );
