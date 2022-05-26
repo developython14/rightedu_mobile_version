@@ -10,8 +10,90 @@ class messages extends StatefulWidget {
 class _messagesState extends State<messages> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('hena rah ndir te3 messages'),
+    return ListView(
+      children: [
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(size: 56.0),
+            title: Text('Mustapha belkassem'),
+            subtitle:
+                Text('Here is a second line  and arwah ya kho rani lhenna'),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(size: 56.0),
+            title: Text('Mustapha belkassem'),
+            subtitle: Text(
+                'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(size: 56.0),
+            title: Text('Mustapha belkassem'),
+            subtitle: Text(
+                'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(size: 56.0),
+            title: Text('Mustapha belkassem'),
+            subtitle: Text(
+                'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(size: 56.0),
+            title: Text('Mustapha belkassem'),
+            subtitle: Text(
+                'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(size: 56.0),
+            title: Text('Mustapha belkassem'),
+            subtitle: Text(
+                'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(size: 56.0),
+            title: Text('Mustapha belkassem'),
+            subtitle: Text(
+                'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(size: 56.0),
+            title: Text('Mustapha belkassem'),
+            subtitle: Text(
+                'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(size: 56.0),
+            title: Text('Mustapha belkassem'),
+            subtitle: Text(
+                'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+      ],
     );
   }
 }

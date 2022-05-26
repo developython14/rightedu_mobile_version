@@ -30,7 +30,7 @@ class _homeState extends State<home> {
           {3: "+99"},
           items: [
             TabItem(icon: Icons.home, title: 'Home'),
-            TabItem(icon: Icons.add, title: 'Notifications'),
+            TabItem(icon: Icons.notifications, title: 'Notifications'),
             TabItem(icon: Icons.map, title: 'Discovery'),
             TabItem(icon: Icons.message, title: 'Message'),
             TabItem(icon: Icons.people, title: 'Profile'),
