@@ -17,23 +17,21 @@ class _homeState extends State<home> {
   int selected_index = 0;
   List widgets = [
     start(),
+    notification(),
     discover(),
     messages(),
     profile(),
-    notification(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('mustapha test'),
-        ),
         body: widgets.elementAt(selected_index),
-        bottomNavigationBar: ConvexAppBar(
+        bottomNavigationBar: ConvexAppBar.badge(
+          {3: "+99"},
           items: [
             TabItem(icon: Icons.home, title: 'Home'),
+            TabItem(icon: Icons.add, title: 'Notifications'),
             TabItem(icon: Icons.map, title: 'Discovery'),
-            TabItem(icon: Icons.add, title: 'Add'),
             TabItem(icon: Icons.message, title: 'Message'),
             TabItem(icon: Icons.people, title: 'Profile'),
           ],
