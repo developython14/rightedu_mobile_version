@@ -9,6 +9,7 @@ import 'package:right/test.dart';
 import 'package:right/intro_screen/intersec_signup.dart';
 import 'package:right/test/test_push.dart';
 import 'package:right/test/test_send.dart';
+import 'package:right/profile/home.dart';
 
 void main() {
   runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/testpush', routes: {
@@ -21,5 +22,6 @@ void main() {
     '/intersignup': (context) => intersignup(),
     '/testsend': (context) => testsend(),
     '/testpush': (context) => testpush(),
+    "/start": (context) => home(),
   }));
 }
