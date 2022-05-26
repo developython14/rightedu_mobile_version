@@ -26,59 +26,94 @@ class _startState extends State<start> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Text("Hi Mustapha ? Lets",
-              style:
-                  const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          GFSearchBar(
-            searchList: list,
-            searchQueryBuilder: (query, list) {
-              return list;
-            },
-            overlaySearchListItemBuilder: (item) {
-              return Container(
-                padding: const EdgeInsets.all(8),
-                child: Text(
-                  "mustapha",
-                  style: const TextStyle(fontSize: 18),
-                ),
-              );
-            },
-            onItemSelected: (item) {
-              setState(() {
-                print('$item');
-              });
-            },
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Explore Our Services:",
-                  style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold)),
-            ],
-          ),
-          GFCarousel(
-            items: imageList.map(
-              (url) {
+    return SafeArea(
+      top:true,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text("Hi Mustapha ? Lets",
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            GFSearchBar(
+              searchList: list,
+              searchQueryBuilder: (query, list) {
+                return list;
+              },
+              overlaySearchListItemBuilder: (item) {
                 return Container(
-                  margin: EdgeInsets.all(8.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                    child: Image.network(url, fit: BoxFit.cover, width: 1000.0),
+                  padding: const EdgeInsets.all(8),
+                  child: Text(
+                    "mustapha",
+                    style: const TextStyle(fontSize: 18),
                   ),
                 );
               },
-            ).toList(),
-            onPageChanged: (index) {
-              setState(() {
-                index;
-              });
-            },
-          ),
-        ],
+              onItemSelected: (item) {
+                setState(() {
+                  print('$item');
+                });
+              },
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(width: 5),
+                Text("Explore Our Services:",
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
+              ],
+            ),
+            SizedBox(height: 10),
+            GFCarousel(
+              items: imageList.map(
+                (url) {
+                  return Container(
+                    margin: EdgeInsets.all(8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      child: Image.network(url, fit: BoxFit.cover, width: 1000.0),
+                    ),
+                  );
+                },
+              ).toList(),
+              onPageChanged: (index) {
+                setState(() {
+                  index;
+                });
+              },
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(width: 5),
+                Text("Explore Our Blogs :",
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
+              ],
+            ),
+            SizedBox(height: 10),
+            GFCarousel(
+              items: imageList.map(
+                (url) {
+                  return Container(
+                    margin: EdgeInsets.all(8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      child: Image.network(url, fit: BoxFit.cover, width: 1000.0),
+                    ),
+                  );
+                },
+              ).toList(),
+              onPageChanged: (index) {
+                setState(() {
+                  index;
+                });
+              },
+            ),
+          ],
+        ),
+      ),
+    )   ),
       ),
     );
   }
