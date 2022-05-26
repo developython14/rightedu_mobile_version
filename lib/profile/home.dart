@@ -17,26 +17,17 @@ class _homeState extends State<home> {
         title: Text('mustapha test'),
       ),
       body: Center(child: Text("doka rana f index$selected_index")),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'switch',
-          ),
-        ],
-        currentIndex: selected_index,
-        selectedItemColor: Color.fromARGB(255, 228, 191, 142),
-        unselectedItemColor: Color.fromARGB(255, 7, 255, 255),
-        onTap: _set_index,
-      ),
+      bottomNavigationBar:ConvexAppBar(
+    items: [
+      TabItem(icon: Icons.home, title: 'Home'),
+      TabItem(icon: Icons.map, title: 'Discovery'),
+      TabItem(icon: Icons.add, title: 'Add'),
+      TabItem(icon: Icons.message, title: 'Message'),
+      TabItem(icon: Icons.people, title: 'Profile'),
+    ],
+    initialActiveIndex: selected_index,//optional, default as 0
+    onTap: _set_index,
+  )
     );
   }
 
