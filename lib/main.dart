@@ -12,7 +12,7 @@ import 'package:right/test/test_send.dart';
 import 'package:right/profile/home.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/testpush', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
