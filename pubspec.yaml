@@ -44,6 +44,7 @@ dependencies:
   email_validator: '^1.0.6'
   flutter_pw_validator: ^1.4.2
   shared_preferences: ^2.0.15
+  convex_bottom_bar: ^3.0.0
 
 
 
