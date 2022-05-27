@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 
 class notification extends StatefulWidget {
   const notification({Key? key}) : super(key: key);
@@ -13,11 +14,11 @@ class _notificationState extends State<notification> {
     return Center(
         child: Container(
       width: 200,
-      height: 200,
+      height: 250,
       child: Card(
           margin: EdgeInsets.all(10),
           elevation: 10,
-          color: Colors.red,
+          color: Color.fromARGB(255, 255, 255, 255),
           shadowColor: Colors.blue,
           shape: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -25,11 +26,28 @@ class _notificationState extends State<notification> {
           child: Column(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                child: Image.asset('assets/start_app/moh.jpg', width: 80.0),
+                borderRadius: BorderRadius.circular(18.0),
+                child: Image.asset('assets/start_app/fares.jpg', width: 80.0),
               ),
-              Text('mustapha belkassem00'),
-              Text("belkassse")
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'mustapha belkassem',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text("software enginer"),
+              SizedBox(
+                height: 10,
+              ),
+              GFButton(
+                onPressed: () {},
+                text: "contact",
+                shape: GFButtonShape.pills,
+              ),
             ],
           )),
     ));
