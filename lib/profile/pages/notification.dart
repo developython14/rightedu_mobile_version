@@ -14,7 +14,7 @@ class _notificationState extends State<notification> {
     return Center(
         child: Container(
       width: 200,
-      height: 250,
+      height: 225,
       child: Card(
           margin: EdgeInsets.all(10),
           elevation: 10,
