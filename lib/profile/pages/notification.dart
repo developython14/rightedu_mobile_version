@@ -11,9 +11,16 @@ class _notificationState extends State<notification> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        child: Text('hena rah ndir te3 notification'),
-      ),
-    );
+        child: Card(
+            margin: EdgeInsets.all(10),
+            elevation: 10,
+            color: Colors.red,
+            shadowColor: Colors.blue,
+            shape: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.white)),
+            child: Column(
+              children: [Text('mustapha belkassem00'), Text("belkassse")],
+            )));
   }
 }
