@@ -120,6 +120,56 @@ class _startState extends State<start> {
                 });
               },
             ),
+            SizedBox(height: 25),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(width: 25),
+                Text("Our Best Experts :",
+                    style: const TextStyle(
+                        fontSize: 25, fontWeight: FontWeight.bold)),
+              ],
+            ),
+            SizedBox(height: 25),
+            Container(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Card(
+                      child: Image.asset(
+                    'assets/start_app/yacine.jpg',
+                  )),
+                  Card(
+                      child: Image.asset(
+                    'assets/start_app/yacine.jpg',
+                  )),
+                  Card(
+                      child: Image.asset(
+                    'assets/start_app/yacine.jpg',
+                  )),
+                  Card(
+                      child: Image.asset(
+                    'assets/start_app/yacine.jpg',
+                  )),
+                  Card(
+                      child: Image.asset(
+                    'assets/start_app/yacine.jpg',
+                  )),
+                  Card(
+                      child: Image.asset(
+                    'assets/start_app/yacine.jpg',
+                  )),
+                  Card(
+                      child: Image.asset(
+                    'assets/start_app/yacine.jpg',
+                  )),
+                  Card(
+                      child: Image.asset(
+                    'assets/start_app/yacine.jpg',
+                  ))
+                ],
+              ),
+            )
           ],
         ),
       ),
