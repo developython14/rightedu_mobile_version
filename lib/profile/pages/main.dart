@@ -131,45 +131,28 @@ class _startState extends State<start> {
               ],
             ),
             SizedBox(height: 25),
-            Container(
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Card(
-                      child: Image.asset(
-                    'assets/start_app/yacine.jpg',
-                    width: 200,
-                  )), Card(
-                      child: Image.asset(
-                    'assets/start_app/yacine.jpg',
-                    width: 200,
-                  )), Card(
-                      child: Image.asset(
-                    'assets/start_app/yacine.jpg',
-                    width: 200,
-                  )), Card(
-                      child: Image.asset(
-                    'assets/start_app/yacine.jpg',
-                    width: 200,
-                  )), Card(
-                      child: Image.asset(
-                    'assets/start_app/yacine.jpg',
-                    width: 200,
-                  )), Card(
-                      child: Image.asset(
-                    'assets/start_app/yacine.jpg',
-                    width: 200,
-                  )), Card(
-                      child: Image.asset(
-                    'assets/start_app/yacine.jpg',
-                    width: 200,
-                  )), Card(
-                      child: Image.asset(
-                    'assets/start_app/yacine.jpg',
-                    width: 200,
-                  )),
-                ],
-              ),
+            ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Card(
+                  child: Text("mustapha"),
+                ),
+                Card(
+                  child: Text("mustapha"),
+                ),
+                Card(
+                  child: Text("mustapha"),
+                ),
+                Card(
+                  child: Text("mustapha"),
+                ),
+                Card(
+                  child: Text("mustapha"),
+                ),
+                Card(
+                  child: Text("mustapha"),
+                ),
+              ],
             )
           ],
         ),
