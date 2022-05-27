@@ -138,35 +138,36 @@ class _startState extends State<start> {
                   Card(
                       child: Image.asset(
                     'assets/start_app/yacine.jpg',
-                  )),
-                  Card(
+                    width: 200,
+                  )), Card(
                       child: Image.asset(
                     'assets/start_app/yacine.jpg',
-                  )),
-                  Card(
+                    width: 200,
+                  )), Card(
                       child: Image.asset(
                     'assets/start_app/yacine.jpg',
-                  )),
-                  Card(
+                    width: 200,
+                  )), Card(
                       child: Image.asset(
                     'assets/start_app/yacine.jpg',
-                  )),
-                  Card(
+                    width: 200,
+                  )), Card(
                       child: Image.asset(
                     'assets/start_app/yacine.jpg',
-                  )),
-                  Card(
+                    width: 200,
+                  )), Card(
                       child: Image.asset(
                     'assets/start_app/yacine.jpg',
-                  )),
-                  Card(
+                    width: 200,
+                  )), Card(
                       child: Image.asset(
                     'assets/start_app/yacine.jpg',
-                  )),
-                  Card(
+                    width: 200,
+                  )), Card(
                       child: Image.asset(
                     'assets/start_app/yacine.jpg',
-                  ))
+                    width: 200,
+                  )),
                 ],
               ),
             )
