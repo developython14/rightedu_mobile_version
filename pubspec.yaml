@@ -45,9 +45,7 @@ dependencies:
   flutter_pw_validator: ^1.4.2
   shared_preferences: ^2.0.15
   convex_bottom_bar: ^3.0.0
-  camera:
-  path_provider:
-  path:
+  
 
 
 

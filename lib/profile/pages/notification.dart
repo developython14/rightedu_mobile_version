@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
 class notification extends StatefulWidget {
-   const notification({
-    super.key,
-    required this.camera,
-  });
-  final CameraDescription camera;
-
+  const notification({Key? key}) : super(key: key);
 
   @override
   State<notification> createState() => _notificationState();
