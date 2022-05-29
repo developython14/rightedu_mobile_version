@@ -9,16 +9,32 @@ class notification extends StatefulWidget {
 }
 
 class _notificationState extends State<notification> {
-  widget mus = 
+  List cards = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+  Widget my = Card(
+    color: Colors.cyan,
+    child: Column(children: [
+      Text('software developper'),
+      Text("hacker ethical "),
+      Text("belkassemi")
+    ]),
+  );
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Container(
-      height: 225,
-      child: ListView.separated(
-        
-      )
-      ),
+      child: Container(
+          height: 225,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (BuildContext context, int index) {
+              return my;
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return SizedBox(
+                width: 10,
+              );
+            },
+            itemCount: cards.length,
+          )),
     );
   }
 }
