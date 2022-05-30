@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
 class profileviewcard extends StatelessWidget {
-  const profileviewcard({
-    Key? key,
-  }) : super(key: key);
+  String name;
+  String fonction;
+  String image_url;
+  profileviewcard(this.name, this.fonction, this.image_url);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class profileviewcard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
             child: Image.asset(
-              "assets/start_app/moh.jpg",
+              image_url,
               height: 80.0,
               width: 80.0,
             ),
@@ -28,12 +29,11 @@ class profileviewcard extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text("Belkassem Mustapha",
-              style: TextStyle(fontWeight: FontWeight.bold)),
+          Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
           SizedBox(
             height: 10,
           ),
-          Text('software developper'),
+          Text(fonction),
           SizedBox(
             height: 10,
           ),
@@ -53,9 +53,5 @@ class profiledata {
   String fonction;
   String image_ulr;
 
-  profiledata(name, fonction, image_ulr) {
-    this.name = name;
-    this.fonction = fonction;
-    this.image_ulr = image_ulr;
-  }
+  profiledata(this.name, this.fonction, this.image_ulr);
 }
