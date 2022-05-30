@@ -24,8 +24,12 @@ class _startState extends State<start> {
     "https://cdn.pixabay.com/photo/2019/12/22/04/18/x-mas-4711785__340.jpg",
     "https://cdn.pixabay.com/photo/2016/11/22/07/09/spruce-1848543__340.jpg"
   ];
-  List cards = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-  Widget my = profileviewcard();
+  List cards = [
+    profiledata(
+        name: "belkassem Mustapha",
+        fonction: "Software Developper",
+        image_url: "assets/start_app/samir.jpg")
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +143,10 @@ class _startState extends State<start> {
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                    return my;
+                    return profileviewcard(
+                        name: cards[index].name,
+                        fonction: cards[index].fonction,
+                        image_url: cards[index].image_url);
                   },
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox(
