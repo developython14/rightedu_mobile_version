@@ -23,6 +23,44 @@ class _startState extends State<start> {
     "https://cdn.pixabay.com/photo/2019/12/22/04/18/x-mas-4711785__340.jpg",
     "https://cdn.pixabay.com/photo/2016/11/22/07/09/spruce-1848543__340.jpg"
   ];
+  List cards = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+  Widget my = Card(
+    elevation: 10,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(20),
+    ),
+    shadowColor: Colors.grey,
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
+          child: Image.asset(
+            "assets/start_app/moh.jpg",
+            height: 80.0,
+            width: 80.0,
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Text("Belkassem Mustapha",
+            style: TextStyle(fontWeight: FontWeight.bold)),
+        SizedBox(
+          height: 10,
+        ),
+        Text('software developper'),
+        SizedBox(
+          height: 10,
+        ),
+        GFButton(
+          onPressed: () {},
+          text: "contact",
+          shape: GFButtonShape.pills,
+        ),
+      ]),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -131,6 +169,20 @@ class _startState extends State<start> {
               ],
             ),
             SizedBox(height: 25),
+            Container(
+                height: 225,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                    return my;
+                  },
+                  separatorBuilder: (BuildContext context, int index) {
+                    return SizedBox(
+                      width: 10,
+                    );
+                  },
+                  itemCount: cards.length,
+                )),
           ],
         ),
       ),
