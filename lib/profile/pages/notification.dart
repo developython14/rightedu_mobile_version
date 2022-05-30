@@ -16,32 +16,36 @@ class _notificationState extends State<notification> {
       borderRadius: BorderRadius.circular(20),
     ),
     shadowColor: Colors.grey,
-    child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20.0),
-        child: Image.asset(
-          "assets/start_app/moh.jpg",
-          height: 80.0,
-          width: 80.0,
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
+          child: Image.asset(
+            "assets/start_app/moh.jpg",
+            height: 80.0,
+            width: 80.0,
+          ),
         ),
-      ),
-      SizedBox(
-        height: 10,
-      ),
-      Text("Belkassem Mustapha", style: TextStyle(fontWeight: FontWeight.bold)),
-      SizedBox(
-        height: 10,
-      ),
-      Text('software developper'),
-      SizedBox(
-        height: 10,
-      ),
-      GFButton(
-        onPressed: () {},
-        text: "contact",
-        shape: GFButtonShape.pills,
-      ),
-    ]),
+        SizedBox(
+          height: 10,
+        ),
+        Text("Belkassem Mustapha",
+            style: TextStyle(fontWeight: FontWeight.bold)),
+        SizedBox(
+          height: 10,
+        ),
+        Text('software developper'),
+        SizedBox(
+          height: 10,
+        ),
+        GFButton(
+          onPressed: () {},
+          text: "contact",
+          shape: GFButtonShape.pills,
+        ),
+      ]),
+    ),
   );
   @override
   Widget build(BuildContext context) {
