@@ -48,13 +48,12 @@ class profileviewcard extends StatelessWidget {
   }
 }
 
-
-
 class profiledata {
   String name;
   String fonction;
   String image_ulr;
-   profiledata(name, fonction,image_ulr) {
+
+  profiledata(name, fonction, image_ulr) {
     this.name = name;
     this.fonction = fonction;
     this.image_ulr = image_ulr;
