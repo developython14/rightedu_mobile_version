@@ -25,10 +25,26 @@ class _startState extends State<start> {
     "https://cdn.pixabay.com/photo/2016/11/22/07/09/spruce-1848543__340.jpg"
   ];
   List cards = [
+    profiledata("belkassem Mustapha", "Software Developper",
+        "assets/start_app/moh.jpg"),
+    profiledata("belkassem Mustapha", "designer", "assets/start_app/samir.jpg"),
     profiledata(
-        name: "belkassem Mustapha",
-        fonction: "Software Developper",
-        image_url: "assets/start_app/samir.jpg")
+        "belkassem samir", "Software Developper", "assets/start_app/3.jpg"),
+    profiledata("belkassem Mustapha", "Software Developper",
+        "assets/start_app/zaki12.jpg"),
+    profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
+    profiledata(
+        "belkassem samir", "Software Developper", "assets/start_app/1.jpg"),
+    profiledata("belkassem Mustapha", "designer", "assets/start_app/samir.jpg"),
+    profiledata(
+        "belkassem 2", "Software Developper", "assets/start_app/fares.jpg"),
+    profiledata(
+        "belkassem samir", "Software Developper", "assets/start_app/3.jpg"),
+    profiledata("belkassem Mustapha", "Software Developper",
+        "assets/start_app/zaki12.jpg"),
+    profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
+    profiledata(
+        "belkassem samir", "Software Developper", "assets/start_app/1.jpg"),
   ];
 
   @override
@@ -143,10 +159,8 @@ class _startState extends State<start> {
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                    return profileviewcard(
-                        name: cards[index].name,
-                        fonction: cards[index].fonction,
-                        image_url: cards[index].image_url);
+                    return profileviewcard(cards[index].name,
+                        cards[index].fonction, cards[index].image_url);
                   },
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox(
