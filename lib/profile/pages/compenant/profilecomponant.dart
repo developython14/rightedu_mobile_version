@@ -20,10 +20,13 @@ class profileviewcard extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
-            child: Image.asset(
-              image_url,
-              height: 80.0,
-              width: 80.0,
+            child: AspectRatio(
+              aspectRatio: 4 / 3,
+              child: Image.asset(
+                image_url,
+                height: 80.0,
+                width: 80.0,
+              ),
             ),
           ),
           SizedBox(
