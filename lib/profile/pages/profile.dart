@@ -8,12 +8,47 @@ class profile extends StatefulWidget {
 }
 
 class _profileState extends State<profile> {
+  TabController tabcon = TabController(length: 6, vsync: this)
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        child: Text('hena rah ndir te3 profile'),
+        child: Column(children: [
+      TabBar(
+        controller: tabcon,
+        tabs: [
+          Tab(
+            text: "Starters",
+          ),
+          Tab(
+            text: "Main Course",
+          ),
+          Tab(
+            text: "Desserts",
+          ),
+          Tab(
+            text: "Snacks",
+          ),
+          Tab(
+            text: "Drinks",
+          ),
+          Tab(
+            text: "Fast Foods",
+          ),
+        ],
+        isScrollable: true,
+        indicatorColor: Colors.deepOrange,
       ),
-    );
+      TabBarView(
+        controller: tabcon,
+        children: const <Widget>[
+          Text("Starters"),
+          Text("Main Course"),
+          Text("Desserts"),
+          Text("Snacks"),
+          Text("Drinks"),
+          Text("first"),
+        ],
+      ),
+    ]));
   }
 }

@@ -39,7 +39,7 @@ class profileviewcard extends StatelessWidget {
           ),
           GFButton(
             onPressed: () {},
-            text: "contact",
+            text: "Contact",
             shape: GFButtonShape.pills,
           ),
         ]),
