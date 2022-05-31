@@ -7,8 +7,15 @@ class profile extends StatefulWidget {
   State<profile> createState() => _profileState();
 }
 
-class _profileState extends State<profile> {
-  TabController tabcon = TabController(length: 6, vsync: this)
+class _profileState extends State<profile> with SingleTickerProviderStateMixin {
+  late TabController tabcon;
+  @override
+  void initState() {
+    TabController tabcon = TabController(length: 6, vsync: this);
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
