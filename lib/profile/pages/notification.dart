@@ -55,10 +55,13 @@ class _notificationState extends State<notification> {
     return Center(
       child: Column(
         children: [
-          TextFormField(
-            decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Enter your username',
+          Container(
+            width: 200,
+            child: TextFormField(
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder(),
+                labelText: 'Enter your username',
+              ),
             ),
           ),
           GridView.count(

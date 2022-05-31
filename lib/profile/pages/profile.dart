@@ -11,9 +11,15 @@ class _profileState extends State<profile> with SingleTickerProviderStateMixin {
   late TabController tabcon;
   @override
   void initState() {
-    TabController tabcon = TabController(length: 6, vsync: this);
     // TODO: implement initState
     super.initState();
+    TabController tabcon = TabController(length: 6, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    tabcon.dispose();
+    super.dispose();
   }
 
   @override
