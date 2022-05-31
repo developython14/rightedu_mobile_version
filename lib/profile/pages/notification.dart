@@ -53,12 +53,22 @@ class _notificationState extends State<notification> {
   Widget build(BuildContext context) {
     List<Widget> data = [my, my, my, my, my, my, my, my, my, my];
     return Center(
-      child: GridView.count(
-          crossAxisCount: 2,
-          padding: const EdgeInsets.all(20),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          children: data),
+      child: Column(
+        children: [
+          TextFormField(
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter your username',
+            ),
+          ),
+          GridView.count(
+              crossAxisCount: 2,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              children: data),
+        ],
+      ),
     );
   }
 }
