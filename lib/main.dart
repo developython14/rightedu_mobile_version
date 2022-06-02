@@ -10,9 +10,10 @@ import 'package:right/intro_screen/intersec_signup.dart';
 import 'package:right/test/test_push.dart';
 import 'package:right/test/test_send.dart';
 import 'package:right/profile/home.dart';
+import 'package:right/profile/navigation_pages/list_experts.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/experts', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -23,5 +24,6 @@ void main() {
     '/testsend': (context) => testsend(),
     '/testpush': (context) => testpush(),
     "/start": (context) => home(),
+    "/experts": (context) => list_experts(),
   }));
 }
