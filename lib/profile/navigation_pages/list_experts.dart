@@ -58,12 +58,6 @@ class _list_expertsState extends State<list_experts> {
       ),
       body: Column(
         children: [
-          TextFormField(
-            decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Enter name of your experts',
-            ),
-          ),
           GridView.count(
               crossAxisCount: 2,
               padding: const EdgeInsets.all(20),
