@@ -10,6 +10,7 @@ class list_services extends StatefulWidget {
 }
 
 class _list_servicesState extends State<list_services> {
+  var filter = '';
   List services = [
     servicedata("belkassem Mustapha", "Software Developper",
         "assets/start_app/moh.jpg"),
@@ -36,7 +37,7 @@ class _list_servicesState extends State<list_services> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('List Of Services'),
+        title: const Text('List Of Services right'),
         centerTitle: true,
       ),
       body: Column(
@@ -44,6 +45,12 @@ class _list_servicesState extends State<list_services> {
           Container(
             padding: EdgeInsets.all(20),
             child: TextField(
+              onChanged: (text) {
+                setState(() {
+                  filter = text;
+                  print("filterwla $filter");
+                });
+              },
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "put your user name"),
@@ -54,7 +61,7 @@ class _list_servicesState extends State<list_services> {
                   itemCount: services.length,
                   scrollDirection: Axis.vertical,
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 20,
+                      maxCrossAxisExtent: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10),
                   itemBuilder: (context, index) {

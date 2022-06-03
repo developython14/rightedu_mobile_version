@@ -9,6 +9,7 @@ class list_experts extends StatefulWidget {
 }
 
 class _list_expertsState extends State<list_experts> {
+  var filter = '';
   List users = [
     profiledata("belkassem Mustapha", "Software Developper",
         "assets/start_app/moh.jpg"),
@@ -43,6 +44,12 @@ class _list_expertsState extends State<list_experts> {
           Container(
             padding: EdgeInsets.all(20),
             child: TextField(
+              onChanged: (text) {
+                setState(() {
+                  filter = text;
+                  print("filterwla $filter");
+                });
+              },
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "put your user name"),
@@ -53,7 +60,7 @@ class _list_expertsState extends State<list_experts> {
                   itemCount: users.length,
                   scrollDirection: Axis.vertical,
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 20,
+                      maxCrossAxisExtent: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10),
                   itemBuilder: (context, index) {
