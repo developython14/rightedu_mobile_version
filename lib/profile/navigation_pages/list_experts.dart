@@ -36,7 +36,7 @@ class _list_expertsState extends State<list_experts> {
             SizedBox(
               height: 10,
             ),
-            Text('software developper'),
+            Text('Software Developper'),
             SizedBox(
               height: 10,
             ),
