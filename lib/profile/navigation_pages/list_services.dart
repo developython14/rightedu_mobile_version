@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
-
-
 class list_services extends StatefulWidget {
-  const list_services({ Key? key }) : super(key: key);
+  const list_services({Key? key}) : super(key: key);
 
   @override
   State<list_services> createState() => _list_servicesState();
 }
 
 class _list_servicesState extends State<list_services> {
-   Widget my = Container(
+  Widget my = Container(
       height: 250,
       child: Card(
         elevation: 10,
@@ -53,27 +51,14 @@ class _list_servicesState extends State<list_services> {
       ));
   @override
   Widget build(BuildContext context) {
-        List<Widget> data = [my, my, my, my, my, my, my, my, my, my];
+    List<Widget> data = [my, my, my, my, my, my, my, my, my, my];
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('List Of Services'),
       ),
       body: Column(
-        children: [
-          TextFormField(
-            decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Enter Services name',
-            ),
-          ),
-          GridView.count(
-              crossAxisCount: 2,
-              padding: const EdgeInsets.all(20),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              children: data)
-        ],
+        children: [my],
       ),
     );
   }
