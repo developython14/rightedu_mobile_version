@@ -51,14 +51,48 @@ class _list_servicesState extends State<list_services> {
       ));
   @override
   Widget build(BuildContext context) {
-    List<Widget> data = [my, my, my, my, my, my, my, my, my, my];
+    List<Widget> data = [
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+    ];
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('List Of Services'),
+        centerTitle: true,
       ),
       body: Column(
-        children: [my],
+        children: [
+          Container(
+            padding: EdgeInsets.all(20),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "put your user name"),
+            ),
+          ),
+          Expanded(
+            child: GridView.count(
+                crossAxisCount: 2,
+                padding: const EdgeInsets.all(20),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                children: data),
+          ),
+        ],
       ),
     );
   }
