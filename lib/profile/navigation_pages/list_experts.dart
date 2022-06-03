@@ -13,10 +13,11 @@ class _list_expertsState extends State<list_experts> {
   List users = [
     profiledata("belkassem Mustapha", "Software Developper",
         "assets/start_app/moh.jpg"),
-    profiledata("belkassem Mustapha", "designer", "assets/start_app/samir.jpg"),
+    profiledata(
+        "belkassem abdelkader", "designer", "assets/start_app/samir.jpg"),
     profiledata(
         "belkassem samir", "Software Developper", "assets/start_app/3.jpg"),
-    profiledata("belkassem Mustapha", "Software Developper",
+    profiledata("belkassem rayene", "Software Developper",
         "assets/start_app/zaki12.jpg"),
     profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
     profiledata(
@@ -25,24 +26,24 @@ class _list_expertsState extends State<list_experts> {
     profiledata("belkassem mohammed", "Software Developper",
         "assets/start_app/fares.jpg"),
     profiledata(
-        "belkassem samir", "Software Developper", "assets/start_app/3.jpg"),
+        "belkassem samer", "Software Developper", "assets/start_app/3.jpg"),
     profiledata("belkassem Mustapha", "Software Developper",
         "assets/start_app/zaki12.jpg"),
     profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
     profiledata(
+        "belkassem jack", "Software Developper", "assets/start_app/1.jpg"),
+    profiledata("belkassem mohammed", "designer", "assets/start_app/samir.jpg"),
+    profiledata(
+        "belkassem jack", "Software Developper", "assets/start_app/fares.jpg"),
+    profiledata(
+        "belkassem yassine", "Software Developper", "assets/start_app/3.jpg"),
+    profiledata(
+        "belkassem paul", "Software Developper", "assets/start_app/zaki12.jpg"),
+    profiledata("belkassem billal", "designer", "assets/start_app/0.jpg"),
+    profiledata(
         "belkassem amir", "Software Developper", "assets/start_app/1.jpg"),
-    profiledata("belkassem fares", "designer", "assets/start_app/samir.jpg"),
-    profiledata("belkassem mohammed", "Software Developper",
-        "assets/start_app/fares.jpg"),
     profiledata(
-        "belkassem samir", "Software Developper", "assets/start_app/3.jpg"),
-    profiledata("belkassem Mustapha", "Software Developper",
-        "assets/start_app/zaki12.jpg"),
-    profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
-    profiledata(
-        "belkassem amir", "Software Developper", "assets/start_app/1.jpg"),
-    profiledata(
-        "belkassem samir", "Software Developper", "assets/start_app/3.jpg"),
+        "belkassem salim", "Software Developper", "assets/start_app/3.jpg"),
     profiledata("belkassem Mustapha", "Software Developper",
         "assets/start_app/zaki12.jpg"),
     profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),

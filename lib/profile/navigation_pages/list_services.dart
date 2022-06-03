@@ -35,6 +35,9 @@ class _list_servicesState extends State<list_services> {
   ];
   @override
   Widget build(BuildContext context) {
+    var data = services.where((countryone) {
+      return countryone.name.toLowerCase().contains("$filter".toLowerCase());
+    }).toList();
     return Scaffold(
       appBar: AppBar(
         title: const Text('List Of Services right'),
@@ -65,8 +68,8 @@ class _list_servicesState extends State<list_services> {
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10),
                   itemBuilder: (context, index) {
-                    return servicesviewcard(services[index].name,
-                        services[index].fonction, services[index].image_url);
+                    return servicesviewcard(data[index].name,
+                        data[index].fonction, data[index].image_url);
                     ;
                   })),
         ],

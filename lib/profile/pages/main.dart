@@ -85,14 +85,18 @@ class _startState extends State<start> {
                 });
               },
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(width: 25),
-                Text("Explore Our Services:",
-                    style: const TextStyle(
-                        fontSize: 25, fontWeight: FontWeight.bold)),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Explore Our Services:",
+                      style: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.bold)),
+                  ElevatedButton(onPressed: () {}, child: Text("more"))
+                ],
+              ),
             ),
             SizedBox(height: 25),
             GFCarousel(
@@ -114,14 +118,18 @@ class _startState extends State<start> {
                 });
               },
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(width: 25),
-                Text("Explore Our Blogs :",
-                    style: const TextStyle(
-                        fontSize: 25, fontWeight: FontWeight.bold)),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Explore Our Blogs:",
+                      style: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.bold)),
+                  ElevatedButton(onPressed: () {}, child: Text("more"))
+                ],
+              ),
             ),
             SizedBox(height: 25),
             GFCarousel(
@@ -144,14 +152,18 @@ class _startState extends State<start> {
               },
             ),
             SizedBox(height: 25),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(width: 25),
-                Text("Our Best Experts :",
-                    style: const TextStyle(
-                        fontSize: 25, fontWeight: FontWeight.bold)),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Explore Our Experts:",
+                      style: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.bold)),
+                  ElevatedButton(onPressed: () {}, child: Text("more"))
+                ],
+              ),
             ),
             SizedBox(height: 25),
             Container(
