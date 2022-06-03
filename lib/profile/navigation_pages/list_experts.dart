@@ -73,8 +73,8 @@ class _list_expertsState extends State<list_experts> {
               child: GridView.builder(
                   itemCount: users.length,
                   scrollDirection: Axis.vertical,
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 2,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10),
                   itemBuilder: (context, index) {

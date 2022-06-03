@@ -60,8 +60,8 @@ class _list_servicesState extends State<list_services> {
               child: GridView.builder(
                   itemCount: services.length,
                   scrollDirection: Axis.vertical,
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 2,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10),
                   itemBuilder: (context, index) {
