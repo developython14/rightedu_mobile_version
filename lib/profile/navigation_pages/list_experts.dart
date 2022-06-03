@@ -9,7 +9,7 @@ class list_experts extends StatefulWidget {
 
 class _list_expertsState extends State<list_experts> {
   Widget my = Container(
-      height: 250,
+      height: 300,
       child: Card(
         elevation: 10,
         shape: RoundedRectangleBorder(
@@ -23,7 +23,7 @@ class _list_expertsState extends State<list_experts> {
             ClipRRect(
               borderRadius: BorderRadius.circular(20.0),
               child: Image.asset(
-                "assets/start_app/moh.jpg",
+                "assets/start_app/samir.jpg",
                 height: 80.0,
                 width: 80.0,
               ),
@@ -51,21 +51,33 @@ class _list_expertsState extends State<list_experts> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> data = [my, my, my, my, my, my, my, my, my, my];
+    List<Widget> data = [
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my,
+      my
+    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('List Of Experts'),
       ),
-      body: Column(
-        children: [
-          GridView.count(
-              crossAxisCount: 2,
-              padding: const EdgeInsets.all(20),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              children: data)
-        ],
-      ),
+      body: GridView.count(
+          crossAxisCount: 2,
+          padding: const EdgeInsets.all(20),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          children: data),
     );
   }
 }
