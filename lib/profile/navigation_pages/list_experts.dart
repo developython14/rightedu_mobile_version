@@ -41,13 +41,23 @@ class _list_expertsState extends State<list_experts> {
     profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
     profiledata(
         "belkassem amir", "Software Developper", "assets/start_app/1.jpg"),
+    profiledata(
+        "belkassem samir", "Software Developper", "assets/start_app/3.jpg"),
+    profiledata("belkassem Mustapha", "Software Developper",
+        "assets/start_app/zaki12.jpg"),
+    profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
+    profiledata(
+        "belkassem amir", "Software Developper", "assets/start_app/1.jpg"),
+    profiledata("belkassem fares", "designer", "assets/start_app/samir.jpg"),
+    profiledata(
+        "belkassem sami", "Software Developper", "assets/start_app/fares.jpg"),
   ];
 
   @override
   Widget build(BuildContext context) {
-    users.retainWhere((countryone) {
-      return countryone.toLowerCase().contains("$filter".toLowerCase());
-    });
+    var data = users.where((countryone) {
+      return countryone.name.toLowerCase().contains("$filter".toLowerCase());
+    }).toList();
     return Scaffold(
       appBar: AppBar(
         title: const Text('List Of Experts'),
@@ -71,15 +81,15 @@ class _list_expertsState extends State<list_experts> {
           ),
           Expanded(
               child: GridView.builder(
-                  itemCount: users.length,
+                  itemCount: data.length,
                   scrollDirection: Axis.vertical,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10),
                   itemBuilder: (context, index) {
-                    return profileviewcard(users[index].name,
-                        users[index].fonction, users[index].image_url);
+                    return profileviewcard(data[index].name,
+                        data[index].fonction, data[index].image_url);
                     ;
                   })),
         ],
