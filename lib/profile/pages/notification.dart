@@ -72,7 +72,7 @@ class _notificationState extends State<notification> {
         child: ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(25.0),
-            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+            child: Image.asset('assets/start_app/samir.jpg', width: 56.0),
           ),
           title: Text(
             'Mustapha Belkassem',
@@ -87,7 +87,7 @@ class _notificationState extends State<notification> {
         child: ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(25.0),
-            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+            child: Image.asset('assets/start_app/0.jpg', width: 56.0),
           ),
           title: Text(
             'Mustapha Belkassem',
@@ -102,7 +102,7 @@ class _notificationState extends State<notification> {
         child: ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(25.0),
-            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+            child: Image.asset('assets/start_app/1.jpg', width: 56.0),
           ),
           title: Text(
             'Mustapha Belkassem',
@@ -117,7 +117,7 @@ class _notificationState extends State<notification> {
         child: ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(25.0),
-            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+            child: Image.asset('assets/start_app/2.jpg', width: 56.0),
           ),
           title: Text(
             'Mustapha Belkassem',
@@ -132,7 +132,7 @@ class _notificationState extends State<notification> {
         child: ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(25.0),
-            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+            child: Image.asset('assets/start_app/fares.jpg', width: 56.0),
           ),
           title: Text(
             'Mustapha Belkassem',
@@ -147,7 +147,112 @@ class _notificationState extends State<notification> {
         child: ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(25.0),
-            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+            child: Image.asset('assets/start_app/yacine.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/yacine.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/yacine.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/yacine.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/yacine.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/yacine.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/yacine.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/yacine.jpg', width: 56.0),
           ),
           title: Text(
             'Mustapha Belkassem',
