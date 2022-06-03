@@ -12,9 +12,7 @@ class _list_expertsState extends State<list_experts> {
       height: 300,
       child: Card(
         elevation: 10,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
+        
         shadowColor: Colors.grey,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
