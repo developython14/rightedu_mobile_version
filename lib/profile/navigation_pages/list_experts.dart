@@ -42,7 +42,7 @@ class _list_expertsState extends State<list_experts> {
             ),
             GFButton(
               onPressed: () {},
-              text: "contact",
+              text: "Contact",
               shape: GFButtonShape.pills,
             ),
           ]),
