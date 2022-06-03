@@ -18,7 +18,7 @@ class _notificationState extends State<notification> {
         ),
         shadowColor: Colors.grey,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(25.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             ClipRRect(
@@ -52,26 +52,112 @@ class _notificationState extends State<notification> {
   @override
   Widget build(BuildContext context) {
     List<Widget> data = [my, my, my, my, my, my, my, my, my, my];
-    return Center(
-      child: Column(
-        children: [
-          Container(
-            width: 200,
-            child: TextFormField(
-              decoration: const InputDecoration(
-                border: UnderlineInputBorder(),
-                labelText: 'Enter your username',
-              ),
-            ),
+    return ListView(children: [
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
           ),
-          GridView.count(
-              crossAxisCount: 2,
-              padding: const EdgeInsets.all(20),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              children: data),
-        ],
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
       ),
-    );
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+      Card(
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(25.0),
+            child: Image.asset('assets/start_app/moh.jpg', width: 56.0),
+          ),
+          title: Text(
+            'Mustapha Belkassem',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      ),
+    ]);
   }
 }

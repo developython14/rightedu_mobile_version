@@ -93,8 +93,14 @@ class _startState extends State<start> {
                 children: [
                   Text("Explore Our Services:",
                       style: const TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.bold)),
-                  ElevatedButton(onPressed: () {}, child: Text("more"))
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      )),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/services');
+                      },
+                      child: Text("more"))
                 ],
               ),
             ),
@@ -161,7 +167,11 @@ class _startState extends State<start> {
                   Text("Explore Our Experts:",
                       style: const TextStyle(
                           fontSize: 15, fontWeight: FontWeight.bold)),
-                  ElevatedButton(onPressed: () {}, child: Text("more"))
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/experts');
+                      },
+                      child: Text("more"))
                 ],
               ),
             ),
