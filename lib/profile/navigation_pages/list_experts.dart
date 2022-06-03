@@ -21,19 +21,33 @@ class _list_expertsState extends State<list_experts> {
     profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
     profiledata(
         "belkassem samir", "Software Developper", "assets/start_app/1.jpg"),
-    profiledata("belkassem Mustapha", "designer", "assets/start_app/samir.jpg"),
-    profiledata(
-        "belkassem 2", "Software Developper", "assets/start_app/fares.jpg"),
+    profiledata("belkassem fares", "designer", "assets/start_app/samir.jpg"),
+    profiledata("belkassem mohammed", "Software Developper",
+        "assets/start_app/fares.jpg"),
     profiledata(
         "belkassem samir", "Software Developper", "assets/start_app/3.jpg"),
     profiledata("belkassem Mustapha", "Software Developper",
         "assets/start_app/zaki12.jpg"),
     profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
     profiledata(
-        "belkassem samir", "Software Developper", "assets/start_app/1.jpg"),
+        "belkassem amir", "Software Developper", "assets/start_app/1.jpg"),
+    profiledata("belkassem fares", "designer", "assets/start_app/samir.jpg"),
+    profiledata("belkassem mohammed", "Software Developper",
+        "assets/start_app/fares.jpg"),
+    profiledata(
+        "belkassem samir", "Software Developper", "assets/start_app/3.jpg"),
+    profiledata("belkassem Mustapha", "Software Developper",
+        "assets/start_app/zaki12.jpg"),
+    profiledata("belkassem Mustapha", "designer", "assets/start_app/0.jpg"),
+    profiledata(
+        "belkassem amir", "Software Developper", "assets/start_app/1.jpg"),
   ];
+
   @override
   Widget build(BuildContext context) {
+    users.retainWhere((countryone) {
+      return countryone.toLowerCase().contains("$filter".toLowerCase());
+    });
     return Scaffold(
       appBar: AppBar(
         title: const Text('List Of Experts'),
