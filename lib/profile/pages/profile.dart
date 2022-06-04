@@ -19,15 +19,15 @@ class _profileState extends State<profile> {
             borderRadius: BorderRadius.circular(25.0),
             child: Image.asset(
               "assets/start_app/fares.jpg",
-              height: 200.0,
-              width: 200.0,
+              height: 150.0,
+              width: 150.0,
             ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text("mustapha"),
-              Text("belka"),
+              Text("free"),
               Text("aboone"),
             ],
           )
