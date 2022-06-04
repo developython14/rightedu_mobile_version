@@ -36,7 +36,9 @@ class _profileState extends State<profile> {
             child: ListTile(
               leading: Icon(Icons.person),
               title: Text('edit profile'),
-              trailing: Icon(Icons.more_vert),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+              ),
             ),
           ),
           Card(
