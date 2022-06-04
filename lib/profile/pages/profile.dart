@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 
 class profile extends StatefulWidget {
   const profile({Key? key}) : super(key: key);
@@ -36,6 +37,10 @@ class _profileState extends State<profile> {
             Text(
               "Software Engineer",
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            ),
+            GFRating(
+              value: 3,
+              onChanged: (value) {},
             ),
             Card(
               child: ListTile(
