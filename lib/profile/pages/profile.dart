@@ -7,62 +7,20 @@ class profile extends StatefulWidget {
   State<profile> createState() => _profileState();
 }
 
-class _profileState extends State<profile> with SingleTickerProviderStateMixin {
-  late TabController tabcon;
-  @override
-  void initState() {
-    tabcon = TabController(length: 6, vsync: this);
-
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    tabcon.dispose();
-    super.dispose();
-  }
-
+class _profileState extends State<profile> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Column(children: [
-      TabBar(
-        controller: tabcon,
-        tabs: [
-          Tab(
-            text: "Starters",
-          ),
-          Tab(
-            text: "Main Course",
-          ),
-          Tab(
-            text: "Desserts",
-          ),
-          Tab(
-            text: "Snacks",
-          ),
-          Tab(
-            text: "Drinks",
-          ),
-          Tab(
-            text: "Fast Foods",
-          ),
+    return SafeArea(
+        child: SingleChildScrollView(
+            child: Column(children: [
+      Image.asset("assets/start_app/fares.jpg"),
+      Row(
+        children: [
+          Text("mustapha"),
+          Text("belka"),
+          Text("aboone"),
         ],
-        isScrollable: true,
-        indicatorColor: Colors.deepOrange,
-      ),
-      TabBarView(
-        controller: tabcon,
-        children: const <Widget>[
-          Text("Starters"),
-          Text("Main Course"),
-          Text("Desserts"),
-          Text("Snacks"),
-          Text("Drinks"),
-          Text("first"),
-        ],
-      ),
-    ]));
+      )
+    ])));
   }
 }

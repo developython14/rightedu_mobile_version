@@ -259,7 +259,7 @@ class _notificationState extends State<notification> {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           subtitle: Text(
-              'ya kho arwah essye tji  is a makach kifach  line  and arwah ya kho rani lhenna'),
+              'ya kho arwah essye tji  is a makach kifach and arwah ya kho rani lhenna'),
           trailing: Icon(Icons.more_vert),
         ),
       ),
