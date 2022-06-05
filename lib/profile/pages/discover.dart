@@ -10,10 +10,30 @@ class discover extends StatefulWidget {
 class _discoverState extends State<discover> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Text('hena rah ndir te3 discovery'),
+    return SafeArea(
+        child: SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              children: [
+                Row(children: [
+                  Container(
+                      child: Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: AssetImage("assets/start_app/moh.jpg"),
+                      ),
+                      Text("Mustpha Belkassem")
+                    ],
+                  )),Icon(Icons.)
+                ])
+              ],
+            ),
+          )
+        ],
       ),
-    );
+    ));
   }
 }
