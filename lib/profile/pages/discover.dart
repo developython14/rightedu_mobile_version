@@ -14,25 +14,30 @@ class _discoverState extends State<discover> {
     return SafeArea(
         child: SingleChildScrollView(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width,
+            width: MediaQuery.of(context).size.width * 0.8,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                           child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           CircleAvatar(
                             backgroundImage:
                                 AssetImage("assets/start_app/moh.jpg"),
                           ),
-                          Text("Mustpha Belkassem")
+                          Text("Mustapha Belkassem")
                         ],
                       )),
-                      Icon(Icons.add_a_photo)
+                      Icon(
+                        Icons.more_vert,
+                      ),
                     ]),
                 Image.asset(
                   "assets/start_app/moh.jpg",
@@ -44,17 +49,26 @@ class _discoverState extends State<discover> {
                     GFButton(
                       onPressed: () {},
                       text: "like",
-                      icon: Icon(Icons.thumb_up),
+                      icon: Icon(
+                        Icons.thumb_up,
+                        color: Colors.grey,
+                      ),
                     ),
                     GFButton(
                       onPressed: () {},
                       text: "comment",
-                      icon: Icon(Icons.comment),
+                      icon: Icon(
+                        Icons.comment,
+                        color: Colors.grey,
+                      ),
                     ),
                     GFButton(
                       onPressed: () {},
                       text: "share",
-                      icon: Icon(Icons.share),
+                      icon: Icon(
+                        Icons.share,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
