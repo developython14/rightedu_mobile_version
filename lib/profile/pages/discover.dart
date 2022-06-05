@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 
 class discover extends StatefulWidget {
   const discover({Key? key}) : super(key: key);
@@ -18,17 +19,35 @@ class _discoverState extends State<discover> {
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
-                Row(children: [
-                  Container(
-                      child: Row(
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CircleAvatar(
-                        backgroundImage: AssetImage("assets/start_app/moh.jpg"),
-                      ),
-                      Text("Mustpha Belkassem")
-                    ],
-                  )),Icon(Icons.)
-                ])
+                      Container(
+                          child: Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage("assets/start_app/moh.jpg"),
+                          ),
+                          Text("Mustpha Belkassem")
+                        ],
+                      )),
+                      Icon(Icons.add_a_photo)
+                    ]),
+                Image.asset(
+                  "assets/start_app/moh.jpg",
+                  width: MediaQuery.of(context).size.width,
+                  height: 350,
+                ),
+                Row(
+                  children: [
+                    GFButton(
+                      onPressed: () {},
+                      text: "like",
+                      icon: Icon(Icons.share),
+                    ),
+                  ],
+                ),
               ],
             ),
           )
