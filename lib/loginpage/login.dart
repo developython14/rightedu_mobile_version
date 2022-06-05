@@ -3,6 +3,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class login extends StatefulWidget {
   @override
@@ -23,6 +24,10 @@ class _loginState extends State<login> {
   }
 
   Future<void> _showMyDialog() async {
+    // Obtain shared preferences.
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('name', '$name');
+    await prefs.setString('password', '$password');
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
@@ -41,7 +46,7 @@ class _loginState extends State<login> {
             TextButton(
               child: const Text('Approve'),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.pushNamed(context, '/intersignup');
               },
             ),
           ],
