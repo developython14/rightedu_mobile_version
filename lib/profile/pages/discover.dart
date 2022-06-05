@@ -48,7 +48,7 @@ class _discoverState extends State<discover> {
                   children: [
                     GFButton(
                       onPressed: () {},
-                      text: "like",
+                      text: "Like",
                       icon: Icon(
                         Icons.thumb_up,
                         color: Colors.grey,
@@ -56,7 +56,7 @@ class _discoverState extends State<discover> {
                     ),
                     GFButton(
                       onPressed: () {},
-                      text: "comment",
+                      text: "Comment",
                       icon: Icon(
                         Icons.comment,
                         color: Colors.grey,
@@ -64,7 +64,7 @@ class _discoverState extends State<discover> {
                     ),
                     GFButton(
                       onPressed: () {},
-                      text: "share",
+                      text: "Share",
                       icon: Icon(
                         Icons.share,
                         color: Colors.grey,
