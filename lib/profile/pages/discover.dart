@@ -44,7 +44,7 @@ class _discoverState extends State<discover> {
                     GFButton(
                       onPressed: () {},
                       text: "like",
-                      icon: Icon(Icons.share),
+                      icon: Icon(Icons.thumb_up),
                     ),
                     GFButton(
                       onPressed: () {},
