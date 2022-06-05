@@ -1,30 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
-class discover extends StatefulWidget {
-  const discover({Key? key}) : super(key: key);
-
-  @override
-  State<discover> createState() => _discoverState();
-}
-
-class _discoverState extends State<discover> {
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-        child: SingleChildScrollView(
-      child: Column(
-        children: [
-          post_widget(),
-          SizedBox(
-            height: 20,
-          ),
-        ],
-      ),
-    ));
-  }
-}
-
 class post_widget extends StatelessWidget {
   const post_widget({
     Key? key,
