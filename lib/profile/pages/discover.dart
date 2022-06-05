@@ -16,7 +16,7 @@ class _discoverState extends State<discover> {
         child: SingleChildScrollView(
       child: Column(
         children: [
-          post_widget('mustapha belkassem', 'assets/start_app/moh.jpg',
+          post_widget('mustapha Belkassem', 'assets/start_app/moh.jpg',
               'assets/start_app/samir.jpg'),
           SizedBox(
             height: 20,
