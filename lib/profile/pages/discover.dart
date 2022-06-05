@@ -35,8 +35,11 @@ class _discoverState extends State<discover> {
                           Text("Mustapha Belkassem")
                         ],
                       )),
-                      Icon(
-                        Icons.more_vert,
+                      IconButton(
+                        icon: Icon(
+                          Icons.more_vert,
+                        ),
+                        onPressed: () {},
                       ),
                     ]),
                 Image.asset(
@@ -55,13 +58,9 @@ class _discoverState extends State<discover> {
                       ),
                     ),
                     GFButton(
-                      onPressed: () {},
-                      text: "Comment",
-                      icon: Icon(
-                        Icons.comment,
-                        color: Colors.grey,
-                      ),
-                    ),
+                        onPressed: () {},
+                        text: "Comment",
+                        icon: Icon(Icons.comment)),
                     GFButton(
                       onPressed: () {},
                       text: "Share",
