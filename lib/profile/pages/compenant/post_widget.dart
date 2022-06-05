@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
 class post_widget extends StatelessWidget {
-  const post_widget({
-    Key? key,
-  }) : super(key: key);
+  String name;
+  String profilepic;
+  String image_url;
+  post_widget(this.name, this.profilepic, this.image_url);
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +28,7 @@ class post_widget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           CircleAvatar(
-                            backgroundImage:
-                                AssetImage("assets/start_app/moh.jpg"),
+                            backgroundImage: AssetImage(profilepic),
                           ),
                           SizedBox(
                             width: 10,
@@ -37,7 +37,7 @@ class post_widget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                "Mustapha Belkassem",
+                                name,
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               Text('02/04/1998')
@@ -61,7 +61,7 @@ class post_widget extends StatelessWidget {
                   height: 10,
                 ),
                 Image.asset(
-                  "assets/start_app/fares.jpg",
+                  image_url,
                   width: MediaQuery.of(context).size.width,
                 ),
                 Row(
