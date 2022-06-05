@@ -40,6 +40,7 @@ class _profileState extends State<profile> {
             ),
             GFRating(
               value: 3,
+              color: Colors.yellow,
               onChanged: (value) {},
             ),
             Card(
