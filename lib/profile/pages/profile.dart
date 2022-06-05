@@ -34,14 +34,23 @@ class _profileState extends State<profile> {
               "Belkassem Mustapha",
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Text(
               "Software Engineer",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 15,
             ),
             GFRating(
               value: 3,
               color: Colors.yellow,
               onChanged: (value) {},
+            ),
+            SizedBox(
+              height: 15,
             ),
             Card(
               child: ListTile(
@@ -56,6 +65,15 @@ class _profileState extends State<profile> {
               child: ListTile(
                 leading: Icon(Icons.settings),
                 title: Text('Setting'),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.history),
+                title: Text('Historique'),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                 ),
