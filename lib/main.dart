@@ -14,7 +14,7 @@ import 'package:right/profile/navigation_pages/list_experts.dart';
 import 'package:right/profile/navigation_pages/list_services.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/login', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
