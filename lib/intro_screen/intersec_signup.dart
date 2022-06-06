@@ -4,20 +4,26 @@ import 'package:right/loginpage/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class intersignup extends StatefulWidget {
-  var name = '';
-  var password = '';
-
   @override
   State<intersignup> createState() => _intersignupState();
 }
 
-Future<void> getdata() async {
-  final prefs = await SharedPreferences.getInstance();
-  var nm = prefs.getString('name');
-  var pass = prefs.getString('password');
-}
-
 class _intersignupState extends State<intersignup> {
+  late var name;
+  late var password;
+  Future<void> getdata() async {
+    final prefs = await SharedPreferences.getInstance();
+    name = prefs.getString('name');
+    password = prefs.getString('password');
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getdata();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
