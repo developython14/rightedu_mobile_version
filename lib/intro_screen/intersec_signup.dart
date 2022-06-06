@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class intersignup extends StatefulWidget {
   var name = '';
   var password = '';
-  const intersignup({Key? key}) : super(key: key);
 
   @override
   State<intersignup> createState() => _intersignupState();
