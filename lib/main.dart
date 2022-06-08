@@ -12,9 +12,10 @@ import 'package:right/test/test_send.dart';
 import 'package:right/profile/home.dart';
 import 'package:right/profile/navigation_pages/list_experts.dart';
 import 'package:right/profile/navigation_pages/list_services.dart';
+import 'package:right/profile/pages/statcomponant/example.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/login', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/stat', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -27,5 +28,6 @@ void main() {
     "/start": (context) => home(),
     "/experts": (context) => list_experts(),
     "/services": (context) => list_services(),
+    "/stat": (context) => stat(),
   }));
 }
