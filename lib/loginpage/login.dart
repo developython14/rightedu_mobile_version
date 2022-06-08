@@ -52,7 +52,7 @@ class _loginState extends State<login> {
 
   Future<void> _showMyDialog(message, note) async {
     // Obtain shared preferences.
-    Map fun = {'login succesfly': gotohome(), 'something errors': goback()};
+    Map fun = {'login succesfly': gotohome, 'something errors': goback};
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('name', '$name');
     await prefs.setString('password', '$password');
@@ -62,17 +62,27 @@ class _loginState extends State<login> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Text(message),
           ),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
+                Icon(
+                  Icons.emoji_emotions,
+                  color: Colors.green,
+                  size: 100,
+                ),
                 ElevatedButton(
                     onPressed: () {
-                      fun[message];
+                      fun[message]();
                     },
-                    child: Text(note)),
+                    child: Text(
+                      note,
+                      style: TextStyle(
+                        backgroundColor: Colors.green,
+                      ),
+                    )),
               ],
             ),
           ),
