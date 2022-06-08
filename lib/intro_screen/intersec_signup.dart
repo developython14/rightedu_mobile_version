@@ -9,19 +9,24 @@ class intersignup extends StatefulWidget {
 }
 
 class _intersignupState extends State<intersignup> {
-  late var name;
-  late var password;
-  Future<void> getdata() async {
-    final prefs = await SharedPreferences.getInstance();
-    name = prefs.getString('name');
-    password = prefs.getString('password');
-  }
+  String? name = '';
+  String? password = '';
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     getdata();
+  }
+
+  Future<void> getdata() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      name = prefs.getString('name');
+      password = prefs.getString('password');
+    });
+    print(name);
+    print(password);
   }
 
   @override
