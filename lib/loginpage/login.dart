@@ -29,8 +29,13 @@ class _loginState extends State<login> {
     final datatosend = {'email': name, 'password': password};
     final url = Uri.parse(
         'https://evening-savannah-43647.herokuapp.com//api/signup_student');
-    final response0 =
-        await http.post(url, body: convert.jsonEncode(datatosend));
+    final response = await http.post(url, body: convert.jsonEncode(datatosend));
+    if (response.statusCode == 200) {
+      var jsonResponse = convert.jsonDecode(response.body);
+      print(jsonResponse);
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
   }
 
   Future<void> _showMyDialog() async {
