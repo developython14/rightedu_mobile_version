@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
 
 class login extends StatefulWidget {
   @override
@@ -21,6 +23,14 @@ class _loginState extends State<login> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
     }
+  }
+
+  Future<void> login() async {
+    final datatosend = {'email': name, 'password': password};
+    final url = Uri.parse(
+        'https://evening-savannah-43647.herokuapp.com//api/signup_student');
+    final response0 =
+        await http.post(url, body: convert.jsonEncode(datatosend));
   }
 
   Future<void> _showMyDialog() async {
