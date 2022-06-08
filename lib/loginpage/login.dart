@@ -53,6 +53,7 @@ class _loginState extends State<login> {
   Future<void> _showMyDialog(message, note) async {
     // Obtain shared preferences.
     Map fun = {'login succesfly': gotohome, 'something errors': goback};
+    Map col = {'login succesfly': Colors.green, 'something errors': Colors.red};
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('name', '$name');
     await prefs.setString('password', '$password');
@@ -70,19 +71,18 @@ class _loginState extends State<login> {
               children: <Widget>[
                 Icon(
                   Icons.emoji_emotions,
-                  color: Colors.green,
+                  color: col[message],
                   size: 100,
                 ),
                 ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(col[message]),
+                    ),
                     onPressed: () {
                       fun[message]();
                     },
-                    child: Text(
-                      note,
-                      style: TextStyle(
-                        backgroundColor: Colors.green,
-                      ),
-                    )),
+                    child: Text(note)),
               ],
             ),
           ),
