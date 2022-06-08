@@ -37,21 +37,7 @@ class _loginState extends State<login> {
     final response = await http.post(url, body: convert.jsonEncode(datatosend));
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
-      showDialog(
-          context: context,
-          builder: (context) {
-            return Center(
-              child: Text('login succefly'),
-            );
-          });
     } else {
-      showDialog(
-          context: context,
-          builder: (context) {
-            return Center(
-              child: Text('something eroor'),
-            );
-          });
       print('Request failed with status: ${response.statusCode}.');
     }
   }
