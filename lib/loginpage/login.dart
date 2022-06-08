@@ -34,12 +34,6 @@ class _loginState extends State<login> {
       var jsonResponse = convert.jsonDecode(response.body);
       print(jsonResponse);
     } else {
-      showAboutDialog(builder: (BuildContext context) {
-        return AlertDialog(
-          title: 'email 2009',
-        );
-      });
-
       print('Request failed with status: ${response.statusCode}.');
     }
   }
