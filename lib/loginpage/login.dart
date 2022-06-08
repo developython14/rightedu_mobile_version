@@ -32,14 +32,27 @@ class _loginState extends State<login> {
     final response = await http.post(url, body: convert.jsonEncode(datatosend));
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
-      print(jsonResponse);
+      if (jsonResponse['message'] == 'login succesfly') {
+        _showMyDialog('login succesfly', 'Go To home page');
+      } else {
+        _showMyDialog('something errors', 'try to correct your information');
+      }
     } else {
       print('Request failed with status: ${response.statusCode}.');
     }
   }
 
-  Future<void> _showMyDialog() async {
+  gotohome() {
+    Navigator.pushNamed(context, '/start');
+  }
+
+  goback() {
+    Navigator.pop(context);
+  }
+
+  Future<void> _showMyDialog(message, note) async {
     // Obtain shared preferences.
+    Map fun = {'login succesfly': gotohome(), 'something errors': goback()};
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('name', '$name');
     await prefs.setString('password', '$password');
@@ -48,23 +61,21 @@ class _loginState extends State<login> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('AlertDialog Title'),
+          title: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Text(message),
+          ),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
-                Text('This is a demo alert dialog. $name'),
-                Text('Would you like to approve of this message? $password'),
+                ElevatedButton(
+                    onPressed: () {
+                      fun[message];
+                    },
+                    child: Text(note)),
               ],
             ),
           ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Approve'),
-              onPressed: () {
-                Navigator.pushNamed(context, '/intersignup');
-              },
-            ),
-          ],
         );
       },
     );
