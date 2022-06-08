@@ -26,14 +26,32 @@ class _loginState extends State<login> {
   }
 
   Future<void> login() async {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Center(child: CircularProgressIndicator());
+        });
     final datatosend = {'email': name, 'password': password};
     final url = Uri.parse(
         'https://evening-savannah-43647.herokuapp.com//api/login_student');
     final response = await http.post(url, body: convert.jsonEncode(datatosend));
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
-      print(jsonResponse);
+      showDialog(
+          context: context,
+          builder: (context) {
+            return Center(
+              child: Text('login succefly'),
+            );
+          });
     } else {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return Center(
+              child: Text('something eroor'),
+            );
+          });
       print('Request failed with status: ${response.statusCode}.');
     }
   }
