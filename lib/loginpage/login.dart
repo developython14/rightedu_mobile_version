@@ -28,7 +28,7 @@ class _loginState extends State<login> {
   Future<void> login() async {
     final datatosend = {'email': name, 'password': password};
     final url = Uri.parse(
-        'https://evening-savannah-43647.herokuapp.com//api/signup_student');
+        'https://evening-savannah-43647.herokuapp.com//api/login_student');
     final response = await http.post(url, body: convert.jsonEncode(datatosend));
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
@@ -150,7 +150,7 @@ class _loginState extends State<login> {
                             onPressed: () {
                               _savingdata();
                               // Validate returns true if the form is valid, or false otherwise.
-                              _showMyDialog();
+                              login();
                             },
                             child: const Text(
                               'Login',
