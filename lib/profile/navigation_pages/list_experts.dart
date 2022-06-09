@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:right/profile/pages/main.dart';
 import 'package:right/profile/pages/compenant/profilecomponant.dart';
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
 
 class list_experts extends StatefulWidget {
   @override
@@ -53,6 +55,28 @@ class _list_expertsState extends State<list_experts> {
     profiledata(
         "belkassem sami", "Software Developper", "assets/start_app/fares.jpg"),
   ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getdata();
+  }
+
+  Future<void> getdata() async {
+    var test = Uri.parse(
+        'https://evening-savannah-43647.herokuapp.com/api/list_countries');
+    var response = await http.get(test);
+    if (response.statusCode == 200) {
+      var jsonResponse = convert.jsonDecode(response.body);
+      for (var i = 0; i < jsonResponse.length; i++) {
+        var mu = profiledata(jsonResponse[i]["name"],
+            jsonResponse[i]["country"], "assets/start_app/3.jpg");
+        users.add(mu);
+      }
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
