@@ -15,7 +15,7 @@ class login extends StatefulWidget {
 
 class _loginState extends State<login> {
   final _formKey = GlobalKey<FormState>();
-  String? name = '';
+  String? email = '';
   String? password = '';
   bool is_pass = true;
   final Color facebookColor = const Color(0xff39579A);
@@ -27,7 +27,7 @@ class _loginState extends State<login> {
   }
 
   Future<void> login() async {
-    final datatosend = {'email': name, 'password': password};
+    final datatosend = {'email': email, 'password': password};
     final url = Uri.parse(
         'https://evening-savannah-43647.herokuapp.com//api/login_student');
     final response = await http.post(url, body: convert.jsonEncode(datatosend));
@@ -55,15 +55,10 @@ class _loginState extends State<login> {
     // Obtain shared preferences.
     Map fun = {'login succesfly': gotohome, 'something errors': goback};
     Map col = {'login succesfly': Colors.green, 'something errors': Colors.red};
-    showDialog(
-        context: context,
-        builder: (context) {
-          return Center(child: CircularProgressIndicator());
-        });
+
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('name', '$name');
+    await prefs.setString('email', '$email');
     await prefs.setString('password', '$password');
-    Navigator.of(context).pop();
 
     return showDialog<void>(
       context: context,
@@ -137,7 +132,7 @@ class _loginState extends State<login> {
                             prefixIcon: Icon(Icons.email),
                             border: OutlineInputBorder()),
                         onSaved: (text) {
-                          name = text;
+                          email = text;
                         },
                       ),
                       SizedBox(height: 20),

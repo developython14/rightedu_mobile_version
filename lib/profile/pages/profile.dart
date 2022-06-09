@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class profile extends StatefulWidget {
-  const profile({Key? key}) : super(key: key);
-
   @override
   State<profile> createState() => _profileState();
 }
 
 class _profileState extends State<profile> {
+  var email;
+  var password;
+  Future<void> profiledata() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      email = prefs.getString('name');
+      password = prefs.getString('password');
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    profiledata();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,14 +47,14 @@ class _profileState extends State<profile> {
               height: 15,
             ),
             Text(
-              "Belkassem Mustapha",
+              "$email",
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 10,
             ),
             Text(
-              "Software Engineer",
+              "$password",
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             ),
             SizedBox(
