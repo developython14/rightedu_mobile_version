@@ -10,12 +10,29 @@ class mus extends StatefulWidget {
 class _musState extends State<mus> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: Image.network(
-              'https://evening-savannah-43647.herokuapp.com/static/img/image_slide/3.jpg'),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(
+                icon: Icon(Icons.android),
+                text: "android",
+              ),
+              Tab(icon: Icon(Icons.phone_iphone), text: "iphone"),
+            ],
+          ),
+        ),
+        body: Column(
+          children: [
+            TabBarView(
+              children: [
+                Text("algeria 1"),
+                Text("algeria vs 222 2"),
+              ],
+            ),
+          ],
         ),
       ),
     );
