@@ -63,6 +63,8 @@ class _list_expertsState extends State<list_experts> {
   }
 
   Future<void> getdata() async {
+    print("ALL IS FREEDOM");
+
     var test = Uri.parse(
         'https://evening-savannah-43647.herokuapp.com/api/list_countries');
     var response = await http.get(test);
