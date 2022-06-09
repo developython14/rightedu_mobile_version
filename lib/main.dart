@@ -15,7 +15,7 @@ import 'package:right/profile/navigation_pages/list_services.dart';
 import 'package:right/profile/pages/statcomponant/example.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/login', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),

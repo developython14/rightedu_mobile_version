@@ -69,9 +69,10 @@ class _list_expertsState extends State<list_experts> {
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i++) {
-        var mu = profiledata(jsonResponse[i]["name"],
+        var mu = profiledata(jsonResponse[i]["name"] + "name",
             jsonResponse[i]["country"], "assets/start_app/3.jpg");
         users.add(mu);
+        print("ALL IS GOOD");
       }
     } else {
       print('Request failed with status: ${response.statusCode}.');
@@ -85,7 +86,7 @@ class _list_expertsState extends State<list_experts> {
     }).toList();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('List Of Experts'),
+        title: const Text('List OF Experts'),
         centerTitle: true,
       ),
       body: Column(
