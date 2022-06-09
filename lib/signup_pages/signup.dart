@@ -83,7 +83,9 @@ class _signupState extends State<signup> {
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i++) {
-        list_countries.add(jsonResponse[i]["country"]);
+        setState(() {
+          list_countries.add(jsonResponse[i]["country"]);
+        });
       }
     } else {
       print('Request failed with status: ${response.statusCode}.');
@@ -97,7 +99,9 @@ class _signupState extends State<signup> {
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i++) {
-        list_faculties.add(jsonResponse[i]["faculty"]);
+        setState(() {
+          list_faculties.add(jsonResponse[i]["faculty"]);
+        });
       }
     } else {
       print('Request failed with status: ${response.statusCode}.');
@@ -111,7 +115,9 @@ class _signupState extends State<signup> {
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i++) {
-        list_spicialities.add(jsonResponse[i]["faculty"]);
+        setState(() {
+          list_spicialities.add(jsonResponse[i]["faculty"]);
+        });
       }
     } else {
       print('Request failed with status: ${response.statusCode}.');

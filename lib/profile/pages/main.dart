@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:right/profile/pages/compenant/profilecomponant.dart';
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
 
 class start extends StatefulWidget {
   const start({Key? key}) : super(key: key);
@@ -46,6 +48,30 @@ class _startState extends State<start> {
     profiledata(
         "belkassem samir", "Software Developper", "assets/start_app/1.jpg"),
   ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getdata();
+  }
+
+  Future<void> getdata() async {
+    var test = Uri.parse(
+        'https://evening-savannah-43647.herokuapp.com/api/list_experts');
+    var response = await http.get(test);
+    if (response.statusCode == 200) {
+      var jsonResponse = convert.jsonDecode(response.body);
+      for (var i = 0; i < jsonResponse.length; i++) {
+        var mu = profiledata(jsonResponse[i]["name"],
+            jsonResponse[i]["country"], "assets/start_app/3.jpg");
+        setState(() {
+          cards.add(mu);
+        });
+      }
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

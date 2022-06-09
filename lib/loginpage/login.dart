@@ -127,6 +127,12 @@ class _loginState extends State<login> {
                   child: Column(
                     children: [
                       TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid email';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(
                             hintText: 'Email',
                             prefixIcon: Icon(Icons.email),
@@ -137,6 +143,12 @@ class _loginState extends State<login> {
                       ),
                       SizedBox(height: 20),
                       TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid password';
+                          }
+                          return null;
+                        },
                         obscureText: is_pass,
                         decoration: InputDecoration(
                           hintText: 'Password',
