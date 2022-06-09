@@ -12,8 +12,11 @@ class _musState extends State<mus> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.network(
-            'https://evening-savannah-43647.herokuapp.com/static/img/image_slide/3.jpg'),
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Image.network(
+              'https://evening-savannah-43647.herokuapp.com/static/img/image_slide/3.jpg'),
+        ),
       ),
     );
   }

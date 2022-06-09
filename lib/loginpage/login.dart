@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -54,9 +55,16 @@ class _loginState extends State<login> {
     // Obtain shared preferences.
     Map fun = {'login succesfly': gotohome, 'something errors': goback};
     Map col = {'login succesfly': Colors.green, 'something errors': Colors.red};
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Center(child: CircularProgressIndicator());
+        });
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('name', '$name');
     await prefs.setString('password', '$password');
+    Navigator.of(context).pop();
+
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!

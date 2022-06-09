@@ -28,5 +28,6 @@ void main() {
     "/start": (context) => home(),
     "/experts": (context) => list_experts(),
     "/services": (context) => list_services(),
+    "/fre": (context) => mus(),
   }));
 }
