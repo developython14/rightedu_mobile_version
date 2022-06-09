@@ -64,20 +64,18 @@ class _list_expertsState extends State<list_experts> {
 
   Future<void> getdata() async {
     var test = Uri.parse(
-        'https://evening-savannah-43647.herokuapp.com/api/list_countries');
+        'https://evening-savannah-43647.herokuapp.com/api/list_experts');
     var response = await http.get(test);
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i++) {
-        var mu = profiledata(
-            "freedom", jsonResponse[i]["country"], "assets/start_app/3.jpg");
+        var mu = profiledata(jsonResponse[i]["name"],
+            jsonResponse[i]["country"], "assets/start_app/3.jpg");
         users.add(mu);
       }
     } else {
       print('Request failed with status: ${response.statusCode}.');
-      print("ALL IS ERROR");
     }
-    print("ALL IS FREEDOM");
   }
 
   @override

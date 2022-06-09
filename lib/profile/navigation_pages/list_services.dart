@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:right/profile/pages/compenant/services_copanant.dart';
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
 
 class list_services extends StatefulWidget {
   const list_services({Key? key}) : super(key: key);
@@ -33,6 +35,30 @@ class _list_servicesState extends State<list_services> {
     servicedata(
         "belkassem samir", "Software Developper", "assets/start_app/1.jpg"),
   ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getdata();
+  }
+
+  Future<void> getdata() async {
+    var test = Uri.parse(
+        'https://evening-savannah-43647.herokuapp.com/api/list_services');
+    var response = await http.get(test);
+    if (response.statusCode == 200) {
+      var jsonResponse = convert.jsonDecode(response.body);
+      for (var i = 0; i < jsonResponse.length; i++) {
+        var mu = servicedata(jsonResponse[i]["service_title"],
+            jsonResponse[i]["service_type"], "assets/start_app/3.jpg");
+        services.add(mu);
+      }
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var data = services.where((countryone) {
