@@ -11,26 +11,36 @@ class _musState extends State<mus> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          bottom: TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.android),
-                text: "android",
-              ),
-              Tab(icon: Icon(Icons.phone_iphone), text: "iphone"),
-            ],
-          ),
-        ),
         body: Column(
           children: [
-            TabBarView(
-              children: [
-                Text("algeria 1"),
-                Text("algeria vs 222 2"),
-              ],
+            Container(
+              width: double.maxFinite,
+              height: 200,
+              child: TabBar(
+                labelColor: Colors.black,
+                unselectedLabelColor: Colors.blue,
+                tabs: [
+                  Tab(
+                    icon: Icon(Icons.phone_android),
+                    text: "algeria",
+                  ),
+                  Tab(icon: Icon(Icons.phone_iphone), text: "egypt"),
+                  Tab(icon: Icon(Icons.phone_iphone), text: "malysia"),
+                ],
+              ),
+            ),
+            Container(
+              width: double.maxFinite,
+              height: 200,
+              child: TabBarView(
+                children: [
+                  Center(child: Text("yacine taboukyout")),
+                  Center(child: Text("mustapha belkassem 24 ans")),
+                  Center(child: Text("mustapha algeria 24 ans")),
+                ],
+              ),
             ),
           ],
         ),
