@@ -52,7 +52,9 @@ class _list_servicesState extends State<list_services> {
       for (var i = 0; i < jsonResponse.length; i++) {
         var mu = servicedata(jsonResponse[i]["service_title"],
             jsonResponse[i]["service_type"], "assets/start_app/3.jpg");
-        services.add(mu);
+        setState(() {
+          services.add(mu);
+        });
       }
     } else {
       print('Request failed with status: ${response.statusCode}.');

@@ -27,14 +27,16 @@ class _discoverState extends State<discover> {
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body);
       for (var i = 0; i < jsonResponse.length; i++) {
-        var mu = post_widget(jsonResponse[i]["name"],
-            jsonResponse[i]["country"], "assets/start_app/3.jpg");
-        posts.add(mu);
-        posts.add(
-          SizedBox(
-            height: 20,
-          ),
-        );
+        var mu = post_widget(jsonResponse[i]["name"], "assets/start_app/3.jpg",
+            "assets/start_app/3.jpg");
+        setState(() {
+          posts.add(mu);
+          posts.add(
+            SizedBox(
+              height: 20,
+            ),
+          );
+        });
       }
     } else {
       print('Request failed with status: ${response.statusCode}.');

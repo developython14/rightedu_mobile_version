@@ -71,7 +71,9 @@ class _list_expertsState extends State<list_experts> {
       for (var i = 0; i < jsonResponse.length; i++) {
         var mu = profiledata(jsonResponse[i]["name"],
             jsonResponse[i]["country"], "assets/start_app/3.jpg");
-        users.add(mu);
+        setState(() {
+          users.add(mu);
+        });
       }
     } else {
       print('Request failed with status: ${response.statusCode}.');
