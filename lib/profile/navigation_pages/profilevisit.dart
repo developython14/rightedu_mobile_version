@@ -47,7 +47,7 @@ class _profilevistState extends State<profilevist> {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Text(
               'Software Enginner',
