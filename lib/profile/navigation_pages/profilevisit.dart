@@ -16,25 +16,31 @@ class _profilevistState extends State<profilevist> {
         child: SingleChildScrollView(
             child: Column(
           children: [
-            Stack(
-              children: [
-                ClipRRect(
-                    borderRadius: BorderRadius.circular(25),
-                    child: Image.asset('assets/start_app/covert.jpg')),
-                Positioned(
-                  left: 120,
-                  top: 155,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(80),
+            SizedBox(
+              height: 350,
+              child: Stack(
+                children: [
+                  ClipRRect(
+                      borderRadius: BorderRadius.circular(25),
                       child: Image.asset(
-                        'assets/start_app/mustapha.jpg',
-                        width: 150,
+                        'assets/start_app/covert.jpg',
+                        height: 300,
                       )),
-                ),
-              ],
+                  Positioned(
+                    left: 120,
+                    top: 200,
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: Image.asset(
+                          'assets/start_app/mustapha.jpg',
+                          width: 150,
+                        )),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Text(
               'Mustapha Belkassem',
