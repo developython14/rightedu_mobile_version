@@ -63,3 +63,15 @@ class Category {
   Category(this.id, this.name, this.parent, this.description, this.image,
       this.count);
 }
+
+List fr = [
+  Category(
+    12,
+    "ADD TO BAG",
+    23,
+    "ADD TO BAG",
+    AnyImage(
+        22, "ADD TO BAG", "assets/start_app/0.jpg", "ADD TO BAG", "ADD TO BAG"),
+    12,
+  )
+];

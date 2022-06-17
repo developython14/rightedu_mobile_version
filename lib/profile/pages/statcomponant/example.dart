@@ -428,4 +428,34 @@ class _ProductDetailPageState extends State<ProductDetailPage>
   }
 }
 
-Widget mustapha = ProductDetailPage(pro);
+Product musta = Product(
+    "ADD TO BAG",
+    78,
+    "ADD TO BAG",
+    [
+      Category(
+        12,
+        "ADD TO BAG",
+        23,
+        "ADD TO BAG",
+        AnyImage(22, "ADD TO BAG", "assets/start_app/0.jpg", "ADD TO BAG",
+            "ADD TO BAG"),
+        12,
+      )
+    ],
+    [
+      AnyImage(22, "ADD TO BAG", "assets/start_app/0.jpg", "ADD TO BAG",
+          "ADD TO BAG")
+    ],
+    ["ADD TO BAG"],
+    "ADD TO BAG",
+    "ADD TO BAG",
+    "ADD TO BAG",
+    21,
+    true,
+    true,
+    "ADD TO BAG",
+    22,
+    23);
+
+Widget lop = ProductDetailPage(musta);
