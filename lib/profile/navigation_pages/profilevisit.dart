@@ -51,7 +51,7 @@ class _profilevistState extends State<profilevist> {
             ),
             Text(
               'Software Enginner',
-              style: TextStyle(color: Colors.grey),
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
             )
           ],
         )),
