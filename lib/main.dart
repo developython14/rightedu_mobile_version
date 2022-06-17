@@ -13,6 +13,7 @@ import 'package:right/profile/home.dart';
 import 'package:right/profile/navigation_pages/list_experts.dart';
 import 'package:right/profile/navigation_pages/list_services.dart';
 import 'package:right/profile/pages/statcomponant/example.dart';
+import 'package:right/profile/navigation_pages/profilevisit.dart';
 
 void main() {
   runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/free', routes: {
@@ -28,6 +29,7 @@ void main() {
     "/start": (context) => home(),
     "/experts": (context) => list_experts(),
     "/services": (context) => list_services(),
-    "/free": (context) => lop,
+    "/product": (context) => lop,
+    "/free": (context) => profilevist(),
   }));
 }
