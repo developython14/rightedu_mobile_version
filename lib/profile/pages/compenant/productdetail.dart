@@ -16,7 +16,7 @@ class Product {
   int quantity;
 
   Product(
-      {this.lineItemId,
+      this.lineItemId,
       this.productId,
       this.productName,
       this.categories,
@@ -30,7 +30,7 @@ class Product {
       this.ifAddedToCart,
       this.description,
       this.stockQuantity,
-      this.quantity});
+      this.quantity);
 
   @override
   toString() => "productId: $productId , productName: $productName";
@@ -43,13 +43,13 @@ class AnyImage {
   String title;
   String alt;
 
-  AnyImage({
+  AnyImage(
     this.id,
     this.imageDescription,
     this.imageURL,
     this.alt,
     this.title,
-  });
+  );
 }
 
 class Category {
@@ -60,11 +60,6 @@ class Category {
   AnyImage image;
   int count;
 
-  Category(
-      {this.id,
-      this.name,
-      this.parent,
-      this.description,
-      this.image,
-      this.count});
+  Category(this.id, this.name, this.parent, this.description, this.image,
+      this.count);
 }

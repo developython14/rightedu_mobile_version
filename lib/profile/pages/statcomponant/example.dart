@@ -4,7 +4,7 @@ import 'package:right/profile/pages/compenant/productdetail.dart';
 class ProductDetailPage extends StatefulWidget {
   final Product product;
 
-  ProductDetailPage({this.product});
+  ProductDetailPage(this.product);
 
   @override
   _ProductDetailPageState createState() => _ProductDetailPageState(product);
@@ -427,3 +427,5 @@ class _ProductDetailPageState extends State<ProductDetailPage>
     );
   }
 }
+
+Widget mustapha = ProductDetailPage(pro);
