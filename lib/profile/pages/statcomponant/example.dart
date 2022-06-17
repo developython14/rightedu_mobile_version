@@ -438,13 +438,33 @@ Product musta = Product(
         "ADD TO BAG",
         23,
         "ADD TO BAG",
-        AnyImage(22, "ADD TO BAG", "assets/start_app/0.jpg", "ADD TO BAG",
+        AnyImage(
+            22,
+            "ADD TO BAG",
+            "https://evening-savannah-43647.herokuapp.com/static/img/image_slide/1.jpg",
+            "ADD TO BAG",
             "ADD TO BAG"),
         12,
       )
     ],
     [
-      AnyImage(22, "ADD TO BAG", "assets/start_app/0.jpg", "ADD TO BAG",
+      AnyImage(
+          22,
+          "ADD TO BAG",
+          "https://evening-savannah-43647.herokuapp.com/static/img/image_slide/1.jpg",
+          "ADD TO BAG",
+          "ADD TO BAG"),
+      AnyImage(
+          22,
+          "ADD TO BAG",
+          "https://evening-savannah-43647.herokuapp.com/static/img/image_slide/2.jpg",
+          "ADD TO BAG",
+          "ADD TO BAG"),
+      AnyImage(
+          22,
+          "ADD TO BAG",
+          "https://evening-savannah-43647.herokuapp.com/static/img/image_slide/3.jpg",
+          "ADD TO BAG",
           "ADD TO BAG")
     ],
     ["ADD TO BAG"],
