@@ -60,6 +60,12 @@ class _profilevistState extends State<profilevist> {
               color: Colors.yellow,
               onChanged: (value) {},
             ),
+            GFButton(
+              onPressed: () {},
+              text: "Hire Me",
+              shape: GFButtonShape.pills,
+              size: GFSize.LARGE,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Row(
