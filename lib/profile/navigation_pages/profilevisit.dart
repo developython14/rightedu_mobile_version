@@ -60,18 +60,46 @@ class _profilevistState extends State<profilevist> {
               color: Colors.yellow,
               onChanged: (value) {},
             ),
-            Row(
-              children: [
-                Column(
-                  children: [Text('software'), Text('software')],
-                ),
-                Column(
-                  children: [Text('software'), Text('software')],
-                ),
-                Column(
-                  children: [Text('software'), Text('software')],
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Text('software'),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text('software')
+                    ],
+                  ),
+                  SizedBox(
+                    width: 25,
+                  ),
+                  Column(
+                    children: [
+                      Text('software'),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text('software')
+                    ],
+                  ),
+                  SizedBox(
+                    width: 25,
+                  ),
+                  Column(
+                    children: [
+                      Text('software'),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text('software')
+                    ],
+                  ),
+                ],
+              ),
             ),
             GFButton(
               onPressed: () {},
