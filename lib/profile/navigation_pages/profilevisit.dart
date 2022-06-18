@@ -63,6 +63,7 @@ class _profilevistState extends State<profilevist> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
                       onPressed: () {},
@@ -101,6 +102,19 @@ class _profilevistState extends State<profilevist> {
                     width: 10,
                   ),
                 ],
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Text(
+              'About',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 27),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Text(
+                'software engineer and data scientist i can help individuals and companies in the following operations :(flask/django)(numpy,scipy,matplotlib,seaborn ,d3,js,sckitlearn,pythorch,tensorflow) refdsgfsdgsdgfdsgsdgfdsgdfgdsgdfsgsfgsdfgfdgfsdgfdfgdfsgdfsgfgsdgfsgfdgds ',
               ),
             )
           ],
