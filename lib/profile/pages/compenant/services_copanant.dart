@@ -46,8 +46,10 @@ class servicesviewcard extends StatelessWidget {
             height: 10,
           ),
           GFButton(
-            onPressed: () {},
-            text: "Contact",
+            onPressed: () {
+              Navigator.pushNamed(context, '/product');
+            },
+            text: "Buy",
             shape: GFButtonShape.pills,
           ),
         ]),

@@ -16,7 +16,7 @@ import 'package:right/profile/pages/statcomponant/example.dart';
 import 'package:right/profile/navigation_pages/profilevisit.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/free', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -30,6 +30,6 @@ void main() {
     "/experts": (context) => list_experts(),
     "/services": (context) => list_services(),
     "/product": (context) => lop,
-    "/free": (context) => profilevist(),
+    "/visprofile": (context) => profilevist(),
   }));
 }

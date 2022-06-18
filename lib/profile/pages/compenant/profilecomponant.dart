@@ -38,7 +38,9 @@ class profileviewcard extends StatelessWidget {
             height: 10,
           ),
           GFButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/visprofile');
+            },
             text: "Contact",
             shape: GFButtonShape.pills,
           ),
