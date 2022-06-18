@@ -67,11 +67,19 @@ class _profilevistState extends State<profilevist> {
                 children: [
                   Column(
                     children: [
-                      Text('software'),
+                      Text(
+                        'Posts',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
                       SizedBox(
                         height: 15,
                       ),
-                      Text('software')
+                      Text(
+                        '+25',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15),
+                      )
                     ],
                   ),
                   SizedBox(
@@ -79,11 +87,19 @@ class _profilevistState extends State<profilevist> {
                   ),
                   Column(
                     children: [
-                      Text('software'),
+                      Text(
+                        'Projects',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
                       SizedBox(
                         height: 15,
                       ),
-                      Text('software')
+                      Text(
+                        '+267',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15),
+                      )
                     ],
                   ),
                   SizedBox(
@@ -91,11 +107,19 @@ class _profilevistState extends State<profilevist> {
                   ),
                   Column(
                     children: [
-                      Text('software'),
+                      Text(
+                        'Skills',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
                       SizedBox(
                         height: 15,
                       ),
-                      Text('software')
+                      Text(
+                        '+277',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15),
+                      )
                     ],
                   ),
                 ],
