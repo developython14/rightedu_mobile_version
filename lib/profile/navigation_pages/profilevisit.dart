@@ -60,6 +60,19 @@ class _profilevistState extends State<profilevist> {
               color: Colors.yellow,
               onChanged: (value) {},
             ),
+            Row(
+              children: [
+                Column(
+                  children: [Text('software'), Text('software')],
+                ),
+                Column(
+                  children: [Text('software'), Text('software')],
+                ),
+                Column(
+                  children: [Text('software'), Text('software')],
+                ),
+              ],
+            ),
             GFButton(
               onPressed: () {},
               text: "Hire Me",
