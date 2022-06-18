@@ -16,7 +16,7 @@ import 'package:right/profile/pages/statcomponant/example.dart';
 import 'package:right/profile/navigation_pages/profilevisit.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/wait', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
