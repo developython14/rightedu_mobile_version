@@ -74,27 +74,32 @@ class _profilevistState extends State<profilevist> {
                   IconButton(
                       onPressed: () {},
                       icon: Icon(
-                        Icons.wallet,
+                        Icons.article,
                         size: 50,
+                        color: Colors.red,
                       )),
                   SizedBox(
                     width: 10,
                   ),
                   IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.message,
-                        size: 50,
-                      )),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.public,
+                      size: 50,
+                      color: Colors.green,
+                    ),
+                  ),
                   SizedBox(
                     width: 10,
                   ),
                   IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.access_alarms,
-                        size: 50,
-                      )),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.work_outline,
+                      size: 50,
+                      color: Colors.grey,
+                    ),
+                  ),
                   SizedBox(
                     width: 10,
                   ),
@@ -103,6 +108,7 @@ class _profilevistState extends State<profilevist> {
                       icon: Icon(
                         Icons.account_box,
                         size: 50,
+                        color: Colors.blue,
                       )),
                   SizedBox(
                     width: 10,
