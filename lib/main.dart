@@ -3,6 +3,7 @@ import 'package:right/main_screen/main_screen.dart';
 import 'package:right/loginpage/login.dart';
 import 'package:right/intro_screen/intro.dart';
 import 'package:right/intro_screen/wait.dart';
+import 'package:right/profile/navigation_pages/free.dart';
 import 'package:right/signup_pages/signup.dart';
 import 'package:right/signup_pages/signup_mod.dart';
 import 'package:right/test.dart';
@@ -14,10 +15,10 @@ import 'package:right/profile/navigation_pages/list_experts.dart';
 import 'package:right/profile/navigation_pages/list_services.dart';
 import 'package:right/profile/pages/statcomponant/example.dart';
 import 'package:right/profile/navigation_pages/profilevisit.dart';
+import 'package:right/profile/navigation_pages/free.dart';
 
 void main() {
-  runApp(
-      MaterialApp(title: 'Right Hacker', initialRoute: '/visprofile', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/hackme', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -32,5 +33,6 @@ void main() {
     "/services": (context) => list_services(),
     "/product": (context) => lop,
     "/visprofile": (context) => profilevist(),
+    "/hackme": (context) => free(),
   }));
 }
