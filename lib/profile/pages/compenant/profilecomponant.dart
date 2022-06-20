@@ -72,8 +72,8 @@ class usercard extends StatelessWidget {
         children: [
           Image.asset(
             image_url,
-            width: 200,
-            height: 200,
+            width: 80,
+            height: 80,
           ),
           SizedBox(
             height: 15,
