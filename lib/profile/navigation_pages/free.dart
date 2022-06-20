@@ -12,15 +12,26 @@ class _freeState extends State<free> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(title: Text('packa')),
       body: Center(
-        child: AspectRatio(
-          aspectRatio: 5 / 2,
-          child: Image.asset(
-            'assets/start_app/moh.jpg',
-            width: 150,
-            height: 350,
-          ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Image.asset(
+              'assets/start_app/moh.jpg',
+              width: 300,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Image.asset(
+              'assets/start_app/moh.jpg',
+              width: 350,
+            ),
+          ],
         ),
       ),
     );

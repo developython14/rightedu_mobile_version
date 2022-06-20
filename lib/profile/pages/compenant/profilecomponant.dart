@@ -53,6 +53,7 @@ class profileviewcard extends StatelessWidget {
 class profiledata {
   String name;
   String fonction;
+
   String image_url;
 
   profiledata(this.name, this.fonction, this.image_url);
@@ -66,34 +67,35 @@ class usercard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 20,
-      color: Colors.white,
-      child: Column(
-        children: [
-          Image.asset(
-            image_url,
-            width: 50,
-            height: 50,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Text(
-            name,
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Text(
-            fonction,
-            style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
-          ),
-          GFButton(
-            onPressed: () {},
-            text: "Hire Me.",
-            shape: GFButtonShape.pills,
-            size: GFSize.LARGE,
-          ),
-        ],
+    return Container(
+      child: Card(
+        elevation: 20,
+        color: Colors.white,
+        child: Column(
+          children: [
+            Image.asset(
+              image_url,
+              height: 200,
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              name,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              fonction,
+              style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
+            ),
+            GFButton(
+              onPressed: () {},
+              text: "Hire Me.",
+              shape: GFButtonShape.pills,
+              size: GFSize.LARGE,
+            ),
+          ],
+        ),
       ),
     );
   }
