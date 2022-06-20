@@ -88,7 +88,7 @@ class usercard extends StatelessWidget {
           ),
           GFButton(
             onPressed: () {},
-            text: "Hire Me",
+            text: "Hire Me.",
             shape: GFButtonShape.pills,
             size: GFSize.LARGE,
           ),
