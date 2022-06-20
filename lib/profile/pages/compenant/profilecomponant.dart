@@ -67,16 +67,14 @@ class usercard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color.fromARGB(255, 76, 117, 157),
+      elevation: 20,
+      color: Colors.white,
       child: Column(
         children: [
-          AspectRatio(
-            aspectRatio: 3 / 2,
-            child: Image.asset(
-              image_url,
-              width: 100,
-              height: 100,
-            ),
+          Image.asset(
+            image_url,
+            width: 50,
+            height: 50,
           ),
           SizedBox(
             height: 15,

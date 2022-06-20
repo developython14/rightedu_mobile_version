@@ -12,158 +12,17 @@ class _freeState extends State<free> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Card(
-              elevation: 20,
-              color: Color.fromARGB(255, 223, 222, 222),
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/start_app/samir.jpg',
-                    width: 200,
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    'Samir Belkassem',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'pizza cooker',
-                    style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
-                  ),
-                  GFButton(
-                    onPressed: () {},
-                    text: "Hire Me",
-                    shape: GFButtonShape.pills,
-                    size: GFSize.LARGE,
-                  ),
-                ],
-              ),
-            ),
-            Card(
-              elevation: 20,
-              color: Color.fromARGB(255, 223, 222, 222),
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/start_app/samir.jpg',
-                    width: 200,
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    'Samir Belkassem',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'pizza cooker',
-                    style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
-                  ),
-                  GFButton(
-                    onPressed: () {},
-                    text: "Hire Me",
-                    shape: GFButtonShape.pills,
-                    size: GFSize.LARGE,
-                  ),
-                ],
-              ),
-            ),
-            Card(
-              elevation: 20,
-              color: Color.fromARGB(255, 223, 222, 222),
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/start_app/samir.jpg',
-                    width: 200,
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    'Samir Belkassem',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'pizza cooker',
-                    style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
-                  ),
-                  GFButton(
-                    onPressed: () {},
-                    text: "Hire Me",
-                    shape: GFButtonShape.pills,
-                    size: GFSize.LARGE,
-                  ),
-                ],
-              ),
-            ),
-            Card(
-              elevation: 20,
-              color: Color.fromARGB(255, 223, 222, 222),
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/start_app/samir.jpg',
-                    width: 200,
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    'Samir Belkassem',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'pizza cooker',
-                    style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
-                  ),
-                  GFButton(
-                    onPressed: () {},
-                    text: "Hire Me",
-                    shape: GFButtonShape.pills,
-                    size: GFSize.LARGE,
-                  ),
-                ],
-              ),
-            ),
-            Card(
-              elevation: 20,
-              color: Color.fromARGB(255, 223, 222, 222),
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/start_app/samir.jpg',
-                    width: 200,
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    'Samir Belkassem',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'pizza cooker',
-                    style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
-                  ),
-                  GFButton(
-                    onPressed: () {},
-                    text: "Hire Me",
-                    shape: GFButtonShape.pills,
-                    size: GFSize.LARGE,
-                  ),
-                ],
-              ),
-            ),
-          ],
+      appBar: AppBar(title: Text('packa')),
+      body: Center(
+        child: AspectRatio(
+          aspectRatio: 5 / 2,
+          child: Image.asset(
+            'assets/start_app/moh.jpg',
+            width: 150,
+            height: 350,
+          ),
         ),
-      )),
+      ),
     );
   }
 }
