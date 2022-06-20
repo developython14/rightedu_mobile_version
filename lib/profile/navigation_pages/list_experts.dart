@@ -119,7 +119,7 @@ class _list_expertsState extends State<list_experts> {
                       data[index].image_url);
                   ;
                 }),
-          )
+          ),
         ],
       ),
     );

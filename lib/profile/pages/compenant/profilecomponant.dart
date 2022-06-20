@@ -15,36 +15,39 @@ class profileviewcard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       shadowColor: Colors.grey,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-            child: Image.asset(
-              image_url,
-              height: 80.0,
-              width: 80.0,
+      child: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: Image.asset(
+                image_url,
+                height: 50.0,
+                width: 50.0,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(
-            height: 10,
-          ),
-          Text(fonction),
-          SizedBox(
-            height: 10,
-          ),
-          GFButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/visprofile');
-            },
-            text: "Contact",
-            shape: GFButtonShape.pills,
-          ),
-        ]),
+            SizedBox(
+              height: 10,
+            ),
+            Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+            SizedBox(
+              height: 10,
+            ),
+            Text(fonction),
+            SizedBox(
+              height: 10,
+            ),
+            GFButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/visprofile');
+              },
+              text: "Contact",
+              shape: GFButtonShape.pills,
+            ),
+          ]),
+        ),
       ),
     );
   }
@@ -70,30 +73,34 @@ class usercard extends StatelessWidget {
     return Card(
       elevation: 20,
       color: Colors.white,
-      child: Column(
-        children: [
-          Image.asset(
-            image_url,
-            height: 200,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Text(
-            name,
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Text(
-            fonction,
-            style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
-          ),
-          GFButton(
-            onPressed: () {},
-            text: "Hire Me.",
-            shape: GFButtonShape.pills,
-            size: GFSize.LARGE,
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            Image.asset(
+              "assets/start_app/samir.jpg",
+              height: 100,
+              width: 150,
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              name,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              fonction,
+              style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
+            ),
+            GFButton(
+              onPressed: () {},
+              text: "Hire Me.",
+              shape: GFButtonShape.pills,
+              size: GFSize.LARGE,
+            ),
+          ],
+        ),
       ),
     );
   }
