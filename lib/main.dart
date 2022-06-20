@@ -34,6 +34,6 @@ void main() {
     "/product": (context) => lop,
     "/visprofile": (context) => profilevist(),
     "/hackme": (context) => free(),
-    "/stat": (context) => game(),
+    "/stat": (context) => resume(),
   }));
 }
