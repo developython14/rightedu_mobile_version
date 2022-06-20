@@ -107,18 +107,19 @@ class _list_expertsState extends State<list_experts> {
             ),
           ),
           Expanded(
-              child: GridView.builder(
-                  itemCount: data.length,
-                  scrollDirection: Axis.vertical,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10),
-                  itemBuilder: (context, index) {
-                    return profileviewcard(data[index].name,
-                        data[index].fonction, data[index].image_url);
-                    ;
-                  })),
+            child: GridView.builder(
+                itemCount: data.length,
+                scrollDirection: Axis.vertical,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10),
+                itemBuilder: (context, index) {
+                  return usercard(data[index].name, data[index].fonction,
+                      data[index].image_url);
+                  ;
+                }),
+          ),
         ],
       ),
     );

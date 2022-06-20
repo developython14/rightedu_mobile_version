@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 
 class free extends StatefulWidget {
   const free({Key? key}) : super(key: key);
@@ -8,35 +9,45 @@ class free extends StatefulWidget {
 }
 
 class _freeState extends State<free> {
-  String? email = 'mus';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('mustapha dynamique')),
-      body: Column(
-        children: [
-          TextFormField(
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter a valid email';
-              }
-              return null;
-            },
-            decoration: InputDecoration(
-                hintText: 'Email',
-                prefixIcon: Icon(Icons.email),
-                border: OutlineInputBorder()),
-            onChanged: (text) {
-              setState(() {
-                email = text;
-              });
-            },
-          ),
-          email == 'mustapha'
-              ? Image.asset('assets/start_app/mustapha.jpg')
-              : Text('machi mustapha')
-        ],
-      ),
+      body: SafeArea(
+          child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+              child: Card(
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/start_app/samir.jpg',
+                      width: 200,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      'Samir Belkassem',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'pizza cooker',
+                      style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
+                    ),
+                    GFButton(
+                      onPressed: () {},
+                      text: "Hire Me",
+                      shape: GFButtonShape.pills,
+                      size: GFSize.LARGE,
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      )),
     );
   }
 }
