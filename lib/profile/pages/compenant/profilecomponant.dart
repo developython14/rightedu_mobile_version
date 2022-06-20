@@ -67,7 +67,7 @@ class usercard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.blue,
+      color: Color.fromARGB(255, 140, 143, 146),
       child: Column(
         children: [
           Image.asset(
