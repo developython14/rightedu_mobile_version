@@ -17,7 +17,7 @@ class _freeState extends State<free> {
       body: Column(
         children: [
           CreditCard(
-              cardNumber: "77777 7879 4864 7854",
+              cardNumber: "2456 7879 4864 7854",
               cardExpiry: "10/25",
               cardHolderName: "Card Holder",
               cvv: "356",
@@ -32,6 +32,25 @@ class _freeState extends State<free> {
               textName: 'Name',
               textExpiry: 'MM/YY'),
         ],
+      ),
+    );
+  }
+}
+
+class game extends StatefulWidget {
+  const game({Key? key}) : super(key: key);
+
+  @override
+  State<game> createState() => _gameState();
+}
+
+class _gameState extends State<game> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('test statistique chart mustapha')),
+      body: Center(
+        child: Text('testa algeria is algeria  chart mustapha'),
       ),
     );
   }

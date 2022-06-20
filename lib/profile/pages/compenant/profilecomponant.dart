@@ -78,9 +78,9 @@ class usercard extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(
-              "assets/start_app/samir.jpg",
-              height: 100,
-              width: 150,
+              image_url,
+              height: 200,
+              width: 200,
             ),
             SizedBox(
               height: 15,
@@ -94,7 +94,9 @@ class usercard extends StatelessWidget {
               style: TextStyle(color: Color.fromARGB(255, 87, 85, 85)),
             ),
             GFButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/visprofile');
+              },
               text: "Hire Me.",
               shape: GFButtonShape.pills,
               size: GFSize.LARGE,

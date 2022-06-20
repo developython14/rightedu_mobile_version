@@ -34,7 +34,7 @@ class _profilevistState extends State<profilevist> {
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(100),
                         child: Image.asset(
-                          'assets/start_app/mustapha.jpg',
+                          'assets/start_app/fares.jpg',
                           width: 150,
                         )),
                   ),

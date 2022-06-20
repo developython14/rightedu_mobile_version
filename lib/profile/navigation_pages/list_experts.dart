@@ -111,6 +111,7 @@ class _list_expertsState extends State<list_experts> {
                 itemCount: data.length,
                 scrollDirection: Axis.vertical,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 2 / 4,
                     crossAxisCount: 2,
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10),

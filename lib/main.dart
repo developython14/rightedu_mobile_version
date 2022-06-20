@@ -18,7 +18,7 @@ import 'package:right/profile/navigation_pages/profilevisit.dart';
 import 'package:right/profile/navigation_pages/free.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/hackme', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/stat', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -34,5 +34,6 @@ void main() {
     "/product": (context) => lop,
     "/visprofile": (context) => profilevist(),
     "/hackme": (context) => free(),
+    "/stat": (context) => free(),
   }));
 }
