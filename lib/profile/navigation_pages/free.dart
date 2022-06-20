@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:awesome_card/awesome_card.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class free extends StatefulWidget {
   const free({Key? key}) : super(key: key);
@@ -48,10 +49,17 @@ class _gameState extends State<game> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('test statistique chart mustapha')),
-      body: Center(
-        child: Text('testa algeria is algeria  chart mustapha'),
-      ),
-    );
+        appBar: AppBar(title: Text('test statistique chart mustapha')),
+        body: Column(
+          children: [
+            LineChart(
+              LineChartData(
+                  // read about it in the LineChartData section
+                  ),
+              swapAnimationDuration: Duration(milliseconds: 150), // Optional
+              swapAnimationCurve: Curves.linear, // Optional
+            )
+          ],
+        ));
   }
 }
