@@ -137,53 +137,64 @@ class _resumeState extends State<resume> {
               width: 400,
               height: 500,
               child: BarChart(
-                BarChartData(barGroups: [
-                  BarChartGroupData(
-                    barRods: [
-                      BarChartRodData(
-                        toY: 24,
-                        width: 23,
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomCenter,
-                            colors: [
-                              Color.fromARGB(255, 231, 227, 227),
-                              Color.fromARGB(255, 97, 198, 136)
-                            ]),
+                BarChartData(
+                    backgroundColor: Color.fromARGB(255, 253, 253, 253),
+                    titlesData: FlTitlesData(
+                        topTitles: AxisTitles(
+                            axisNameWidget: Text(
+                      'ain taya',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
+                    ))),
+                    barGroups: [
+                      BarChartGroupData(
+                        barRods: [
+                          BarChartRodData(
+                            toY: 24,
+                            width: 23,
+                            gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                colors: [
+                                  Color.fromARGB(255, 231, 227, 227),
+                                  Color.fromARGB(255, 97, 198, 136)
+                                ]),
+                          ),
+                        ],
+                        x: 1,
                       ),
-                    ],
-                    x: 1,
-                  ),
-                  BarChartGroupData(
-                    barRods: [
-                      BarChartRodData(
-                        toY: 15,
-                        width: 23,
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomCenter,
-                            colors: [
-                              Color.fromARGB(255, 231, 227, 227),
-                              Color.fromARGB(255, 141, 36, 125)
-                            ]),
+                      BarChartGroupData(
+                        barRods: [
+                          BarChartRodData(
+                            toY: 15,
+                            width: 23,
+                            gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                colors: [
+                                  Color.fromARGB(255, 231, 227, 227),
+                                  Color.fromARGB(255, 141, 36, 125)
+                                ]),
+                          )
+                        ],
+                        x: 2,
+                      ),
+                      BarChartGroupData(
+                        barRods: [
+                          BarChartRodData(
+                            toY: 10,
+                            gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                colors: [
+                                  Color.fromARGB(255, 231, 227, 227),
+                                  Color.fromARGB(255, 141, 36, 36)
+                                ]),
+                            width: 23,
+                          )
+                        ],
+                        x: 3,
                       )
-                    ],
-                    x: 2,
-                  ),
-                  BarChartGroupData(
-                    barRods: [
-                      BarChartRodData(
-                        toY: 10,
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomCenter,
-                            colors: [
-                              Color.fromARGB(255, 231, 227, 227),
-                              Color.fromARGB(255, 141, 36, 36)
-                            ]),
-                        width: 23,
-                      )
-                    ],
-                    x: 3,
-                  )
-                ]
+                    ]
                     // read about it in the BarChartData section
                     ),
                 swapAnimationDuration: Duration(milliseconds: 150), // Optional
