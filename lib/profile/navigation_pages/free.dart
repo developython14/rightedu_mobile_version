@@ -58,7 +58,9 @@ class _gameState extends State<game> {
                 centerSpaceRadius: 100,
                 sectionsSpace: 2,
                 borderData: FlBorderData(),
-                pieTouchData: PieTouchData(),
+                pieTouchData: PieTouchData(
+                  touchCallback: (FlTouchEvent, PieTouchResponse) {},
+                ),
                 centerSpaceColor: Color.fromARGB(255, 234, 252, 241),
                 sections: [
                   PieChartSectionData(
@@ -78,6 +80,7 @@ class _gameState extends State<game> {
                       showTitle: true,
                       title: 'algeria',
                       color: Color.fromARGB(255, 212, 117, 0),
+                      badgeWidget: Text('free'),
                       titleStyle: TextStyle(color: Colors.white)),
                   PieChartSectionData(
                       value: 25,
@@ -130,10 +133,62 @@ class _resumeState extends State<resume> {
         title: Text('free'),
       ),
       body: Center(
-        child: Text(
-          'Im HERE GUERRIER',
-        ),
-      ),
+          child: Container(
+              width: 400,
+              height: 500,
+              child: BarChart(
+                BarChartData(barGroups: [
+                  BarChartGroupData(
+                    barRods: [
+                      BarChartRodData(
+                        toY: 24,
+                        width: 23,
+                        gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            colors: [
+                              Color.fromARGB(255, 231, 227, 227),
+                              Color.fromARGB(255, 97, 198, 136)
+                            ]),
+                      ),
+                    ],
+                    x: 1,
+                  ),
+                  BarChartGroupData(
+                    barRods: [
+                      BarChartRodData(
+                        toY: 15,
+                        width: 23,
+                        gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            colors: [
+                              Color.fromARGB(255, 231, 227, 227),
+                              Color.fromARGB(255, 141, 36, 125)
+                            ]),
+                      )
+                    ],
+                    x: 2,
+                  ),
+                  BarChartGroupData(
+                    barRods: [
+                      BarChartRodData(
+                        toY: 10,
+                        gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            colors: [
+                              Color.fromARGB(255, 231, 227, 227),
+                              Color.fromARGB(255, 141, 36, 36)
+                            ]),
+                        width: 23,
+                      )
+                    ],
+                    x: 3,
+                  )
+                ]
+                    // read about it in the BarChartData section
+                    ),
+                swapAnimationDuration: Duration(milliseconds: 150), // Optional
+                swapAnimationCurve: Curves.linear, // Optional
+              ))),
     );
   }
 }
