@@ -167,7 +167,7 @@ class _resumeState extends State<resume> {
                                 ]),
                           ),
                         ],
-                        x: 1,
+                        x: 1998,
                       ),
                       BarChartGroupData(
                         barRods: [
