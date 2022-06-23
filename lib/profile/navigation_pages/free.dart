@@ -138,7 +138,12 @@ class _resumeState extends State<resume> {
               height: 500,
               child: BarChart(
                 BarChartData(
-                    backgroundColor: Color.fromARGB(255, 253, 253, 253),
+                    gridData: FlGridData(
+                      show: true,
+                      drawHorizontalLine: true,
+                      drawVerticalLine: false,
+                    ),
+                    maxY: 30,
                     titlesData: FlTitlesData(
                         topTitles: AxisTitles(
                             axisNameWidget: Text(
