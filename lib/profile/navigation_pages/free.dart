@@ -54,44 +54,56 @@ class _gameState extends State<game> {
           width: 200,
           height: 200,
           child: PieChart(
-            PieChartData(sections: [
-              PieChartSectionData(
-                value: 33,
-                color: Colors.cyan,
-                showTitle: true,
-                title: 'MUSTAPHA',
-              ),
-              PieChartSectionData(
-                value: 33,
-                color: Colors.green,
-                showTitle: true,
-                title: 'free',
-              ),
-              PieChartSectionData(
-                value: 25,
-                showTitle: true,
-                title: 'algeria',
-                color: Color.fromARGB(255, 212, 117, 0),
-              ),
-              PieChartSectionData(
-                value: 25,
-                showTitle: true,
-                title: 'algeria',
-                color: Colors.yellow,
-              ),
-              PieChartSectionData(
-                value: 67,
-                showTitle: true,
-                title: 'egypt',
-                color: Color.fromARGB(255, 249, 54, 0),
-              ),
-              PieChartSectionData(
-                value: 67,
-                showTitle: true,
-                title: 'egypt',
-                color: Color.fromARGB(255, 0, 113, 0),
-              ),
-            ]
+            PieChartData(
+                centerSpaceRadius: 100,
+                sectionsSpace: 2,
+                borderData: FlBorderData(),
+                pieTouchData: PieTouchData(),
+                centerSpaceColor: Color.fromARGB(255, 234, 252, 241),
+                sections: [
+                  PieChartSectionData(
+                      value: 33,
+                      color: Colors.cyan,
+                      showTitle: true,
+                      title: 'hackalgeria',
+                      titleStyle: TextStyle(color: Colors.white)),
+                  PieChartSectionData(
+                      value: 100,
+                      color: Color.fromARGB(255, 151, 17, 17),
+                      showTitle: true,
+                      title: 'free',
+                      titleStyle: TextStyle(color: Colors.white)),
+                  PieChartSectionData(
+                      value: 25,
+                      showTitle: true,
+                      title: 'algeria',
+                      color: Color.fromARGB(255, 212, 117, 0),
+                      titleStyle: TextStyle(color: Colors.white)),
+                  PieChartSectionData(
+                      value: 25,
+                      showTitle: true,
+                      title: 'algeria',
+                      color: Colors.yellow,
+                      titleStyle: TextStyle(color: Colors.white)),
+                  PieChartSectionData(
+                      value: 67,
+                      showTitle: true,
+                      title: 'egypt',
+                      color: Color.fromARGB(255, 249, 54, 0),
+                      titleStyle: TextStyle(color: Colors.white)),
+                  PieChartSectionData(
+                      value: 67,
+                      showTitle: true,
+                      title: 'egypt',
+                      color: Color.fromARGB(255, 0, 113, 0),
+                      titleStyle: TextStyle(color: Colors.white)),
+                  PieChartSectionData(
+                      value: 67,
+                      showTitle: true,
+                      title: 'ain taya',
+                      color: Color.fromARGB(255, 0, 113, 0),
+                      titleStyle: TextStyle(color: Colors.white)),
+                ]
                 // read about it in the PieChartData section
                 ),
             swapAnimationDuration: Duration(milliseconds: 150), // Optional
