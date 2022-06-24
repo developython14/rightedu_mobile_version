@@ -72,9 +72,24 @@ class _resumeState extends State<resume> {
                   borderRadius: BorderRadius.circular(25)),
               child: Column(
                 children: [
-                  Text(
-                    "Algeria Bank",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "assets/start_app/usthb.png",
+                        width: 100,
+                        height: 100,
+                      ),
+                      Text(
+                        "Algeria Bank",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Expanded(
                     child: BarChart(
@@ -83,6 +98,7 @@ class _resumeState extends State<resume> {
                         backgroundColor: back,
                         titlesData: FlTitlesData(
                           rightTitles: AxisTitles(drawBehindEverything: true),
+                          topTitles: AxisTitles(drawBehindEverything: true),
                         ),
                         minY: 0,
                         maxY: 25,
