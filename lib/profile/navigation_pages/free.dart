@@ -44,44 +44,67 @@ class resume extends StatefulWidget {
 }
 
 class _resumeState extends State<resume> {
-  Color men = Colors.red;
-  Color women = Colors.blue;
+  Color men = Color.fromARGB(255, 222, 0, 126);
+  Color women = Color.fromARGB(255, 10, 127, 222);
   Color back = Color.fromARGB(255, 0, 1, 2);
+  double widthbar = 20;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Center(
           child: Container(
-            color: Color.fromARGB(255, 168, 255, 241),
+            color: Color.fromARGB(255, 255, 255, 255),
             width: MediaQuery.of(context).size.width * 0.9,
-            height: MediaQuery.of(context).size.height * 0.6,
-            child: BarChart(
-              BarChartData(
-                backgroundColor: back,
-                titlesData: FlTitlesData(
-                    rightTitles: AxisTitles(drawBehindEverything: true),
-                    topTitles: AxisTitles(
-                        axisNameWidget: Text(
-                      'Men Vs Women',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ))),
-                minY: 0,
-                maxY: 35,
-                barGroups: [
-                  BarChartGroupData(barsSpace: 2, x: 1, barRods: [
-                    BarChartRodData(toY: 15, color: men),
-                    BarChartRodData(toY: 22, color: women)
-                  ]),
-                  BarChartGroupData(barsSpace: 2, x: 2, barRods: [
-                    BarChartRodData(toY: 15, color: men),
-                    BarChartRodData(toY: 10, color: women)
-                  ])
-                ],
-                // read about it in the BarChartData section
+            height: MediaQuery.of(context).size.height * 0.8,
+            child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25)),
+              child: BarChart(
+                BarChartData(
+                  alignment: BarChartAlignment.spaceAround,
+                  backgroundColor: back,
+                  titlesData: FlTitlesData(
+                      rightTitles: AxisTitles(drawBehindEverything: true),
+                      bottomTitles: AxisTitles(sideTitles: SideTitles(
+                          getTitlesWidget: (double value, TitleMeta meta) {
+                        return SideTitleWidget(
+                          axisSide: meta.axisSide,
+                          space: 5,
+                          child: Text('m'),
+                        );
+                      })),
+                      topTitles: AxisTitles(
+                          drawBehindEverything: true,
+                          axisNameWidget: Text(
+                            'Men Vs Women',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ))),
+                  minY: 0,
+                  maxY: 25,
+                  barGroups: [
+                    BarChartGroupData(barsSpace: 5, x: 1, barRods: [
+                      BarChartRodData(width: widthbar, toY: 15, color: men),
+                      BarChartRodData(width: widthbar, toY: 22, color: women)
+                    ]),
+                    BarChartGroupData(barsSpace: 5, x: 2, barRods: [
+                      BarChartRodData(width: widthbar, toY: 10, color: men),
+                      BarChartRodData(width: widthbar, toY: 18, color: women)
+                    ]),
+                    BarChartGroupData(barsSpace: 5, x: 1, barRods: [
+                      BarChartRodData(width: widthbar, toY: 17, color: men),
+                      BarChartRodData(width: widthbar, toY: 26, color: women)
+                    ]),
+                    BarChartGroupData(barsSpace: 5, x: 2, barRods: [
+                      BarChartRodData(width: widthbar, toY: 24, color: men),
+                      BarChartRodData(width: widthbar, toY: 13, color: women)
+                    ]),
+                  ],
+                  // read about it in the BarChartData section
+                ),
+                swapAnimationDuration: Duration(milliseconds: 150), // Optional
+                swapAnimationCurve: Curves.linear, // Optional
               ),
-              swapAnimationDuration: Duration(milliseconds: 150), // Optional
-              swapAnimationCurve: Curves.linear, // Optional
             ),
           ),
         ),
