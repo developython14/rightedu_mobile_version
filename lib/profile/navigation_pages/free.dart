@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:awesome_card/awesome_card.dart';
@@ -343,10 +345,55 @@ class _resumeState extends State<resume> {
                         ))
                       ]),
                     )),
+                SizedBox(
+                  height: 15,
+                ),
                 Container(
-                  color: Color.fromARGB(255, 163, 16, 16),
+                  color: Color.fromARGB(67, 161, 40, 149),
                   width: MediaQuery.of(context).size.width * 0.9,
                   height: MediaQuery.of(context).size.height * 0.7,
+                  child: Card(
+                      child: Column(children: [
+                    Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(25),
+                          child: Image.asset(
+                            "assets/start_app/data.jpg",
+                            width: 100,
+                            height: 100,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          "Analysis data",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 7, 79, 168)),
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                        child: PieChart(
+                      PieChartData(
+                        sections: [
+                          PieChartSectionData(value: 23, color: Colors.black),
+                          PieChartSectionData(
+                              value: 23, color: Color.fromARGB(255, 130, 0, 0)),
+                          PieChartSectionData(
+                              value: 23,
+                              color: Color.fromARGB(255, 23, 132, 23))
+                        ],
+                        // read about it in the PieChartData section
+                      ),
+                      swapAnimationDuration:
+                          Duration(milliseconds: 150), // Optional
+                      swapAnimationCurve: Curves.linear, // Optional
+                    ))
+                  ])),
                 )
               ],
             ),
