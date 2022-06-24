@@ -265,14 +265,17 @@ class _resumeState extends State<resume> {
                             titlesData: FlTitlesData(
                                 rightTitles: AxisTitles(
                                     sideTitles: SideTitles(showTitles: false)),
+                                leftTitles: AxisTitles(
+                                    sideTitles: SideTitles(showTitles: true)),
                                 topTitles: AxisTitles(
                                     sideTitles: SideTitles(showTitles: false))),
                             lineBarsData: [
                               LineChartBarData(
+                                barWidth: 10,
                                 isCurved: true,
                                 gradient: LinearGradient(
                                   colors: [
-                                    Color.fromARGB(255, 62, 9, 108),
+                                    Color.fromARGB(255, 75, 0, 140),
                                     Colors.redAccent
                                   ],
                                   begin: Alignment.centerLeft,
@@ -289,8 +292,38 @@ class _resumeState extends State<resume> {
                                 ],
                               ),
                               LineChartBarData(
+                                barWidth: 5,
+                                isCurved: true,
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color.fromARGB(255, 0, 84, 140),
+                                    Color.fromARGB(255, 255, 82, 140)
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                                spots: const [
+                                  FlSpot(0, 3),
+                                  FlSpot(0.6, 2),
+                                  FlSpot(2.9, 5),
+                                  FlSpot(6, 4.1),
+                                  FlSpot(4, 4),
+                                  FlSpot(5.5, 3),
+                                  FlSpot(1, 4),
+                                ],
+                              ),
+                              LineChartBarData(
                                 isCurved: true,
                                 color: Colors.blue,
+                                barWidth: 10,
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color.fromARGB(255, 99, 255, 156),
+                                    Colors.redAccent
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
                                 spots: const [
                                   FlSpot(3, 3),
                                   FlSpot(2.56, 1.2),
@@ -309,7 +342,12 @@ class _resumeState extends State<resume> {
                           swapAnimationCurve: Curves.linear, // Optional
                         ))
                       ]),
-                    ))
+                    )),
+                Container(
+                  color: Color.fromARGB(255, 163, 16, 16),
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: MediaQuery.of(context).size.height * 0.7,
+                )
               ],
             ),
           ),
