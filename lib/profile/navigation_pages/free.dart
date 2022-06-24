@@ -45,7 +45,7 @@ class resume extends StatefulWidget {
 
 class _resumeState extends State<resume> {
   Color men = Color.fromARGB(255, 222, 0, 126);
-  Color women = Color.fromARGB(255, 10, 127, 222);
+  Color women = Color.fromARGB(255, 6, 118, 209);
   Color back = Color.fromARGB(255, 0, 1, 2);
   double widthbar = 20;
   Widget getTitles(double value, TitleMeta meta) {
@@ -68,74 +68,91 @@ class _resumeState extends State<resume> {
             width: MediaQuery.of(context).size.width * 0.9,
             height: MediaQuery.of(context).size.height * 0.7,
             child: Card(
+              elevation: 4,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25)),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        "assets/start_app/usthb.png",
-                        width: 100,
-                        height: 100,
-                      ),
-                      Text(
-                        "Algeria Bank",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Expanded(
-                    child: BarChart(
-                      BarChartData(
-                        alignment: BarChartAlignment.spaceAround,
-                        backgroundColor: back,
-                        titlesData: FlTitlesData(
-                          rightTitles: AxisTitles(drawBehindEverything: true),
-                          topTitles: AxisTitles(drawBehindEverything: true),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(25),
+                          child: Image.asset(
+                            "assets/start_app/usthb.png",
+                            width: 100,
+                            height: 100,
+                          ),
                         ),
-                        minY: 0,
-                        maxY: 25,
-                        barGroups: [
-                          BarChartGroupData(barsSpace: 5, x: 1, barRods: [
-                            BarChartRodData(
-                                width: widthbar, toY: 15, color: men),
-                            BarChartRodData(
-                                width: widthbar, toY: 22, color: women)
-                          ]),
-                          BarChartGroupData(barsSpace: 5, x: 2, barRods: [
-                            BarChartRodData(
-                                width: widthbar, toY: 10, color: men),
-                            BarChartRodData(
-                                width: widthbar, toY: 18, color: women)
-                          ]),
-                          BarChartGroupData(barsSpace: 5, x: 3, barRods: [
-                            BarChartRodData(
-                                width: widthbar, toY: 17, color: men),
-                            BarChartRodData(
-                                width: widthbar, toY: 26, color: women)
-                          ]),
-                          BarChartGroupData(barsSpace: 5, x: 4, barRods: [
-                            BarChartRodData(
-                                width: widthbar, toY: 24, color: men),
-                            BarChartRodData(
-                                width: widthbar, toY: 13, color: women)
-                          ]),
-                        ],
-                        // read about it in the BarChartData section
-                      ),
-                      swapAnimationDuration:
-                          Duration(milliseconds: 150), // Optional
-                      swapAnimationCurve: Curves.linear, // Optional
+                        Text(
+                          "Algeria Bank",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 7, 79, 168)),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Expanded(
+                      child: BarChart(
+                        BarChartData(
+                          alignment: BarChartAlignment.spaceAround,
+                          backgroundColor: back,
+                          titlesData: FlTitlesData(
+                              rightTitles:
+                                  AxisTitles(drawBehindEverything: true),
+                              topTitles: AxisTitles(drawBehindEverything: true),
+                              bottomTitles: AxisTitles(
+                                  sideTitles:
+                                      SideTitles(getTitlesWidget: getTitles))),
+                          minY: 0,
+                          maxY: 25,
+                          barGroups: [
+                            BarChartGroupData(barsSpace: 5, x: 1, barRods: [
+                              BarChartRodData(
+                                  width: widthbar, toY: 15, color: men),
+                              BarChartRodData(
+                                  width: widthbar, toY: 22, color: women)
+                            ]),
+                            BarChartGroupData(barsSpace: 5, x: 2, barRods: [
+                              BarChartRodData(
+                                  width: widthbar, toY: 10, color: men),
+                              BarChartRodData(
+                                  width: widthbar, toY: 18, color: women)
+                            ]),
+                            BarChartGroupData(barsSpace: 5, x: 3, barRods: [
+                              BarChartRodData(
+                                  width: widthbar, toY: 17, color: men),
+                              BarChartRodData(
+                                  width: widthbar, toY: 26, color: women)
+                            ]),
+                            BarChartGroupData(barsSpace: 5, x: 4, barRods: [
+                              BarChartRodData(
+                                  width: widthbar, toY: 24, color: men),
+                              BarChartRodData(
+                                  width: widthbar, toY: 13, color: women)
+                            ]),
+                          ],
+                          // read about it in the BarChartData section
+                        ),
+                        swapAnimationDuration:
+                            Duration(milliseconds: 150), // Optional
+                        swapAnimationCurve: Curves.linear, // Optional
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
               ),
             ),
           ),
