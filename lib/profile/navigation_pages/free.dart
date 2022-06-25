@@ -13,6 +13,15 @@ class _resumeState extends State<resume> {
   Color women = Color.fromARGB(255, 6, 118, 209);
   Color back = Color.fromARGB(255, 0, 1, 2);
   double widthbar = 22;
+  final list_spicialities = ["PAYSERA", "WIZE", "PAYPAL", "MASTER CARD"];
+
+  String? cardtype = '';
+  String? holdername = '';
+  String? bankname = '';
+  String? cardnumber = '';
+  String? expiredate = '';
+  String capitalize(String s) => s[0].toUpperCase() + s.substring(1);
+
   final _formKey = GlobalKey<FormState>();
   Widget getTitles(double value, TitleMeta meta) {
     const style = TextStyle(
@@ -420,11 +429,11 @@ class _resumeState extends State<resume> {
                   child: Column(
                     children: [
                       CreditCard(
-                          cardNumber: "2456 7879 4864 7854",
-                          cardExpiry: "10/25",
-                          cardHolderName: "Belkassem Mustapha",
+                          cardNumber: cardnumber,
+                          cardExpiry: expiredate,
+                          cardHolderName: holdername,
                           cvv: "356",
-                          bankName: "Algeria Bank",
+                          bankName: bankname.toString(),
                           cardType: CardType
                               .discover, // Optional if you want to override Card Type
                           showBackSide: false,
@@ -442,6 +451,11 @@ class _resumeState extends State<resume> {
                           key: _formKey,
                           children: [
                             TextFormField(
+                              onChanged: (text) {
+                                setState(() {
+                                  holdername = capitalize(text);
+                                });
+                              },
                               decoration: InputDecoration(
                                   label: Text('card holder name'),
                                   hintText: 'card holder is'),
@@ -454,6 +468,11 @@ class _resumeState extends State<resume> {
                               },
                             ),
                             TextFormField(
+                              onChanged: (text) {
+                                setState(() {
+                                  bankname = text;
+                                });
+                              },
                               decoration: InputDecoration(
                                   label: Text('Bank name'),
                                   hintText: 'Bank name is'),
@@ -466,6 +485,11 @@ class _resumeState extends State<resume> {
                               },
                             ),
                             TextFormField(
+                              onChanged: (text) {
+                                setState(() {
+                                  expiredate = text;
+                                });
+                              },
                               decoration: InputDecoration(
                                   label: Text('expire date of card'),
                                   hintText: 'expire date of card'),
@@ -478,6 +502,11 @@ class _resumeState extends State<resume> {
                               },
                             ),
                             TextFormField(
+                              onChanged: (text) {
+                                setState(() {
+                                  cardnumber = text;
+                                });
+                              },
                               decoration: InputDecoration(
                                   label: Text('card number'),
                                   hintText: 'card number is'),
@@ -488,6 +517,33 @@ class _resumeState extends State<resume> {
                                 }
                                 return null;
                               },
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text("Select Card Type:"),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                Expanded(
+                                  child: DropdownButton(
+                                      hint: Text('$cardtype'),
+                                      items: list_spicialities
+                                          .map(buildmen)
+                                          .toList(),
+                                      onChanged: (String? text) {
+                                        setState(() {
+                                          cardtype = text ?? "";
+                                        });
+                                      }),
+                                ),
+                              ],
+                            ),
+                            GFButton(
+                              onPressed: () {},
+                              text: "add this card",
+                              fullWidthButton: true,
+                              size: GFSize.LARGE,
                             ),
                           ],
                         ),
@@ -503,3 +559,6 @@ class _resumeState extends State<resume> {
     );
   }
 }
+
+DropdownMenuItem<String> buildmen(String item) =>
+    DropdownMenuItem(value: item, child: Text('$item'));
