@@ -28,6 +28,7 @@ class _editprofileState extends State<editprofile> {
                       prefixIcon: Icon(Icons.people_alt),
                       border: UnderlineInputBorder(),
                       labelText: 'Enter your username',
+                      counterText: 'Enter your username',
                     ),
                   ),
                 ],
