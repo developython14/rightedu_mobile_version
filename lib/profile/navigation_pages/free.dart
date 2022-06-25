@@ -3,41 +3,6 @@ import 'package:getwidget/getwidget.dart';
 import 'package:awesome_card/awesome_card.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-class free extends StatefulWidget {
-  const free({Key? key}) : super(key: key);
-
-  @override
-  State<free> createState() => _freeState();
-}
-
-class _freeState extends State<free> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('ALGERIA')),
-      body: Column(
-        children: [
-          CreditCard(
-              cardNumber: "2456 7879 4864 7854",
-              cardExpiry: "10/25",
-              cardHolderName: "Card Holder",
-              cvv: "356",
-              bankName: "Algeria Bank",
-              cardType: CardType
-                  .discover, // Optional if you want to override Card Type
-              showBackSide: false,
-              frontBackground: CardBackgrounds.black,
-              backBackground: CardBackgrounds.white,
-              showShadow: true,
-              textExpDate: 'Exp. Date',
-              textName: 'Name',
-              textExpiry: 'MM/YY'),
-        ],
-      ),
-    );
-  }
-}
-
 class resume extends StatefulWidget {
   @override
   State<resume> createState() => _resumeState();
@@ -48,6 +13,7 @@ class _resumeState extends State<resume> {
   Color women = Color.fromARGB(255, 6, 118, 209);
   Color back = Color.fromARGB(255, 0, 1, 2);
   double widthbar = 22;
+  final _formKey = GlobalKey<FormState>();
   Widget getTitles(double value, TitleMeta meta) {
     const style = TextStyle(
       color: Color.fromARGB(255, 7, 2, 2),
@@ -357,7 +323,7 @@ class _resumeState extends State<resume> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(25),
                           child: Image.asset(
-                            "assets/start_app/data.jpg",
+                            "assets/start_app/0.jpg",
                             width: 100,
                             height: 100,
                           ),
@@ -380,13 +346,60 @@ class _resumeState extends State<resume> {
                         centerSpaceRadius: 100,
                         sections: [
                           PieChartSectionData(
-                              value: 23,
+                              value: 10,
+                              radius: 50,
+                              title: "alger",
+                              badgeWidget: ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Image.asset(
+                                  "assets/start_app/3.jpg",
+                                  width: 40,
+                                  height: 40,
+                                ),
+                              ),
+                              titleStyle: TextStyle(color: Colors.white),
                               color: Color.fromARGB(255, 183, 92, 92)),
                           PieChartSectionData(
-                              value: 23,
+                              value: 24,
+                              radius: 45,
+                              badgeWidget: ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Image.asset(
+                                  "assets/start_app/2.jpg",
+                                  width: 40,
+                                  height: 40,
+                                ),
+                              ),
+                              title: "casabclanca",
+                              titleStyle: TextStyle(color: Colors.white),
+                              color: Color.fromARGB(255, 180, 127, 186)),
+                          PieChartSectionData(
+                              value: 13,
+                              radius: 60,
+                              title: "roma",
+                              badgeWidget: ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Image.asset(
+                                  "assets/start_app/fares.jpg",
+                                  width: 40,
+                                  height: 40,
+                                ),
+                              ),
+                              titleStyle: TextStyle(color: Colors.white),
                               color: Color.fromARGB(255, 52, 194, 52)),
                           PieChartSectionData(
-                              value: 23,
+                              radius: 45,
+                              value: 8,
+                              title: "madrid",
+                              badgeWidget: ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Image.asset(
+                                  "assets/start_app/moh.jpg",
+                                  width: 40,
+                                  height: 40,
+                                ),
+                              ),
+                              titleStyle: TextStyle(color: Colors.white),
                               color: Color.fromARGB(255, 75, 67, 224))
                         ],
                         // read about it in the PieChartData section
@@ -396,6 +409,91 @@ class _resumeState extends State<resume> {
                       swapAnimationCurve: Curves.linear, // Optional
                     ))
                   ])),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  color: Color.fromARGB(255, 233, 233, 233),
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: Column(
+                    children: [
+                      CreditCard(
+                          cardNumber: "2456 7879 4864 7854",
+                          cardExpiry: "10/25",
+                          cardHolderName: "Belkassem Mustapha",
+                          cvv: "356",
+                          bankName: "Algeria Bank",
+                          cardType: CardType
+                              .discover, // Optional if you want to override Card Type
+                          showBackSide: false,
+                          frontBackground: CardBackgrounds.black,
+                          backBackground: CardBackgrounds.white,
+                          showShadow: true,
+                          textExpDate: 'Exp. Date',
+                          textName: 'Name',
+                          textExpiry: 'MM/YY'),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Form(
+                        child: Column(
+                          key: _formKey,
+                          children: [
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  label: Text('card holder name'),
+                                  hintText: 'card holder is'),
+                              // The validator receives the text that the user has entered.
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter some text';
+                                }
+                                return null;
+                              },
+                            ),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  label: Text('Bank name'),
+                                  hintText: 'Bank name is'),
+                              // The validator receives the text that the user has entered.
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter some text';
+                                }
+                                return null;
+                              },
+                            ),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  label: Text('expire date of card'),
+                                  hintText: 'expire date of card'),
+                              // The validator receives the text that the user has entered.
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter some text';
+                                }
+                                return null;
+                              },
+                            ),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  label: Text('card number'),
+                                  hintText: 'card number is'),
+                              // The validator receives the text that the user has entered.
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter some text';
+                                }
+                                return null;
+                              },
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),

@@ -33,7 +33,6 @@ void main() {
     "/services": (context) => list_services(),
     "/product": (context) => lop,
     "/visprofile": (context) => profilevist(),
-    "/hackme": (context) => free(),
     "/stat": (context) => resume(),
   }));
 }
