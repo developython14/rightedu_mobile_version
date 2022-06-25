@@ -68,55 +68,85 @@ class _profileState extends State<profile> {
             SizedBox(
               height: 15,
             ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.person, color: Colors.blue),
-                title: Text('Edit Profile'),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/editprofile');
+              },
+              child: Card(
+                child: ListTile(
+                  leading: Icon(Icons.person, color: Colors.blue),
+                  title: Text('Edit Profile'),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
               ),
             ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.settings, color: Colors.blue),
-                title: Text('Setting'),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/settingprofile');
+              },
+              child: Card(
+                child: ListTile(
+                  leading: Icon(Icons.settings, color: Colors.blue),
+                  title: Text('Setting'),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
               ),
             ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.history, color: Colors.blue),
-                title: Text('Historique'),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/hisprofile');
+              },
+              child: Card(
+                child: ListTile(
+                  leading: Icon(Icons.history, color: Colors.blue),
+                  title: Text('Historique'),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
               ),
             ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.credit_card, color: Colors.blue),
-                title: Text('Payments cards'),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/payprofile');
+              },
+              child: Card(
+                child: ListTile(
+                  leading: Icon(Icons.credit_card, color: Colors.blue),
+                  title: Text('Payments cards'),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
               ),
             ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.help_center, color: Colors.blue),
-                title: Text('Help and faq'),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/helpprofile');
+              },
+              child: Card(
+                child: ListTile(
+                  leading: Icon(Icons.help_center, color: Colors.blue),
+                  title: Text('Help and faq'),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
               ),
             ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.logout, color: Colors.blue),
-                title: Text('Logout'),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/login');
+              },
+              child: Card(
+                child: ListTile(
+                  leading: Icon(Icons.logout, color: Colors.blue),
+                  title: Text('Logout'),
+                ),
               ),
             ),
           ]),

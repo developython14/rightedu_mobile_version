@@ -17,9 +17,14 @@ import 'package:right/profile/pages/statcomponant/example.dart';
 import 'package:right/profile/navigation_pages/profilevisit.dart';
 import 'package:right/profile/navigation_pages/free.dart';
 import 'package:right/profile/navigation_pages/training.dart';
+import 'package:right/profile/pages/edit_profile/editprofile.dart';
+import 'package:right/profile/pages/edit_profile/settingprofile.dart';
+import 'package:right/profile/pages/edit_profile/hisprofile.dart';
+import 'package:right/profile/pages/edit_profile/payprofile.dart';
+import 'package:right/profile/pages/edit_profile/helpprofile.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/right', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -36,5 +41,10 @@ void main() {
     "/visprofile": (context) => profilevist(),
     "/stat": (context) => resume(),
     "/right": (context) => right(),
+    "/editprofile": (context) => editprofile(),
+    "/settingprofile": (context) => settingprofile(),
+    "/hisprofile": (context) => hisprofile(),
+    "/payprofile": (context) => payprofile(),
+    "/helpprofile": (context) => helpprofile(),
   }));
 }
