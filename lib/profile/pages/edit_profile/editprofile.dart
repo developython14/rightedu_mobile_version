@@ -8,6 +8,7 @@ class editprofile extends StatefulWidget {
 }
 
 class _editprofileState extends State<editprofile> {
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +16,24 @@ class _editprofileState extends State<editprofile> {
         title: Text('edit profile'),
         centerTitle: true,
       ),
-      body: Center(child: Text('edit profile')),
+      body: Center(
+          child: Column(
+        children: [
+          Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.people_alt),
+                      border: UnderlineInputBorder(),
+                      labelText: 'Enter your username',
+                    ),
+                  ),
+                ],
+              ))
+        ],
+      )),
     );
   }
 }
