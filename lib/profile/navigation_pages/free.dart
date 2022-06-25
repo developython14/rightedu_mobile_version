@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:awesome_card/awesome_card.dart';
@@ -379,13 +377,17 @@ class _resumeState extends State<resume> {
                     Expanded(
                         child: PieChart(
                       PieChartData(
+                        centerSpaceRadius: 100,
                         sections: [
-                          PieChartSectionData(value: 23, color: Colors.black),
-                          PieChartSectionData(
-                              value: 23, color: Color.fromARGB(255, 130, 0, 0)),
                           PieChartSectionData(
                               value: 23,
-                              color: Color.fromARGB(255, 23, 132, 23))
+                              color: Color.fromARGB(255, 183, 92, 92)),
+                          PieChartSectionData(
+                              value: 23,
+                              color: Color.fromARGB(255, 52, 194, 52)),
+                          PieChartSectionData(
+                              value: 23,
+                              color: Color.fromARGB(255, 75, 67, 224))
                         ],
                         // read about it in the PieChartData section
                       ),
