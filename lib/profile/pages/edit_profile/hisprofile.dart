@@ -15,7 +15,72 @@ class _hisprofileState extends State<hisprofile> {
         title: Text('historique profile'),
         centerTitle: true,
       ),
-      body: Center(child: Text('historique profile')),
+      body: SafeArea(
+          child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+              'services history',
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            ),
+            Table(
+              children: [
+                TableRow(children: [
+                  Text(
+                    'id',
+                  ),
+                  Text(
+                    'service name',
+                  ),
+                  Text(
+                    'service state',
+                  ),
+                  Text(
+                    'professor',
+                  ),
+                  Text(
+                    'prices',
+                  )
+                ]),
+                TableRow(children: [
+                  Text(
+                    'id',
+                  ),
+                  Text(
+                    'service name',
+                  ),
+                  Text(
+                    'service state',
+                  ),
+                  Text(
+                    'professor',
+                  ),
+                  Text(
+                    'prices',
+                  )
+                ]),
+                TableRow(children: [
+                  Text(
+                    'id',
+                  ),
+                  Text(
+                    'service name',
+                  ),
+                  Text(
+                    'service state',
+                  ),
+                  Text(
+                    'professor',
+                  ),
+                  Text(
+                    'prices',
+                  )
+                ])
+              ],
+            )
+          ],
+        ),
+      )),
     );
   }
 }

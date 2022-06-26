@@ -25,7 +25,7 @@ import 'package:right/profile/pages/edit_profile/helpprofile.dart';
 
 void main() {
   runApp(
-      MaterialApp(title: 'Right Hacker', initialRoute: '/editprofile', routes: {
+      MaterialApp(title: 'Right Hacker', initialRoute: '/hisprofile', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
