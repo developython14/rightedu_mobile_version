@@ -12,10 +12,20 @@ class editprofile extends StatefulWidget {
 
 class _editprofileState extends State<editprofile> {
   final _formKey = GlobalKey<FormState>();
+
+  Future<void> savedata() async {
+    final valid = _formKey.currentState!.validate();
+    if (!valid) {
+      return;
+    }
+    _formKey.currentState!.save();
+  }
+
   File? identity;
   String? username = '';
   String? email = '';
   String? newpassword = '';
+  String? confirmnewpassword = '';
   String? newnumberphone = '';
   @override
   Widget build(BuildContext context) {
@@ -70,6 +80,9 @@ class _editprofileState extends State<editprofile> {
                     child: Column(
                       children: [
                         TextFormField(
+                          onSaved: (text) {
+                            username = text;
+                          },
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.people_alt),
                             border: UnderlineInputBorder(),
@@ -81,6 +94,9 @@ class _editprofileState extends State<editprofile> {
                           height: 10,
                         ),
                         TextFormField(
+                          onSaved: (text) {
+                            email = text;
+                          },
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.email),
                             border: UnderlineInputBorder(),
@@ -92,6 +108,9 @@ class _editprofileState extends State<editprofile> {
                           height: 10,
                         ),
                         TextFormField(
+                          onSaved: (text) {
+                            newpassword = text;
+                          },
                           obscureText: true,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.lock),
@@ -104,6 +123,9 @@ class _editprofileState extends State<editprofile> {
                           height: 10,
                         ),
                         TextFormField(
+                          onSaved: (text) {
+                            confirmnewpassword = text;
+                          },
                           obscureText: true,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.lock),
@@ -116,6 +138,9 @@ class _editprofileState extends State<editprofile> {
                           height: 10,
                         ),
                         TextFormField(
+                          onSaved: (text) {
+                            newnumberphone = text;
+                          },
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.phone),
                             border: UnderlineInputBorder(),
@@ -127,7 +152,20 @@ class _editprofileState extends State<editprofile> {
                           height: 10,
                         ),
                         GFButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await savedata();
+                            Map data = {
+                              'username': username,
+                              'email': email,
+                              'newpassword': newpassword,
+                              'confirmnewpassword': confirmnewpassword,
+                              'phone': newnumberphone,
+                            };
+                            print(
+                              'CEST REGLE BIEN TOT',
+                            );
+                            print(data);
+                          },
                           text: "update your informations",
                           fullWidthButton: true,
                           size: GFSize.LARGE,
