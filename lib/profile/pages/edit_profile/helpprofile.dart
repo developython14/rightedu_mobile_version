@@ -12,8 +12,23 @@ class _MyWidgetState extends State<helpprofile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('help profile'),
         centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.help_center,
+              size: 40,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              'Help',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
       body: Center(child: Text('HELP profile')),
     );

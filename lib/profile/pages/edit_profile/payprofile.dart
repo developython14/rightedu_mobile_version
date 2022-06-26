@@ -12,8 +12,23 @@ class _payprofileState extends State<payprofile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('pay profile'),
         centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.monetization_on,
+              size: 40,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              'Payments',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
       body: Center(child: Text('pay profile')),
     );
