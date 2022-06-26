@@ -20,63 +20,67 @@ class _hisprofileState extends State<hisprofile> {
         child: Column(
           children: [
             Text(
-              'services history',
+              'Services History',
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
-            Table(
-              children: [
-                TableRow(children: [
-                  Text(
-                    'id',
-                  ),
-                  Text(
-                    'service name',
-                  ),
-                  Text(
-                    'service state',
-                  ),
-                  Text(
-                    'professor',
-                  ),
-                  Text(
-                    'prices',
-                  )
-                ]),
-                TableRow(children: [
-                  Text(
-                    'id',
-                  ),
-                  Text(
-                    'service name',
-                  ),
-                  Text(
-                    'service state',
-                  ),
-                  Text(
-                    'professor',
-                  ),
-                  Text(
-                    'prices',
-                  )
-                ]),
-                TableRow(children: [
-                  Text(
-                    'id',
-                  ),
-                  Text(
-                    'service name',
-                  ),
-                  Text(
-                    'service state',
-                  ),
-                  Text(
-                    'professor',
-                  ),
-                  Text(
-                    'prices',
-                  )
-                ])
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Table(
+                border: TableBorder.all(),
+                children: [
+                  TableRow(children: [
+                    Text(
+                      'id',
+                    ),
+                    Text(
+                      'service name',
+                    ),
+                    Text(
+                      'service state',
+                    ),
+                    Text(
+                      'professor',
+                    ),
+                    Text(
+                      'prices',
+                    )
+                  ]),
+                  TableRow(children: [
+                    Text(
+                      'id',
+                    ),
+                    Text(
+                      'service name',
+                    ),
+                    Text(
+                      'service state',
+                    ),
+                    Container(
+                      color: Color.fromARGB(255, 243, 33, 121),
+                      height: 40,
+                    ),
+                    Text(
+                      'prices',
+                    )
+                  ]),
+                  TableRow(children: [
+                    Text(
+                      'id',
+                    ),
+                    Text(
+                      'service name',
+                    ),
+                    Container(
+                      color: Colors.blue,
+                      height: 40,
+                    ),
+                    Icon(Icons.abc_sharp),
+                    Text(
+                      'prices',
+                    )
+                  ])
+                ],
+              ),
             )
           ],
         ),
