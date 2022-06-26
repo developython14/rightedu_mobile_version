@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:file_picker/file_picker.dart';
+import 'dart:async';
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 
 class editprofile extends StatefulWidget {
-  const editprofile({Key? key}) : super(key: key);
-
   @override
   State<editprofile> createState() => _editprofileState();
 }
 
 class _editprofileState extends State<editprofile> {
   final _formKey = GlobalKey<FormState>();
+  File? identity;
+  String? username = '';
+  String? email = '';
+  String? newpassword = '';
+  String? newnumberphone = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +29,40 @@ class _editprofileState extends State<editprofile> {
           child: Center(
               child: Column(
             children: [
-              Image.asset('assets/start_app/moh.jpg'),
+              SizedBox(
+                height: 30,
+              ),
+              Stack(children: [
+                ClipRRect(
+                    borderRadius: BorderRadius.circular(80.0),
+                    child: Image.asset(
+                      'assets/start_app/moh.jpg',
+                      height: 250,
+                      width: 250,
+                    )),
+                Positioned(
+                  left: 110,
+                  top: 130,
+                  child: IconButton(
+                      onPressed: () async {
+                        FilePickerResult? result =
+                            await FilePicker.platform.pickFiles();
+
+                        if (result != null) {
+                          setState(() {
+                            identity = File(result.files.single.path!);
+                          });
+                        } else {
+                          // User canceled the picker
+                        }
+                      },
+                      icon: Icon(
+                        Icons.add_a_photo_outlined,
+                        color: Colors.blue,
+                        size: 40,
+                      )),
+                )
+              ]),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Form(
