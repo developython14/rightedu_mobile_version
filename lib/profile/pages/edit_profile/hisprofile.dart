@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
+import 'package:right/profile/pages/compenant/post_widget.dart';
 
 class hisprofile extends StatefulWidget {
   const hisprofile({Key? key}) : super(key: key);
@@ -149,57 +151,55 @@ class _hisprofileState extends State<hisprofile> {
                       ),
                     ),
                   ], rows: [
-                    DataRow(selected: true, cells: [
+                    DataRow(cells: [
                       DataCell(
                         Text(
                           '1',
                         ),
                       ),
                       DataCell(
-                        Text(
-                          'traduction of university paper',
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/fares.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'traduction of university paper',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/mustapha.jpg",
+                              ),
+                            ),
+                            SizedBox(width: 15),
+                            Text(
+                              'mustapha belkassem',
+                            ),
+                          ],
                         ),
                       ),
                       DataCell(
                         Text(
-                          'mustapha belkassem',
+                          '25 Usd',
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
                       DataCell(
-                        Text(
-                          '25',
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          'completed',
-                        ),
-                      )
-                    ]),
-                    DataRow(cells: [
-                      DataCell(
-                        Text(
-                          '3',
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          'traduction of university paper',
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          'mustapha belkassem',
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          '25',
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          'completed',
+                        GFButtonBadge(
+                          color: GFColors.SUCCESS,
+                          onPressed: () {},
+                          text: "Completed",
                         ),
                       )
                     ]),
@@ -210,85 +210,450 @@ class _hisprofileState extends State<hisprofile> {
                         ),
                       ),
                       DataCell(
-                        Text(
-                          'traduction of university paper',
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/fares.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'traduction of university paper',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/mustapha.jpg",
+                              ),
+                            ),
+                            SizedBox(width: 15),
+                            Text(
+                              'mustapha belkassem',
+                            ),
+                          ],
                         ),
                       ),
                       DataCell(
                         Text(
-                          'mustapha belkassem',
+                          '25 Usd',
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
                       DataCell(
-                        Text(
-                          '25',
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          'completed',
+                        GFButtonBadge(
+                          color: GFColors.DANGER,
+                          onPressed: () {},
+                          text: "rejceted",
                         ),
                       )
                     ]),
                     DataRow(cells: [
+                      DataCell(
+                        Text(
+                          '3',
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/fares.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'traduction of university paper',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/mustapha.jpg",
+                              ),
+                            ),
+                            SizedBox(width: 15),
+                            Text(
+                              'mustapha belkassem',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Text(
+                          '25 Usd',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      DataCell(
+                        GFButtonBadge(
+                          color: GFColors.WARNING,
+                          onPressed: () {},
+                          text: "Pending",
+                        ),
+                      )
+                    ]),
+                    DataRow(selected: true, cells: [
                       DataCell(
                         Text(
                           '4',
                         ),
                       ),
                       DataCell(
-                        Text(
-                          'traduction of university paper',
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/fares.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'traduction of university paper',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/mustapha.jpg",
+                              ),
+                            ),
+                            SizedBox(width: 15),
+                            Text(
+                              'mustapha belkassem',
+                            ),
+                          ],
                         ),
                       ),
                       DataCell(
                         Text(
-                          'mustapha belkassem',
+                          '25 Usd',
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
                       DataCell(
-                        Text(
-                          '25',
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          'completed',
+                        GFButtonBadge(
+                          color: GFColors.SUCCESS,
+                          onPressed: () {},
+                          text: "Completed",
                         ),
                       )
                     ]),
-                    DataRow(cells: [
+                    DataRow(selected: true, cells: [
                       DataCell(
                         Text(
                           '5',
                         ),
                       ),
                       DataCell(
-                        Text(
-                          'traduction of university paper',
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/fares.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'traduction of university paper',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/mustapha.jpg",
+                              ),
+                            ),
+                            SizedBox(width: 15),
+                            Text(
+                              'mustapha belkassem',
+                            ),
+                          ],
                         ),
                       ),
                       DataCell(
                         Text(
-                          'mustapha belkassem',
+                          '25 Usd',
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
                       DataCell(
-                        Text(
-                          '25',
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          'completed',
+                        GFButtonBadge(
+                          color: GFColors.SUCCESS,
+                          onPressed: () {},
+                          text: "Completed",
                         ),
                       )
-                    ])
+                    ]),
+                    DataRow(selected: true, cells: [
+                      DataCell(
+                        Text(
+                          '6',
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/fares.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'traduction of university paper',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/mustapha.jpg",
+                              ),
+                            ),
+                            SizedBox(width: 15),
+                            Text(
+                              'mustapha belkassem',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Text(
+                          '25 Usd',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      DataCell(
+                        GFButtonBadge(
+                          color: GFColors.WARNING,
+                          onPressed: () {},
+                          text: "pending",
+                        ),
+                      )
+                    ]),
+                    DataRow(cells: [
+                      DataCell(
+                        Text(
+                          '7',
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/fares.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'traduction of university paper',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/mustapha.jpg",
+                              ),
+                            ),
+                            SizedBox(width: 15),
+                            Text(
+                              'mustapha belkassem',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Text(
+                          '25 Usd',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      DataCell(
+                        GFButtonBadge(
+                          color: GFColors.DANGER,
+                          onPressed: () {},
+                          text: "Rejected",
+                        ),
+                      )
+                    ]),
+                    DataRow(cells: [
+                      DataCell(
+                        Text(
+                          '8',
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/fares.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'traduction of university paper',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/mustapha.jpg",
+                              ),
+                            ),
+                            SizedBox(width: 15),
+                            Text(
+                              'mustapha belkassem',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Text(
+                          '25 Usd',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      DataCell(
+                        GFButtonBadge(
+                          color: GFColors.SUCCESS,
+                          onPressed: () {},
+                          text: "Completed",
+                        ),
+                      )
+                    ]),
+                    DataRow(cells: [
+                      DataCell(
+                        Text(
+                          '9',
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/fares.jpg",
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'traduction of university paper',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/start_app/mustapha.jpg",
+                              ),
+                            ),
+                            SizedBox(width: 15),
+                            Text(
+                              'mustapha belkassem',
+                            ),
+                          ],
+                        ),
+                      ),
+                      DataCell(
+                        Text(
+                          '25 Usd',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      DataCell(
+                        GFButtonBadge(
+                          color: GFColors.WARNING,
+                          onPressed: () {},
+                          text: "pendind",
+                        ),
+                      )
+                    ]),
                   ]),
                 ],
               ),
             )),
-            Text('france')
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  post_widget(
+                    'Mustapha belkassem',
+                    "assets/start_app/mustapha.jpg",
+                    "assets/start_app/fares.jpg",
+                  ),
+                  post_widget(
+                    'Mustapha belkassem',
+                    "assets/start_app/mustapha.jpg",
+                    "assets/start_app/samir.jpg",
+                  ),
+                  post_widget(
+                    'Mustapha belkassem',
+                    "assets/start_app/mustapha.jpg",
+                    "assets/start_app/usthb.png",
+                  ),
+                  post_widget(
+                    'Mustapha Belkassem',
+                    "assets/start_app/mustapha.jpg",
+                    "assets/start_app/cover.jpg",
+                  ),
+                  post_widget(
+                    'Mustapha Belkassem',
+                    "assets/start_app/mustapha.jpg",
+                    "assets/start_app/elon.jpg",
+                  ),
+                ],
+              ),
+            )
           ]),
         ),
       ),
