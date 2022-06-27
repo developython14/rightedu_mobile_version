@@ -564,10 +564,16 @@ class _payprofileState extends State<payprofile> {
                 )
               ]),
             ]),
+            SizedBox(
+              height: 40,
+            ),
             GFButton(
               onPressed: () {},
               text: "Add New Card",
               fullWidthButton: true,
+            ),
+            SizedBox(
+              height: 20,
             ),
             Row(
               children: [
@@ -613,7 +619,7 @@ class _payprofileState extends State<payprofile> {
                           )
                         ],
                       ),
-                      Text("500 €",
+                      Text("120 €",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
