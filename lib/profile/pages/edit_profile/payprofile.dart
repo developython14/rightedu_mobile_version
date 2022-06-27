@@ -54,7 +54,7 @@ class _payprofileState extends State<payprofile> {
                       width: 10,
                     ),
                     Text(
-                      'service name',
+                      'card name holder',
                     ),
                   ],
                 ),
@@ -71,7 +71,7 @@ class _payprofileState extends State<payprofile> {
                       width: 10,
                     ),
                     Text(
-                      'service provider',
+                      'bank name',
                     ),
                   ],
                 ),
@@ -88,7 +88,7 @@ class _payprofileState extends State<payprofile> {
                       width: 10,
                     ),
                     Text(
-                      'Price',
+                      'Card Number',
                     ),
                   ],
                 ),
@@ -128,9 +128,7 @@ class _payprofileState extends State<payprofile> {
                       SizedBox(
                         width: 15,
                       ),
-                      Text(
-                        'traduction of university paper',
-                      ),
+                      Text('Belkassem Mustapha'),
                     ],
                   ),
                 ),
@@ -151,7 +149,7 @@ class _payprofileState extends State<payprofile> {
                 ),
                 DataCell(
                   Text(
-                    '25 Usd',
+                    '1237 8230 5996 787',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -159,7 +157,7 @@ class _payprofileState extends State<payprofile> {
                   GFButtonBadge(
                     color: GFColors.SUCCESS,
                     onPressed: () {},
-                    text: "Completed",
+                    text: "Active",
                   ),
                 )
               ]),
@@ -180,9 +178,7 @@ class _payprofileState extends State<payprofile> {
                       SizedBox(
                         width: 15,
                       ),
-                      Text(
-                        'traduction of university paper',
-                      ),
+                      Text('Belkassem Mustapha'),
                     ],
                   ),
                 ),
@@ -203,7 +199,7 @@ class _payprofileState extends State<payprofile> {
                 ),
                 DataCell(
                   Text(
-                    '25 Usd',
+                    '1237 8210 5996 787',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -211,7 +207,7 @@ class _payprofileState extends State<payprofile> {
                   GFButtonBadge(
                     color: GFColors.DANGER,
                     onPressed: () {},
-                    text: "rejceted",
+                    text: "Blocked",
                   ),
                 )
               ]),
@@ -233,7 +229,7 @@ class _payprofileState extends State<payprofile> {
                         width: 15,
                       ),
                       Text(
-                        'traduction of university paper',
+                        'Belkassem Mustapha',
                       ),
                     ],
                   ),
@@ -248,14 +244,14 @@ class _payprofileState extends State<payprofile> {
                       ),
                       SizedBox(width: 15),
                       Text(
-                        'mustapha belkassem',
+                        'Algerie Bank',
                       ),
                     ],
                   ),
                 ),
                 DataCell(
                   Text(
-                    '25 Usd',
+                    '1234 36728 2892 909',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -263,7 +259,7 @@ class _payprofileState extends State<payprofile> {
                   GFButtonBadge(
                     color: GFColors.WARNING,
                     onPressed: () {},
-                    text: "Pending",
+                    text: "no credit",
                   ),
                 )
               ]),
@@ -284,9 +280,7 @@ class _payprofileState extends State<payprofile> {
                       SizedBox(
                         width: 15,
                       ),
-                      Text(
-                        'traduction of university paper',
-                      ),
+                      Text('Belkassem Mustapha'),
                     ],
                   ),
                 ),
@@ -307,7 +301,7 @@ class _payprofileState extends State<payprofile> {
                 ),
                 DataCell(
                   Text(
-                    '25 Usd',
+                    '1237 8330 5996 787',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -315,7 +309,7 @@ class _payprofileState extends State<payprofile> {
                   GFButtonBadge(
                     color: GFColors.SUCCESS,
                     onPressed: () {},
-                    text: "Completed",
+                    text: "Active",
                   ),
                 )
               ]),
@@ -336,9 +330,7 @@ class _payprofileState extends State<payprofile> {
                       SizedBox(
                         width: 15,
                       ),
-                      Text(
-                        'traduction of university paper',
-                      ),
+                      Text('Belkassem Mustapha'),
                     ],
                   ),
                 ),
@@ -359,7 +351,7 @@ class _payprofileState extends State<payprofile> {
                 ),
                 DataCell(
                   Text(
-                    '25 Usd',
+                    '1237 8970 5436 768',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -367,7 +359,7 @@ class _payprofileState extends State<payprofile> {
                   GFButtonBadge(
                     color: GFColors.SUCCESS,
                     onPressed: () {},
-                    text: "Completed",
+                    text: "Active",
                   ),
                 )
               ]),
@@ -388,9 +380,7 @@ class _payprofileState extends State<payprofile> {
                       SizedBox(
                         width: 15,
                       ),
-                      Text(
-                        'traduction of university paper',
-                      ),
+                      Text('Belkassem Mustapha'),
                     ],
                   ),
                 ),
@@ -411,7 +401,7 @@ class _payprofileState extends State<payprofile> {
                 ),
                 DataCell(
                   Text(
-                    '25 Usd',
+                    '1237 8970 5436 768',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -419,7 +409,7 @@ class _payprofileState extends State<payprofile> {
                   GFButtonBadge(
                     color: GFColors.WARNING,
                     onPressed: () {},
-                    text: "pending",
+                    text: "no credit",
                   ),
                 )
               ]),
@@ -440,9 +430,7 @@ class _payprofileState extends State<payprofile> {
                       SizedBox(
                         width: 15,
                       ),
-                      Text(
-                        'traduction of university paper',
-                      ),
+                      Text('Belkassem Mustapha'),
                     ],
                   ),
                 ),
@@ -463,7 +451,7 @@ class _payprofileState extends State<payprofile> {
                 ),
                 DataCell(
                   Text(
-                    '25 Usd',
+                    '1237 8970 5436 768',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -471,7 +459,7 @@ class _payprofileState extends State<payprofile> {
                   GFButtonBadge(
                     color: GFColors.DANGER,
                     onPressed: () {},
-                    text: "Rejected",
+                    text: "Blocked",
                   ),
                 )
               ]),
@@ -492,9 +480,7 @@ class _payprofileState extends State<payprofile> {
                       SizedBox(
                         width: 15,
                       ),
-                      Text(
-                        'traduction of university paper',
-                      ),
+                      Text('Belkassem Mustapha'),
                     ],
                   ),
                 ),
@@ -515,7 +501,7 @@ class _payprofileState extends State<payprofile> {
                 ),
                 DataCell(
                   Text(
-                    '25 Usd',
+                    '1237 8970 5436 787',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -523,7 +509,7 @@ class _payprofileState extends State<payprofile> {
                   GFButtonBadge(
                     color: GFColors.SUCCESS,
                     onPressed: () {},
-                    text: "Completed",
+                    text: "Active",
                   ),
                 )
               ]),
@@ -544,9 +530,7 @@ class _payprofileState extends State<payprofile> {
                       SizedBox(
                         width: 15,
                       ),
-                      Text(
-                        'traduction of university paper',
-                      ),
+                      Text('Belkassem Mustapha'),
                     ],
                   ),
                 ),
@@ -567,7 +551,7 @@ class _payprofileState extends State<payprofile> {
                 ),
                 DataCell(
                   Text(
-                    '25 Usd',
+                    '1237 8970 5996 787',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -580,6 +564,93 @@ class _payprofileState extends State<payprofile> {
                 )
               ]),
             ]),
+            GFButton(
+              onPressed: () {},
+              text: "Add New Card",
+              fullWidthButton: true,
+            ),
+            Row(
+              children: [
+                Card(
+                  color: Colors.blue,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.monetization_on,
+                              size: 40, color: Colors.white),
+                          Text(
+                            "Total Money",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Text("500 €",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white))
+                    ],
+                  ),
+                ),
+                Card(
+                  color: Colors.red,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.monetization_on,
+                              size: 40, color: Colors.white),
+                          Text(
+                            "Used Money",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Text("500 €",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white))
+                    ],
+                  ),
+                ),
+                Card(
+                  color: Colors.green,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.monetization_on,
+                            color: Colors.white,
+                            size: 40,
+                          ),
+                          Text(
+                            "Rested Money",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Text("380 €",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white))
+                    ],
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       )),
