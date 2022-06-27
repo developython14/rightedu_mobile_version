@@ -9,6 +9,35 @@ class payprofile extends StatefulWidget {
 }
 
 class _payprofileState extends State<payprofile> {
+  _dismissDialog() {
+    Navigator.pop(context);
+  }
+
+  void _showMaterialDialog() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Material Dialog'),
+            content: Text('Hey! I am Coflutter!'),
+            actions: <Widget>[
+              TextButton(
+                  onPressed: () {
+                    _dismissDialog();
+                  },
+                  child: Text('Close')),
+              TextButton(
+                onPressed: () {
+                  print('HelloWorld!');
+                  _dismissDialog();
+                },
+                child: Text('HelloWorld!'),
+              )
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -568,7 +597,9 @@ class _payprofileState extends State<payprofile> {
               height: 40,
             ),
             GFButton(
-              onPressed: () {},
+              onPressed: () {
+                _showMaterialDialog();
+              },
               text: "Add New Card",
               fullWidthButton: true,
             ),
