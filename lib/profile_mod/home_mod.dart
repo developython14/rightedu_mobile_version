@@ -30,7 +30,7 @@ class _homemodState extends State<homemod> {
           {1: "6", 3: "+99"},
           items: [
             TabItem(icon: Icons.home, title: 'Home'),
-            TabItem(icon: Icons.notifications, title: 'Notifications'),
+            TabItem(icon: Icons.notifications, title: 'Notification'),
             TabItem(icon: Icons.map, title: 'Discovery'),
             TabItem(icon: Icons.message, title: 'Message'),
             TabItem(icon: Icons.people, title: 'Profile'),

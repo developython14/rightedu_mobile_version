@@ -3,6 +3,7 @@ import 'package:getwidget/getwidget.dart';
 import 'package:right/profile/pages/compenant/post_widget.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class discover extends StatefulWidget {
   const discover({Key? key}) : super(key: key);
@@ -15,9 +16,9 @@ class _discoverState extends State<discover> {
   List<Widget> posts = [];
   @override
   void initState() {
+    getdata();
     // TODO: implement initState
     super.initState();
-    getdata();
   }
 
   Future<void> getdata() async {
@@ -45,11 +46,25 @@ class _discoverState extends State<discover> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: SingleChildScrollView(
-      child: Column(
-        children: posts,
-      ),
-    ));
+    return Scaffold(
+      body: SafeArea(
+          child: SingleChildScrollView(
+        child: posts.length > 0
+            ? Column(
+                children: posts,
+              )
+            : Column(
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.4,
+                  ),
+                  SpinKitFadingCircle(
+                    color: Colors.blue,
+                    size: 100,
+                  ),
+                ],
+              ),
+      )),
+    );
   }
 }

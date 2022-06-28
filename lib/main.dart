@@ -26,7 +26,7 @@ import 'package:right/profile/pages/edit_profile/helpprofile.dart';
 import 'package:right/profile_mod/home_mod.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/homemod', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
