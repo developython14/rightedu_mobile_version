@@ -156,7 +156,7 @@ class _startState extends State<start> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Explore Our Blogs:",
+                  Text("Explore Our blogs:",
                       style: const TextStyle(
                           fontSize: 15, fontWeight: FontWeight.bold)),
                   ElevatedButton(onPressed: () {}, child: Text("more"))
