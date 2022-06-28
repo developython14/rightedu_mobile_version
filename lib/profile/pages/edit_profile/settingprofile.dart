@@ -46,6 +46,11 @@ class _settingprofileState extends State<settingprofile> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Icon(
+                  Icons.flag,
+                  size: 30,
+                  color: Colors.blue,
+                ),
                 Text("Change country"),
                 SizedBox(
                   width: 20,
@@ -64,6 +69,11 @@ class _settingprofileState extends State<settingprofile> {
             ),
             Row(
               children: [
+                Icon(
+                  Icons.school,
+                  size: 30,
+                  color: Colors.blue,
+                ),
                 Text("Change Faculty"),
                 SizedBox(
                   width: 20,
@@ -82,6 +92,11 @@ class _settingprofileState extends State<settingprofile> {
             ),
             Row(
               children: [
+                Icon(
+                  Icons.flag,
+                  size: 30,
+                  color: Colors.blue,
+                ),
                 Text("Change Spiciality"),
                 SizedBox(
                   width: 20,
