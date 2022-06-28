@@ -4,6 +4,7 @@ import 'package:right/loginpage/login.dart';
 import 'package:right/intro_screen/intro.dart';
 import 'package:right/intro_screen/wait.dart';
 import 'package:right/profile/navigation_pages/free.dart';
+import 'package:right/profile/pages/edit_profile/add_card_pay.dart';
 import 'package:right/signup_pages/signup.dart';
 import 'package:right/signup_pages/signup_mod.dart';
 import 'package:right/test.dart';
@@ -24,7 +25,7 @@ import 'package:right/profile/pages/edit_profile/payprofile.dart';
 import 'package:right/profile/pages/edit_profile/helpprofile.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/addcard', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -46,5 +47,6 @@ void main() {
     "/hisprofile": (context) => hisprofile(),
     "/payprofile": (context) => payprofile(),
     "/helpprofile": (context) => helpprofile(),
+    "/addcard": (context) => addcard(),
   }));
 }
