@@ -14,7 +14,15 @@ class _settingprofileState extends State<settingprofile> {
   String? spiciality = '';
   String? level = '';
   String? language = '';
-  final list_countries = ["Bac+1"];
+  final list_countries = [
+    "algeria",
+    "algeria",
+    "algeria",
+  ];
+  final list_faculties = ["alger", "alger", "alger"];
+  final list_spicialities = ["math", "physique"];
+  final list_levels = ["Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"];
+  final list_languages = ["english", "arabic"];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +37,7 @@ class _settingprofileState extends State<settingprofile> {
               size: 40,
             ),
             SizedBox(
-              width: 10,
+              width: 5,
             ),
             Text(
               'Setting',
@@ -50,6 +58,9 @@ class _settingprofileState extends State<settingprofile> {
                   Icons.flag,
                   size: 30,
                   color: Colors.blue,
+                ),
+                SizedBox(
+                  width: 5,
                 ),
                 Text("Change country"),
                 SizedBox(
@@ -74,17 +85,20 @@ class _settingprofileState extends State<settingprofile> {
                   size: 30,
                   color: Colors.blue,
                 ),
+                SizedBox(
+                  width: 5,
+                ),
                 Text("Change Faculty"),
                 SizedBox(
                   width: 20,
                 ),
                 Expanded(
                   child: DropdownButton(
-                      hint: Text('$country'),
-                      items: list_countries.map(buildmen).toList(),
+                      hint: Text('$faculty'),
+                      items: list_faculties.map(buildmen).toList(),
                       onChanged: (String? text) {
                         setState(() {
-                          country = text ?? "";
+                          faculty = text ?? "";
                         });
                       }),
                 )
@@ -93,9 +107,12 @@ class _settingprofileState extends State<settingprofile> {
             Row(
               children: [
                 Icon(
-                  Icons.flag,
+                  Icons.golf_course,
                   size: 30,
                   color: Colors.blue,
+                ),
+                SizedBox(
+                  width: 5,
                 ),
                 Text("Change Spiciality"),
                 SizedBox(
@@ -103,11 +120,11 @@ class _settingprofileState extends State<settingprofile> {
                 ),
                 Expanded(
                   child: DropdownButton(
-                      hint: Text('$country'),
-                      items: list_countries.map(buildmen).toList(),
+                      hint: Text('$spiciality'),
+                      items: list_spicialities.map(buildmen).toList(),
                       onChanged: (String? text) {
                         setState(() {
-                          country = text ?? "";
+                          spiciality = text ?? "";
                         });
                       }),
                 )
@@ -115,6 +132,14 @@ class _settingprofileState extends State<settingprofile> {
             ),
             Row(
               children: [
+                Icon(
+                  Icons.leaderboard,
+                  size: 30,
+                  color: Colors.blue,
+                ),
+                SizedBox(
+                  width: 5,
+                ),
                 Text("Change Level"),
                 SizedBox(
                   width: 20,
@@ -133,17 +158,25 @@ class _settingprofileState extends State<settingprofile> {
             ),
             Row(
               children: [
+                Icon(
+                  Icons.language,
+                  size: 30,
+                  color: Colors.blue,
+                ),
+                SizedBox(
+                  width: 5,
+                ),
                 Text("Change Language"),
                 SizedBox(
                   width: 20,
                 ),
                 Expanded(
                   child: DropdownButton(
-                      hint: Text('$country'),
-                      items: list_countries.map(buildmen).toList(),
+                      hint: Text('$language'),
+                      items: list_languages.map(buildmen).toList(),
                       onChanged: (String? text) {
                         setState(() {
-                          country = text ?? "";
+                          language = text ?? "";
                         });
                       }),
                 )

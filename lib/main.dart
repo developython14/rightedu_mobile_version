@@ -23,9 +23,10 @@ import 'package:right/profile/pages/edit_profile/settingprofile.dart';
 import 'package:right/profile/pages/edit_profile/hisprofile.dart';
 import 'package:right/profile/pages/edit_profile/payprofile.dart';
 import 'package:right/profile/pages/edit_profile/helpprofile.dart';
+import 'package:right/profile_mod/home_mod.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/homemod', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -48,5 +49,6 @@ void main() {
     "/payprofile": (context) => payprofile(),
     "/helpprofile": (context) => helpprofile(),
     "/addcard": (context) => addcard(),
+    "/homemod": (context) => homemod(),
   }));
 }

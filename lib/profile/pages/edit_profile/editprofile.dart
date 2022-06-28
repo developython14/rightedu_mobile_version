@@ -66,8 +66,8 @@ class _editprofileState extends State<editprofile> {
                       width: 250,
                     )),
                 Positioned(
-                  left: 110,
-                  top: 130,
+                  left: 80,
+                  top: 90,
                   child: IconButton(
                       onPressed: () async {
                         FilePickerResult? result =
@@ -82,9 +82,9 @@ class _editprofileState extends State<editprofile> {
                         }
                       },
                       icon: Icon(
-                        Icons.add_a_photo_outlined,
-                        color: Colors.blue,
-                        size: 40,
+                        Icons.add_a_photo_rounded,
+                        color: Color.fromARGB(239, 214, 9, 9),
+                        size: 70,
                       )),
                 )
               ]),
