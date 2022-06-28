@@ -25,7 +25,7 @@ import 'package:right/profile/pages/edit_profile/payprofile.dart';
 import 'package:right/profile/pages/edit_profile/helpprofile.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/addcard', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/start', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
