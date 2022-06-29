@@ -28,6 +28,13 @@ class _chatscreenState extends State<chatscreen> {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Container(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'salam alikom cv',
+                    ),
+                  ),
                   decoration: BoxDecoration(
                       color: Color.fromARGB(255, 127, 228, 200),
                       borderRadius: BorderRadius.only(
@@ -45,6 +52,13 @@ class _chatscreenState extends State<chatscreen> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'elhmdoulh cv hb hb ce sf s dsshhk',
+                    ),
+                  ),
                   decoration: BoxDecoration(
                       color: Color.fromARGB(255, 146, 117, 197),
                       borderRadius: BorderRadius.only(
@@ -53,7 +67,7 @@ class _chatscreenState extends State<chatscreen> {
                         bottomRight: Radius.circular(25),
                       )),
                   width: 150,
-                  height: 40,
+                  height: 80,
                 ),
               ),
             )
