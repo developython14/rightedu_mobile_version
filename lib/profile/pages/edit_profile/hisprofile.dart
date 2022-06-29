@@ -16,22 +16,23 @@ class _hisprofileState extends State<hisprofile> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.history,
-                size: 40,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                'History',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
-            ],
+          title: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.history,
+                  size: 40,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'History',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ),
           bottom: TabBar(tabs: [
             Padding(

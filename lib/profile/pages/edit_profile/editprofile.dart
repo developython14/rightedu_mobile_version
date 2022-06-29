@@ -31,22 +31,23 @@ class _editprofileState extends State<editprofile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.edit,
-              size: 40,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              'Edit Profile',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-            ),
-          ],
+        title: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.edit,
+                size: 40,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                'Edit Profile',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
         ),
       ),
       body: SafeArea(
