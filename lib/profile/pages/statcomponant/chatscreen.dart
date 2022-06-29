@@ -16,62 +16,251 @@ class _chatscreenState extends State<chatscreen> {
           'Project status',
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'salam alikom cv',
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'salam alikom cv',
+                      ),
                     ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 127, 228, 200),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          bottomLeft: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
                   ),
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 127, 228, 200),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(25),
-                        bottomLeft: Radius.circular(25),
-                        bottomRight: Radius.circular(25),
-                      )),
-                  width: 150,
-                  height: 40,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'elhmdoulh cv hb hb ce sf s dsshhk',
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'elhmdoulh cv hb hb ce sf   free',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 146, 117, 197),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          topRight: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
                   ),
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 146, 117, 197),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(25),
-                        topRight: Radius.circular(25),
-                        bottomRight: Radius.circular(25),
-                      )),
-                  width: 150,
-                  height: 80,
                 ),
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'salam alikom cv',
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 127, 228, 200),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          bottomLeft: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'elhmdoulh cv hb hb ce sf   blakssem',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 146, 117, 197),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          topRight: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'salam alikom cv',
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 127, 228, 200),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          bottomLeft: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'elhmdoulh',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 146, 117, 197),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          topRight: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'salam alikom cv',
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 127, 228, 200),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          bottomLeft: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'elhmdoulh cv hb hb ce sf sdasdasdasdasdsawsfdsfdsfdsfds  ',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 146, 117, 197),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          topRight: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'salam alikom cv',
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 127, 228, 200),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          bottomLeft: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'elhmdoulh cv hb hb ce sf sdasdasdasdasdsawsfdsfdsfdsfds  sdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdsdsshhk',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 146, 117, 197),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          topRight: Radius.circular(25),
+                          bottomRight: Radius.circular(25),
+                        )),
+                    width: MediaQuery.of(context).size.width * 0.45,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
