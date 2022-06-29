@@ -102,12 +102,14 @@ class _chatscreenState extends State<chatscreen> {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Container(
-                          alignment: Alignment.center,
+                          alignment: Alignment.centerLeft,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                              'elhmdoulh cv elhmdoulh cv elhmdoulh cv ',
-                              style: TextStyle(color: Colors.white),
+                              'salam alikom salam alikom sala alikom salam alikom salam alikom',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                           constraints: BoxConstraints(
