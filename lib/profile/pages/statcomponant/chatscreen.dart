@@ -106,7 +106,8 @@ class _chatscreenState extends State<chatscreen> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: FittedBox(
-                                fit: BoxFit.fill, child: const Text("dedede")),
+                                fit: BoxFit.fill,
+                                child: const Text("algeria is guerriera")),
                           ),
                           constraints: BoxConstraints(
                               maxWidth:
