@@ -12,6 +12,7 @@ class _chatscreenState extends State<chatscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Padding(
           padding: const EdgeInsets.symmetric(vertical: 35),
           child: Row(
@@ -79,11 +80,11 @@ class _chatscreenState extends State<chatscreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'ici c est algeria ....',
+                        'ici c est ghaya ghaya  😚😍😍....',
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -101,12 +102,12 @@ class _chatscreenState extends State<chatscreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'elhmdoulh cv hb hb ce sf   free',
+                        'elhmdoulh cv hb hb ce sf  😍😍😍 free',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -129,7 +130,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -153,7 +154,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -176,7 +177,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -200,7 +201,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -223,7 +224,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -247,7 +248,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -270,7 +271,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -294,7 +295,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -318,7 +319,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -341,7 +342,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -365,7 +366,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -388,7 +389,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -412,7 +413,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -435,7 +436,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -459,7 +460,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -482,7 +483,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -506,7 +507,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -530,7 +531,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -553,7 +554,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -577,7 +578,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -600,7 +601,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -624,7 +625,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -647,7 +648,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -671,7 +672,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
@@ -694,7 +695,7 @@ class _chatscreenState extends State<chatscreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 127, 228, 200),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
@@ -713,12 +714,12 @@ class _chatscreenState extends State<chatscreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'elhmdoulh cv hb hb ce sf sdasdasdasdasdsawsfdsfdsfdsfds  sdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdsdsshhk',
+                        'elhmdoulh cv hb hb ce sf   sdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdsdsshhk',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 117, 197),
+                        color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25),
