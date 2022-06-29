@@ -25,35 +25,34 @@ import 'package:right/profile/pages/edit_profile/payprofile.dart';
 import 'package:right/profile/pages/edit_profile/helpprofile.dart';
 import 'package:right/profile_mod/home_mod.dart';
 import 'package:right/profile/pages/statcomponant/projectstatus.dart';
+import 'package:right/profile/pages/statcomponant/chatscreen.dart';
 
 void main() {
-  runApp(MaterialApp(
-      title: 'Right Hacker',
-      initialRoute: '/projectstatus',
-      routes: {
-        '/login': (context) => login(),
-        '/signup': (context) => signup(),
-        '/signupmod': (context) => signupmod(),
-        '/intro': (context) => toma(),
-        '/wait': (context) => wait(),
-        '/free': (context) => univs(),
-        '/intersignup': (context) => intersignup(),
-        '/testsend': (context) => testsend(),
-        '/testpush': (context) => testpush(),
-        "/start": (context) => home(),
-        "/experts": (context) => list_experts(),
-        "/services": (context) => list_services(),
-        "/product": (context) => lop,
-        "/visprofile": (context) => profilevist(),
-        "/stat": (context) => resume(),
-        "/right": (context) => right(),
-        "/editprofile": (context) => editprofile(),
-        "/settingprofile": (context) => settingprofile(),
-        "/hisprofile": (context) => hisprofile(),
-        "/payprofile": (context) => payprofile(),
-        "/helpprofile": (context) => helpprofile(),
-        "/addcard": (context) => addcard(),
-        "/homemod": (context) => homemod(),
-        "/projectstatus": (context) => projectstatus(),
-      }));
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/chat', routes: {
+    '/login': (context) => login(),
+    '/signup': (context) => signup(),
+    '/signupmod': (context) => signupmod(),
+    '/intro': (context) => toma(),
+    '/wait': (context) => wait(),
+    '/free': (context) => univs(),
+    '/intersignup': (context) => intersignup(),
+    '/testsend': (context) => testsend(),
+    '/testpush': (context) => testpush(),
+    "/start": (context) => home(),
+    "/experts": (context) => list_experts(),
+    "/services": (context) => list_services(),
+    "/product": (context) => lop,
+    "/visprofile": (context) => profilevist(),
+    "/stat": (context) => resume(),
+    "/right": (context) => right(),
+    "/editprofile": (context) => editprofile(),
+    "/settingprofile": (context) => settingprofile(),
+    "/hisprofile": (context) => hisprofile(),
+    "/payprofile": (context) => payprofile(),
+    "/helpprofile": (context) => helpprofile(),
+    "/addcard": (context) => addcard(),
+    "/homemod": (context) => homemod(),
+    "/chat": (context) => chatscreen(),
+    "/projectstatus": (context) => projectstatus(),
+  }));
 }
