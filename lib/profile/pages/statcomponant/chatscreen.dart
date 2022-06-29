@@ -97,33 +97,37 @@ class _chatscreenState extends State<chatscreen> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'salam alikom salam alikom sala alikom salam alikom salam alikom',
-                              style: TextStyle(
-                                color: Colors.white,
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Container(
+                              constraints: BoxConstraints(
+                                  maxWidth:
+                                      MediaQuery.of(context).size.width * 0.45),
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'ssala',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25),
+                                    topRight: Radius.circular(25),
+                                    bottomRight: Radius.circular(25),
+                                  )),
                             ),
                           ),
-                          constraints: BoxConstraints(
-                              maxWidth:
-                                  MediaQuery.of(context).size.width * 0.45),
-                          decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(25),
-                                topRight: Radius.circular(25),
-                                bottomRight: Radius.circular(25),
-                              )),
-                        ),
-                      ),
+                        )
+                      ],
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -157,7 +161,7 @@ class _chatscreenState extends State<chatscreen> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                              'elhmdoulh cv hb hb ce sf   blakssem',
+                              'elhmdoblakssem',
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
@@ -168,7 +172,6 @@ class _chatscreenState extends State<chatscreen> {
                                 topRight: Radius.circular(25),
                                 bottomRight: Radius.circular(25),
                               )),
-                          width: MediaQuery.of(context).size.width * 0.45,
                         ),
                       ),
                     ),
