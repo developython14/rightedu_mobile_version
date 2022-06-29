@@ -105,11 +105,12 @@ class _chatscreenState extends State<chatscreen> {
                           alignment: Alignment.center,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'elhmdoulh cv hb hb ce sf  😍😍😍 free',
-                              style: TextStyle(color: Colors.white),
-                            ),
+                            child: FittedBox(
+                                fit: BoxFit.fill, child: const Text("dedede")),
                           ),
+                          constraints: BoxConstraints(
+                              maxWidth:
+                                  MediaQuery.of(context).size.width * 0.45),
                           decoration: BoxDecoration(
                               color: Colors.black,
                               borderRadius: BorderRadius.only(
@@ -117,7 +118,6 @@ class _chatscreenState extends State<chatscreen> {
                                 topRight: Radius.circular(25),
                                 bottomRight: Radius.circular(25),
                               )),
-                          width: MediaQuery.of(context).size.width * 0.45,
                         ),
                       ),
                     ),
@@ -718,7 +718,7 @@ class _chatscreenState extends State<chatscreen> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                              'elhmdoulh cv hb hb ce sf   sdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdssdasdasdasdasdsawsfdsfdsfdsfdsdsshhk',
+                              'elhmdoulh cv hb hb ce sf   wa3ra denia ',
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
