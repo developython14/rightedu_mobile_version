@@ -105,9 +105,10 @@ class _chatscreenState extends State<chatscreen> {
                           alignment: Alignment.center,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: FittedBox(
-                                fit: BoxFit.fill,
-                                child: const Text("algeria is guerriera")),
+                            child: Text(
+                              'elhmdoulh cv elhmdoulh cv elhmdoulh cv ',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                           constraints: BoxConstraints(
                               maxWidth:
