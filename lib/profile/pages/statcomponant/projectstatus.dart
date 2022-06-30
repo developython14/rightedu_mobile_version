@@ -48,7 +48,6 @@ class _mustaphaudioState extends State<mustaphaudio> {
   Future<void> stopPlayer() async {
     if (_myPlayer != null) {
       await _myPlayer.stopPlayer();
-      _mPlayer = null;
     }
   }
 
