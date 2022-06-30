@@ -14,6 +14,7 @@ final _exampleAudioFilePathMP3 =
 
 class _mustaphaudioState extends State<mustaphaudio> {
   FlutterSoundPlayer _myPlayer = FlutterSoundPlayer();
+
   bool _mPlayerIsInited = false;
   @override
   void initState() {
@@ -35,7 +36,6 @@ class _mustaphaudioState extends State<mustaphaudio> {
   }
 
   void play() async {
-    print('start paleyr ya mustapha good');
     await _myPlayer.startPlayer(
         fromURI: _exampleAudioFilePathMP3,
         codec: Codec.mp3,
@@ -55,7 +55,7 @@ class _mustaphaudioState extends State<mustaphaudio> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('dart:async'),
+        title: Text('mustapha belkassem'),
       ),
       body: Center(
         child: Column(
