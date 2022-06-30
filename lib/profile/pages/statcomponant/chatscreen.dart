@@ -74,27 +74,59 @@ class _chatscreenState extends State<chatscreen> {
                       height: 20,
                     ),
                     datearker(),
-                    sendermessage(),
-                    recivedmessage(),
-                    sendermessage(),
-                    recivedmessage(),
-                    sendermessage(),
-                    recivedmessage(),
+                    sendermessage(
+                      "Samir Belkassem cv kho ???",
+                    ),
+                    recivedmessage(
+                      "Samir Belkassem fasdfsfsd cv kho ???",
+                    ),
+                    sendermessage(
+                      "Samir mustapha belkassem cv kho ???",
+                    ),
+                    recivedmessage(
+                      "salam alikom khoya cv hb labas???",
+                    ),
+                    sendermessage(
+                      "salam alikom khoya cv hb labasintikc sjsksls???",
+                    ),
+                    recivedmessage(
+                      "bien et vs???",
+                    ),
                     datearker(),
-                    sendermessage(),
+                    sendermessage(
+                      "ghaya  et algerie???",
+                    ),
                     datearker(),
-                    sendermessage(),
-                    recivedmessage(),
-                    sendermessage(),
-                    recivedmessage(),
-                    sendermessage(),
-                    recivedmessage(),
+                    sendermessage(
+                      "Samir   ???",
+                    ),
+                    recivedmessage(
+                      "gooll rebhna???",
+                    ),
+                    sendermessage(
+                      "gooll rebhna abid s???",
+                    ),
+                    recivedmessage(
+                      "gooll rebhna???",
+                    ),
+                    sendermessage(
+                      "gooll rebhna???",
+                    ),
+                    recivedmessage(
+                      "gooll rebhna???",
+                    ),
                     datearker(),
-                    sendermessage(),
+                    sendermessage(
+                      "gooll rebhna???",
+                    ),
                     datearker(),
-                    recivedmessage(),
+                    recivedmessage(
+                      "gooll rebhnagsgdfgfsdgfsdfg???",
+                    ),
                     datearker(),
-                    recivedmessage()
+                    recivedmessage(
+                      "gooll rebhnagsgdfgfsdgfsrebhnagsgdfgfsdgfsdfgrebhnagsgdfgfsdgfsdfgdfg???",
+                    )
                   ],
                 ),
               ),

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class recivedmessage extends StatelessWidget {
-  const recivedmessage({
-    Key? key,
-  }) : super(key: key);
+  String textmessage;
+  recivedmessage(this.textmessage);
 
   @override
   Widget build(BuildContext context) {
@@ -14,23 +13,24 @@ class recivedmessage extends StatelessWidget {
         child: Container(
           constraints: BoxConstraints(
               maxWidth: MediaQuery.of(context).size.width * 0.45),
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              'salam alikom cv khoya samir bkhir elhamdoula',
-              style: TextStyle(
-                color: Colors.white,
+          child: Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+              topRight: Radius.circular(25),
+              bottomLeft: Radius.circular(25),
+              bottomRight: Radius.circular(25),
+            )),
+            color: Colors.black,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                textmessage,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
-          decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25),
-                topRight: Radius.circular(25),
-                bottomRight: Radius.circular(25),
-              )),
         ),
       ),
     );
@@ -38,9 +38,8 @@ class recivedmessage extends StatelessWidget {
 }
 
 class sendermessage extends StatelessWidget {
-  const sendermessage({
-    Key? key,
-  }) : super(key: key);
+  String textmessage;
+  sendermessage(this.textmessage);
 
   @override
   Widget build(BuildContext context) {
@@ -51,20 +50,24 @@ class sendermessage extends StatelessWidget {
         child: Container(
           constraints: BoxConstraints(
               maxWidth: MediaQuery.of(context).size.width * 0.45),
-          alignment: Alignment.center,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              'elhm😍😍😍 free  alikom cv khoya samir',
+          child: Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25),
+              bottomLeft: Radius.circular(25),
+              bottomRight: Radius.circular(25),
+            )),
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                textmessage,
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
             ),
           ),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25),
-                bottomLeft: Radius.circular(25),
-                bottomRight: Radius.circular(25),
-              )),
         ),
       ),
     );
