@@ -9,7 +9,8 @@ class mustaphaudio extends StatefulWidget {
   State<mustaphaudio> createState() => _mustaphaudioState();
 }
 
-final _exampleAudioFilePathMP3 = 'http://www.nch.com.au/acm/8k16bitpcm.wav';
+final _exampleAudioFilePathMP3 =
+    'https://flutter-sound.canardoux.xyz/extract/05.mp3';
 
 class _mustaphaudioState extends State<mustaphaudio> {
   FlutterSoundPlayer _myPlayer = FlutterSoundPlayer();
@@ -28,13 +29,16 @@ class _mustaphaudioState extends State<mustaphaudio> {
   @override
   void dispose() {
     _myPlayer.closeAudioSession();
+
     // TODO: implement dispose
     super.dispose();
   }
 
   void play() async {
+    print('start paleyr ya mustapha good');
     await _myPlayer.startPlayer(
         fromURI: _exampleAudioFilePathMP3,
+        codec: Codec.mp3,
         whenFinished: () {
           setState(() {});
         });
@@ -44,6 +48,7 @@ class _mustaphaudioState extends State<mustaphaudio> {
   Future<void> stopPlayer() async {
     if (_myPlayer != null) {
       await _myPlayer.stopPlayer();
+      _mPlayer = null;
     }
   }
 
