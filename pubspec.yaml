@@ -51,6 +51,7 @@ dependencies:
   status_change: ^2.0.0
   flutter_sound_lite: ^8.5.0
   audioplayers: ^1.0.1
+  permission_handler: ^10.0.0
 
   
 
