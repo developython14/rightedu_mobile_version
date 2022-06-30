@@ -56,6 +56,6 @@ void main() {
         "/addcard": (context) => addcard(),
         "/homemod": (context) => homemod(),
         "/chat": (context) => chatscreen(),
-        "/projectstatus": (context) => reed(),
+        "/projectstatus": (context) => mustaphaudio(),
       }));
 }
