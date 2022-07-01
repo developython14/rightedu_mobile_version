@@ -26,6 +26,7 @@ import 'package:right/profile/pages/edit_profile/helpprofile.dart';
 import 'package:right/profile_mod/home_mod.dart';
 import 'package:right/profile/pages/statcomponant/projectstatus.dart';
 import 'package:right/profile/pages/statcomponant/chatscreen.dart';
+import 'package:right/profile/pages/statcomponant/voice.dart';
 
 void main() {
   runApp(
@@ -55,6 +56,7 @@ void main() {
     "/homemod": (context) => homemod(),
     "/chat": (context) => chatscreen(),
     "/projectstatus": (context) => VideoPlayerScreen(),
-    "/audiotest": (context) => audioscrenn()
+    "/audiotest": (context) => audioscrenn(),
+    "/freewec": (context) => PlayerOnProgress(),
   }));
 }

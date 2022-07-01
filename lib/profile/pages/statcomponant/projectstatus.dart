@@ -114,8 +114,10 @@ class _audioscrennState extends State<audioscrenn> {
   double picked = 2;
   String _exampleAudioFilePathMP3 =
       'https://flutter-sound.canardoux.xyz/extract/05.mp3';
+  StreamSubscription? _mPlayerSubscription;
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
+  var pos;
   @override
   void initState() {
     // TODO: implement initState
@@ -125,12 +127,10 @@ class _audioscrennState extends State<audioscrenn> {
         _mPlayerIsInited = true;
       });
     });
-    _myPlayer.onProgress!.listen((e) {
+    _mPlayerSubscription = _myPlayer.onProgress!.listen((e) {
       setState(() {
         duration = e.duration;
         position = e.position;
-        print('mustapha look here');
-        print(duration);
       });
     });
   }
@@ -150,12 +150,32 @@ class _audioscrennState extends State<audioscrenn> {
         whenFinished: () {
           setState(() {});
         });
+    _mPlayerSubscription = _myPlayer.onProgress!.listen((e) {
+      setState(() {
+        pos = e.position.inMilliseconds;
+        print('sound player is open ya musta[ha');
+        print(pos);
+      });
+    });
     setState(() {});
   }
 
   Future<void> stopPlayer() async {
     if (_myPlayer != null) {
       await _myPlayer.stopPlayer();
+    }
+  }
+
+  give() {
+    if (_myPlayer != null) {
+      _mPlayerSubscription = _myPlayer.onProgress!.listen((e) {
+        print('sound player is open ya musta[ha');
+        setState(() {
+          pos = e.position.inMilliseconds;
+          print('sound player is open ya musta[ha');
+          print(pos);
+        });
+      });
     }
   }
 
@@ -172,6 +192,7 @@ class _audioscrennState extends State<audioscrenn> {
             Text('Sound PLayer'),
             ElevatedButton(onPressed: play, child: Text('start player')),
             ElevatedButton(onPressed: stopPlayer, child: Text('stop player')),
+            ElevatedButton(onPressed: give, child: Text('give me ')),
             Slider(
                 divisions: 20,
                 max: 20,
