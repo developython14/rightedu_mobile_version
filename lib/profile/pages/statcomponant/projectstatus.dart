@@ -11,6 +11,9 @@ class VideoPlayerScreen extends StatefulWidget {
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   late VideoPlayerController _controller;
   late Future<void> _initializeVideoPlayerFuture;
+  double wid = 200;
+  double hei = 1200;
+  String data = 'asse';
 
   @override
   void initState() {
@@ -39,18 +42,24 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Butterfly Video'),
-      ),
       // Use a FutureBuilder to display a loading spinner while waiting for the
       // VideoPlayerController to finish initializing.
-      body: Center(
-        child: Column(
-          children: [
-            Text(
-              'mustapha video player',
-            ),
-            FutureBuilder(
+      body: SafeArea(
+        child: Container(
+          color: Colors.red,
+          height: wid,
+          width: 1200,
+          child: GestureDetector(
+            onTap: () {
+              print('mustapha capteur');
+              setState(() {
+                wid = MediaQuery.of(context).size.width;
+                hei = MediaQuery.of(context).size.height;
+                print(hei);
+                data = 'belkassem';
+              });
+            },
+            child: FutureBuilder(
               future: _initializeVideoPlayerFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
@@ -70,7 +79,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                 }
               },
             ),
-          ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
