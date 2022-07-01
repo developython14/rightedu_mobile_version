@@ -332,30 +332,42 @@ class _chatscreenState extends State<chatscreen> {
                       "gooll rfasdfdasfsaebgooll rfasdfdasfsaebhna???hna???",
                     ),
                     imagemessage("assets/start_app/1.jpg", true),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                        color: Colors.blue.withOpacity(0.3),
-                        borderRadius: BorderRadius.circular(20),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          decoration: BoxDecoration(
+                            color: Colors.blue.withOpacity(0.3),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                onPressed: (() {
+                                  setState(() {
+                                    playsound = !playsound;
+                                    print(playsound);
+                                  });
+                                }),
+                                icon: Icon(
+                                  playsound == true
+                                      ? Icons.pause
+                                      : Icons.play_arrow,
+                                ),
+                              ),
+                              Expanded(
+                                  child: Container(
+                                height: 2,
+                                color: Colors.red,
+                              ))
+                            ],
+                          ),
+                        ),
                       ),
-                      child: Row(
-                        children: [
-                          IconButton(
-                            onPressed: (() {
-                              setState(() {
-                                playsound == !playsound;
-                                print(playsound);
-                              });
-                            }),
-                            icon: Icon(
-                              playsound == true
-                                  ? Icons.pause
-                                  : Icons.play_arrow,
-                            ),
-                          )
-                        ],
-                      ),
-                    )
+                    ),
+                    AudioMessage()
                   ],
                 ),
               ),
