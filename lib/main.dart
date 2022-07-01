@@ -28,7 +28,8 @@ import 'package:right/profile/pages/statcomponant/projectstatus.dart';
 import 'package:right/profile/pages/statcomponant/chatscreen.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/chat', routes: {
+  runApp(
+      MaterialApp(title: 'Right Hacker', initialRoute: '/audiotest', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -54,5 +55,6 @@ void main() {
     "/homemod": (context) => homemod(),
     "/chat": (context) => chatscreen(),
     "/projectstatus": (context) => VideoPlayerScreen(),
+    "/audiotest": (context) => audioscrenn()
   }));
 }

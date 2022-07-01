@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:flutter_sound_lite/flutter_sound.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
   @override
@@ -94,6 +95,86 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                   ))
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class audioscrenn extends StatefulWidget {
+  const audioscrenn({Key? key}) : super(key: key);
+
+  @override
+  State<audioscrenn> createState() => _audioscrennState();
+}
+
+class _audioscrennState extends State<audioscrenn> {
+  FlutterSoundPlayer _myPlayer = FlutterSoundPlayer();
+  bool _mPlayerIsInited = false;
+  double picked = 2;
+  String _exampleAudioFilePathMP3 =
+      'https://flutter-sound.canardoux.xyz/extract/05.mp3';
+  Duration duration = Duration.zero;
+  Duration position = Duration.zero;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _myPlayer.openAudioSession().then((value) {
+      setState(() {
+        _mPlayerIsInited = true;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _myPlayer.closeAudioSession();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  void play() async {
+    print('sound player is open');
+    await _myPlayer.startPlayer(
+        fromURI: _exampleAudioFilePathMP3,
+        codec: Codec.mp3,
+        whenFinished: () {
+          setState(() {});
+        });
+    setState(() {});
+  }
+
+  Future<void> stopPlayer() async {
+    if (_myPlayer != null) {
+      await _myPlayer.stopPlayer();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('sound player'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Text('Sound PLayer'),
+            ElevatedButton(onPressed: play, child: Text('start player')),
+            ElevatedButton(onPressed: stopPlayer, child: Text('stop player')),
+            Slider(
+                divisions: 1,
+                max: 20,
+                value: picked,
+                onChanged: (double value) {
+                  setState(() {
+                    picked = value;
+                  });
+                }),
+            Text('${picked.toString()}')
+          ],
         ),
       ),
     );
