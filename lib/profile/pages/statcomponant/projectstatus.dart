@@ -111,12 +111,13 @@ class audioscrenn extends StatefulWidget {
 class _audioscrennState extends State<audioscrenn> {
   FlutterSoundPlayer _myPlayer = FlutterSoundPlayer();
   bool _mPlayerIsInited = false;
-  double picked = 2;
+  double picked = 15;
   String _exampleAudioFilePathMP3 =
       'https://flutter-sound.canardoux.xyz/extract/05.mp3';
   StreamSubscription? _mPlayerSubscription;
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
+  double _mVolume1 = 100.0;
   var pos;
   @override
   void initState() {
@@ -194,13 +195,16 @@ class _audioscrennState extends State<audioscrenn> {
             ElevatedButton(onPressed: stopPlayer, child: Text('stop player')),
             ElevatedButton(onPressed: give, child: Text('give me ')),
             Slider(
-                divisions: 20,
-                max: 20,
+                divisions: 100,
+                max: 100,
                 value: picked,
-                onChanged: (double value) {
+                onChanged: (double value) async {
                   setState(() {
                     picked = value;
                   });
+                  await _myPlayer.setVolume(
+                    picked / 100,
+                  );
                 }),
             Text('${picked.toString()}'),
             Padding(
@@ -212,7 +216,7 @@ class _audioscrennState extends State<audioscrenn> {
                   Text(position.toString())
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
