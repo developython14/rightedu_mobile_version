@@ -117,14 +117,15 @@ class _datearkerState extends State<datearker> {
 
 class imagemessage extends StatelessWidget {
   String image_url;
-  imagemessage(this.image_url);
+  bool me;
+  imagemessage(this.image_url, this.me);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Align(
-        alignment: Alignment.centerRight,
+        alignment: me == true ? Alignment.centerRight : Alignment.centerLeft,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: Stack(

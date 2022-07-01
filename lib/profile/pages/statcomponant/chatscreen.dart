@@ -14,6 +14,7 @@ class chatscreen extends StatefulWidget {
 class _chatscreenState extends State<chatscreen> {
   late VideoPlayerController _controller;
   late Future<void> _initializeVideoPlayerFuture;
+  bool playsound = false;
   @override
   void initState() {
     // TODO: implement initState
@@ -274,9 +275,7 @@ class _chatscreenState extends State<chatscreen> {
                     recivedmessage(
                       "gooll allez les gars???",
                     ),
-                    imagemessage(
-                      "assets/start_app/samir.jpg",
-                    ),
+                    imagemessage("assets/start_app/samir.jpg", true),
                     datearker(),
                     recivedmessage(
                       "gooll rebhnagsgdfgfsdgfsrebhnagsgdfgfsdgfsdfgrebhnagsgdfgfsdgfsdfgdfg???",
@@ -297,9 +296,7 @@ class _chatscreenState extends State<chatscreen> {
                     sendermessage(
                       "gooll rdfsfafdsebhna???",
                     ),
-                    imagemessage(
-                      "assets/start_app/fares.jpg",
-                    ),
+                    imagemessage("assets/start_app/fares.jpg", false),
                     sendermessage(
                       "gooll refdasfdasfbhna???",
                     ),
@@ -318,9 +315,47 @@ class _chatscreenState extends State<chatscreen> {
                     recivedmessage(
                       "gooll rfasdfdasfsaebhna???",
                     ),
-                    imagemessage(
-                      "assets/start_app/moh.jpg",
+                    imagemessage("assets/start_app/moh.jpg", true),
+                    recivedmessage(
+                      "gooll rfasdfdasfgooll rfasdfdasfsaebhna???saebhna???",
                     ),
+                    sendermessage(
+                      "gooll refdasfdasfbgooll rfasdfdasfsaebhna???hna???",
+                    ),
+                    recivedmessage(
+                      "gooll rfasdfdasfsaebhna??? gooll rfasdfdasfsaebhna???",
+                    ),
+                    sendermessage(
+                      "gooll refdasfdasfbhna???",
+                    ),
+                    recivedmessage(
+                      "gooll rfasdfdasfsaebgooll rfasdfdasfsaebhna???hna???",
+                    ),
+                    imagemessage("assets/start_app/1.jpg", true),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.45,
+                      decoration: BoxDecoration(
+                        color: Colors.blue.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: (() {
+                              setState(() {
+                                playsound == !playsound;
+                                print(playsound);
+                              });
+                            }),
+                            icon: Icon(
+                              playsound == true
+                                  ? Icons.pause
+                                  : Icons.play_arrow,
+                            ),
+                          )
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
