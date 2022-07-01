@@ -56,7 +56,6 @@ void main() {
     "/homemod": (context) => homemod(),
     "/chat": (context) => chatscreen(),
     "/projectstatus": (context) => VideoPlayerScreen(),
-    "/audiotest": (context) => audioscrenn(),
-    "/freewec": (context) => PlayerOnProgress(),
+    "/audiotest": (context) => VideoPlayerScreen(),
   }));
 }
