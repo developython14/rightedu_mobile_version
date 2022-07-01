@@ -12,7 +12,7 @@ class ChatInputField extends StatefulWidget {
 
 class _ChatInputFieldState extends State<ChatInputField> {
   double kDefaultPadding = 6;
-  Color kPrimaryColor = Color.fromARGB(255, 33, 35, 37);
+  Color kPrimaryColor = Colors.blue;
   File? experience;
 
   @override

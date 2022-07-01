@@ -39,7 +39,7 @@ class _chatscreenState extends State<chatscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
         title: Padding(
           padding: const EdgeInsets.symmetric(vertical: 35),
           child: Row(
@@ -274,29 +274,53 @@ class _chatscreenState extends State<chatscreen> {
                     recivedmessage(
                       "gooll allez les gars???",
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(30),
-                          child: Stack(
-                            children: [
-                              Container(
-                                  width: 200,
-                                  height: 300,
-                                  child: Image.asset(
-                                    "assets/start_app/cover.jpg",
-                                  )),
-                            ],
-                          ),
-                        ),
-                      ),
+                    imagemessage(
+                      "assets/start_app/samir.jpg",
                     ),
                     datearker(),
                     recivedmessage(
                       "gooll rebhnagsgdfgfsdgfsrebhnagsgdfgfsdgfsdfgrebhnagsgdfgfsdgfsdfgdfg???",
-                    )
+                    ),
+                    sendermessage(
+                      "gooll frefrwefklwefjkwel;feklwfj abid s???",
+                    ),
+                    recivedmessage(
+                      "gooll rebhna???",
+                    ),
+                    sendermessage(
+                      "gooll refdasfdasfbhna???",
+                    ),
+                    recivedmessage(
+                      "gooll rfasdfdasfsaebhna???",
+                    ),
+                    datearker(),
+                    sendermessage(
+                      "gooll rdfsfafdsebhna???",
+                    ),
+                    imagemessage(
+                      "assets/start_app/fares.jpg",
+                    ),
+                    sendermessage(
+                      "gooll refdasfdasfbhna???",
+                    ),
+                    recivedmessage(
+                      "gooll rfasdfdasfsaebhna???",
+                    ),
+                    sendermessage(
+                      "gooll refdasfdasfbhna???",
+                    ),
+                    recivedmessage(
+                      "gooll rfasdfdasfsaebhna???",
+                    ),
+                    sendermessage(
+                      "gooll refdasfdasfbhna???",
+                    ),
+                    recivedmessage(
+                      "gooll rfasdfdasfsaebhna???",
+                    ),
+                    imagemessage(
+                      "assets/start_app/moh.jpg",
+                    ),
                   ],
                 ),
               ),

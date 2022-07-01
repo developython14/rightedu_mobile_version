@@ -20,7 +20,7 @@ class recivedmessage extends StatelessWidget {
               bottomLeft: Radius.circular(25),
               bottomRight: Radius.circular(25),
             )),
-            color: Colors.black,
+            color: Colors.blue,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
@@ -109,6 +109,39 @@ class _datearkerState extends State<datearker> {
                 bottomRight: Radius.circular(25),
                 topRight: Radius.circular(25),
               )),
+        ),
+      ),
+    );
+  }
+}
+
+class imagemessage extends StatelessWidget {
+  String image_url;
+  imagemessage(this.image_url);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: Stack(
+            children: [
+              Container(
+                  width: 200,
+                  height: 300,
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage(
+                          image_url,
+                        ),
+                      ))),
+            ],
+          ),
         ),
       ),
     );
