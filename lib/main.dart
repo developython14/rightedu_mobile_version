@@ -29,8 +29,7 @@ import 'package:right/profile/pages/statcomponant/chatscreen.dart';
 import 'package:right/profile/pages/statcomponant/voice.dart';
 
 void main() {
-  runApp(
-      MaterialApp(title: 'Right Hacker', initialRoute: '/audiotest', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/chat', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),

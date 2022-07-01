@@ -277,7 +277,7 @@ class _chatscreenState extends State<chatscreen> {
                     imagemessage("assets/start_app/samir.jpg", true),
                     datearker(),
                     recivedmessage(
-                      "gooll rebhnagsgdfgfsdgfsrebhnagsgdfgfsdgfsdfgrebhnagsgdfgfsdgfsdfgdfg???",
+                      "gooll بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ الْحَمْدُ لِلَّهِ الَّذِ???",
                     ),
                     sendermessage(
                       "gooll frefrwefklwefjkwel;feklwfj abid s???",
