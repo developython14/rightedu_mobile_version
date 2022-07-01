@@ -149,11 +149,15 @@ class imagemessage extends StatelessWidget {
   }
 }
 
-class AudioMessage extends StatelessWidget {
+class AudioMessage extends StatefulWidget {
+  @override
+  State<AudioMessage> createState() => _AudioMessageState();
+}
+
+class _AudioMessageState extends State<AudioMessage> {
   bool playsound = false;
   double kDefaultPadding = 8.0;
   Color kPrimaryColor = Colors.blue;
-  final playsound = true;
 
   @override
   Widget build(BuildContext context) {
