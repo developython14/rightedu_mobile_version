@@ -125,6 +125,14 @@ class _audioscrennState extends State<audioscrenn> {
         _mPlayerIsInited = true;
       });
     });
+    _myPlayer.onProgress!.listen((e) {
+      setState(() {
+        duration = e.duration;
+        position = e.position;
+        print('mustapha look here');
+        print(duration);
+      });
+    });
   }
 
   @override
@@ -165,7 +173,7 @@ class _audioscrennState extends State<audioscrenn> {
             ElevatedButton(onPressed: play, child: Text('start player')),
             ElevatedButton(onPressed: stopPlayer, child: Text('stop player')),
             Slider(
-                divisions: 1,
+                divisions: 20,
                 max: 20,
                 value: picked,
                 onChanged: (double value) {
@@ -173,7 +181,17 @@ class _audioscrennState extends State<audioscrenn> {
                     picked = value;
                   });
                 }),
-            Text('${picked.toString()}')
+            Text('${picked.toString()}'),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(duration.toString()),
+                  Text(position.toString())
+                ],
+              ),
+            )
           ],
         ),
       ),
