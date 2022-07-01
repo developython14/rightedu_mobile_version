@@ -10,9 +10,6 @@ class VideoPlayerScreen extends StatefulWidget {
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   late VideoPlayerController _controller;
   late Future<void> _initializeVideoPlayerFuture;
-  double wid = 200;
-  double hei = 200;
-  String data = 'free';
 
   @override
   void initState() {
