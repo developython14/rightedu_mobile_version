@@ -52,6 +52,9 @@ dependencies:
   flutter_sound_lite: ^8.5.0
   audioplayers: ^1.0.1
   video_player:
+  camera:
+  path_provider:
+  path:
 
   
 
