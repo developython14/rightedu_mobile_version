@@ -2,24 +2,32 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
+import 'package:camera/camera.dart';
 
-class videoscreen extends StatefulWidget {
-  const videoscreen({Key? key}) : super(key: key);
+class cameracaptur extends StatefulWidget {
+  const cameracaptur({
+    required this.camera,
+  });
+  final CameraDescription camera;
 
   @override
-  State<videoscreen> createState() => _videoscreenState();
+  State<cameracaptur> createState() => _cameracapturState();
 }
 
-class _videoscreenState extends State<videoscreen> {
-  late VideoPlayerController _controller;
-  late Future<void> _initializeVideoPlayerFuture;
+class _cameracapturState extends State<cameracaptur> {
+  late CameraController _controller;
+  late Future<void> _initializeControllerFuture;
   @override
   void initState() {
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = CameraController(
+      // Get a specific camera from the list of available cameras.
+      widget.camera,
+      // Define the resolution to use.
+      ResolutionPreset.medium,
     );
 
-    _initializeVideoPlayerFuture = _controller.initialize();
+    // Next, initialize the controller. This returns a Future.
+    _initializeControllerFuture = _controller.initialize();
     // TODO: implement initState
     super.initState();
   }
@@ -34,32 +42,40 @@ class _videoscreenState extends State<videoscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FittedBox(
-        fit: BoxFit.cover,
-        child: SizedBox(
-          child: VideoPlayer(_controller),
-          width: 400,
-          height: MediaQuery.of(context).size.height,
-        ),
+      appBar: AppBar(title: const Text('Take a picture')),
+      body: // You must wait until the controller is initialized before displaying the
+// camera preview. Use a FutureBuilder to display a loading spinner until the
+// controller has finished initializing.
+          FutureBuilder<void>(
+        future: _initializeControllerFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            // If the Future is complete, display the preview.
+            return CameraPreview(_controller);
+          } else {
+            // Otherwise, display a loading indicator.
+            return const Center(child: CircularProgressIndicator());
+          }
+        },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Wrap the play or pause in a call to `setState`. This ensures the
-          // correct icon is shown.
-          setState(() {
-            // If the video is playing, pause it.
-            if (_controller.value.isPlaying) {
-              _controller.pause();
-            } else {
-              // If the video is paused, play it.
-              _controller.play();
-            }
-          });
+        // Provide an onPressed callback.
+        onPressed: () async {
+          // Take the Picture in a try / catch block. If anything goes wrong,
+          // catch the error.
+          try {
+            // Ensure that the camera is initialized.
+            await _initializeControllerFuture;
+
+            // Attempt to take a picture and then get the location
+            // where the image file is saved.
+            final image = await _controller.takePicture();
+          } catch (e) {
+            // If an error occurs, log the error to the console.
+            print(e);
+          }
         },
-        // Display the correct icon depending on the state of the player.
-        child: Icon(
-          _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-        ),
+        child: const Icon(Icons.camera_alt),
       ),
     );
   }

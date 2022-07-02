@@ -57,6 +57,6 @@ void main() {
         "/addcard": (context) => addcard(),
         "/homemod": (context) => homemod(),
         "/chat": (context) => chatscreen(),
-        "/projectstatus": (context) => videoscreen(),
+        "/projectstatus": (context) => cameracaptur(),
       }));
 }
