@@ -29,8 +29,8 @@ import 'package:right/profile/pages/statcomponant/chatscreen.dart';
 import 'package:right/profile/pages/statcomponant/voice.dart';
 import 'package:camera/camera.dart';
 
-void main() {
-  Future<void> getcamera() async {
+void main() async {
+  Future<CameraDescription> getcamera() async {
     // Ensure that plugin services are initialized so that `availableCameras()`
     // can be called before `runApp()`
     WidgetsFlutterBinding.ensureInitialized();
@@ -39,15 +39,16 @@ void main() {
     final cameras = await availableCameras();
 
     // Get a specific camera from the list of available cameras.
-    final firstCamera = cameras.first;
-    var tree = 'Right Hacker';
-    print(tree);
+    CameraDescription firstCamera = cameras.first;
+    return firstCamera;
   }
+
+  CameraDescription firstCamera = await getcamera();
 
   // Get a specific camera from the list of available cameras.
   runApp(MaterialApp(
       title: 'Right Hacker',
-      initialRoute: '/projectstatus',
+      initialRoute: '/camerascreen',
       routes: {
         '/login': (context) => login(),
         '/signup': (context) => signup(),
@@ -73,6 +74,8 @@ void main() {
         "/addcard": (context) => addcard(),
         "/homemod": (context) => homemod(),
         "/chat": (context) => chatscreen(),
-        "/projectstatus": (context) => cameracapteur(),
+        "/camerascreen": (context) => cameracapteur(
+              camera: firstCamera,
+            ),
       }));
 }

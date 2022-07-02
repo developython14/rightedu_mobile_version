@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
 import 'package:camera/camera.dart';
+import 'dart:io';
 
 class cameracapteur extends StatefulWidget {
   cameracapteur({
     required this.camera,
   });
-
-  late CameraDescription camera;
+  final CameraDescription camera;
 
   @override
   State<cameracapteur> createState() => _cameracapteurState();
@@ -18,8 +18,9 @@ class cameracapteur extends StatefulWidget {
 class _cameracapteurState extends State<cameracapteur> {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
+  String image_url = '';
   @override
-  void initState() async {
+  void initState() {
     // TODO: implement initState
     super.initState();
     _controller = CameraController(
@@ -32,7 +33,6 @@ class _cameracapteurState extends State<cameracapteur> {
     // Next, initialize the controller. This returns a Future.
     _initializeControllerFuture = _controller.initialize();
   }
-  }
 
   @override
   void dispose() {
@@ -44,7 +44,20 @@ class _cameracapteurState extends State<cameracapteur> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('belkassem')),
+      body: FutureBuilder<void>(
+        future: _initializeControllerFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            // If the Future is complete, display the preview.
+            return CameraPreview(
+              _controller,
+            );
+          } else {
+            // Otherwise, display a loading indicator.
+            return const Center(child: CircularProgressIndicator());
+          }
+        },
+      ),
       floatingActionButton: FloatingActionButton(
         // Provide an onPressed callback.
         onPressed: () async {
@@ -57,6 +70,10 @@ class _cameracapteurState extends State<cameracapteur> {
             // Attempt to take a picture and then get the location
             // where the image file is saved.
             final image = await _controller.takePicture();
+            setState(() {
+              image_url = image.path;
+            });
+            print(image_url);
           } catch (e) {
             // If an error occurs, log the error to the console.
             print(e);
