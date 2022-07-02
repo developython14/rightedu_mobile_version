@@ -24,7 +24,7 @@ import 'package:right/profile/pages/edit_profile/hisprofile.dart';
 import 'package:right/profile/pages/edit_profile/payprofile.dart';
 import 'package:right/profile/pages/edit_profile/helpprofile.dart';
 import 'package:right/profile_mod/home_mod.dart';
-import 'package:right/profile/pages/statcomponant/projectstatus.dart';
+import 'package:right/profile/pages/statcomponant/cameracapteur.dart';
 import 'package:right/profile/pages/statcomponant/chatscreen.dart';
 import 'package:right/profile/pages/statcomponant/voice.dart';
 import 'package:camera/camera.dart';
@@ -46,36 +46,34 @@ void main() async {
   CameraDescription firstCamera = await getcamera();
 
   // Get a specific camera from the list of available cameras.
-  runApp(MaterialApp(
-      title: 'Right Hacker',
-      initialRoute: '/camerascreen',
-      routes: {
-        '/login': (context) => login(),
-        '/signup': (context) => signup(),
-        '/signupmod': (context) => signupmod(),
-        '/intro': (context) => toma(),
-        '/wait': (context) => wait(),
-        '/free': (context) => univs(),
-        '/intersignup': (context) => intersignup(),
-        '/testsend': (context) => testsend(),
-        '/testpush': (context) => testpush(),
-        "/start": (context) => home(),
-        "/experts": (context) => list_experts(),
-        "/services": (context) => list_services(),
-        "/product": (context) => lop,
-        "/visprofile": (context) => profilevist(),
-        "/stat": (context) => resume(),
-        "/right": (context) => right(),
-        "/editprofile": (context) => editprofile(),
-        "/settingprofile": (context) => settingprofile(),
-        "/hisprofile": (context) => hisprofile(),
-        "/payprofile": (context) => payprofile(),
-        "/helpprofile": (context) => helpprofile(),
-        "/addcard": (context) => addcard(),
-        "/homemod": (context) => homemod(),
-        "/chat": (context) => chatscreen(),
-        "/camerascreen": (context) => cameracapteur(
-              camera: firstCamera,
-            ),
-      }));
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/voice', routes: {
+    '/login': (context) => login(),
+    '/signup': (context) => signup(),
+    '/signupmod': (context) => signupmod(),
+    '/intro': (context) => toma(),
+    '/wait': (context) => wait(),
+    '/free': (context) => univs(),
+    '/intersignup': (context) => intersignup(),
+    '/testsend': (context) => testsend(),
+    '/testpush': (context) => testpush(),
+    "/start": (context) => home(),
+    "/experts": (context) => list_experts(),
+    "/services": (context) => list_services(),
+    "/product": (context) => lop,
+    "/visprofile": (context) => profilevist(),
+    "/stat": (context) => resume(),
+    "/right": (context) => right(),
+    "/editprofile": (context) => editprofile(),
+    "/settingprofile": (context) => settingprofile(),
+    "/hisprofile": (context) => hisprofile(),
+    "/payprofile": (context) => payprofile(),
+    "/helpprofile": (context) => helpprofile(),
+    "/addcard": (context) => addcard(),
+    "/homemod": (context) => homemod(),
+    "/chat": (context) => chatscreen(),
+    "/camerascreen": (context) => cameracapteur(
+          camera: firstCamera,
+        ),
+    "/voice": (context) => voice(),
+  }));
 }

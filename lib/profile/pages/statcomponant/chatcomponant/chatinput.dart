@@ -80,7 +80,9 @@ class _ChatInputFieldState extends State<ChatInputField> {
                     ),
                     SizedBox(width: kDefaultPadding / 4),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/camerascreen');
+                      },
                       icon:
                           Icon(Icons.camera_alt_outlined, color: kPrimaryColor),
                     ),

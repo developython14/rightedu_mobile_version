@@ -49,8 +49,16 @@ class _cameracapteurState extends State<cameracapteur> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             // If the Future is complete, display the preview.
-            return CameraPreview(
-              _controller,
+            final size = MediaQuery.of(context).size;
+            final deviceRatio = size.width / size.height;
+            return Transform.scale(
+              scale: _controller.value.aspectRatio / deviceRatio,
+              child: Center(
+                child: AspectRatio(
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: CameraPreview(_controller),
+                ),
+              ),
             );
           } else {
             // Otherwise, display a loading indicator.
@@ -73,13 +81,12 @@ class _cameracapteurState extends State<cameracapteur> {
             setState(() {
               image_url = image.path;
             });
-            print(image_url);
           } catch (e) {
             // If an error occurs, log the error to the console.
             print(e);
           }
         },
-        child: const Icon(Icons.camera_alt),
+        child: Icon(image_url.length == 0 ? Icons.camera_alt : Icons.send),
       ),
     );
   }
