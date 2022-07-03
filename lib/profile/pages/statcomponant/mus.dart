@@ -51,6 +51,11 @@ class _dataaudioState extends State<dataaudio> {
     }
   }
 
+  changeinslider(double value) async {
+    await player.seek(Duration(milliseconds: value.toInt()));
+    position = Duration(milliseconds: value.toInt());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +69,13 @@ class _dataaudioState extends State<dataaudio> {
           ElevatedButton(onPressed: play, child: Text('play ')),
           ElevatedButton(onPressed: pausePlayer, child: Text('stop')),
           ElevatedButton(onPressed: resumePlayer, child: Text('resume')),
+          Text('$duree'),
+          Text('$position'),
+          Slider(
+              value: position.inMilliseconds.toDouble(),
+              max: duree.inMilliseconds.toDouble(),
+              divisions: 50,
+              onChanged: changeinslider)
         ],
       ),
     );
