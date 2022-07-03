@@ -28,7 +28,7 @@ import 'package:right/profile/pages/statcomponant/cameracapteur.dart';
 import 'package:right/profile/pages/statcomponant/chatscreen.dart';
 import 'package:right/profile/pages/statcomponant/voice.dart';
 import 'package:camera/camera.dart';
-import 'package:right/profile/pages/statcomponant/mus.dart';
+import 'package:right/profile/pages/statcomponant/voice_message.dart';
 
 void main() async {
   Future<CameraDescription> getcamera() async {
@@ -47,7 +47,7 @@ void main() async {
   CameraDescription firstCamera = await getcamera();
 
   // Get a specific camera from the list of available cameras.
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/chat', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/voice', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -75,6 +75,6 @@ void main() async {
     "/camerascreen": (context) => cameracapteur(
           camera: firstCamera,
         ),
-    "/voice": (context) => dataaudio(),
+    "/voice": (context) => recorder(),
   }));
 }
