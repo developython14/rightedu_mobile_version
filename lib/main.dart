@@ -28,6 +28,7 @@ import 'package:right/profile/pages/statcomponant/cameracapteur.dart';
 import 'package:right/profile/pages/statcomponant/chatscreen.dart';
 import 'package:right/profile/pages/statcomponant/voice.dart';
 import 'package:camera/camera.dart';
+import 'package:right/profile/pages/statcomponant/mus.dart';
 
 void main() async {
   Future<CameraDescription> getcamera() async {
@@ -74,6 +75,6 @@ void main() async {
     "/camerascreen": (context) => cameracapteur(
           camera: firstCamera,
         ),
-    "/voice": (context) => voice(),
+    "/voice": (context) => dataaudio(),
   }));
 }
