@@ -13,6 +13,9 @@ class voice extends StatefulWidget {
 class _voiceState extends State<voice> {
   FlutterSoundPlayer _myPlayer = FlutterSoundPlayer();
   bool _mPlayerIsInited = false;
+  double _mSubscriptionDuration = 0;
+  StreamSubscription? _mPlayerSubscription;
+  int pos = 1998;
 
   @override
   void initState() {
@@ -21,6 +24,12 @@ class _voiceState extends State<voice> {
     _myPlayer.openAudioSession().then((value) {
       setState(() {
         _mPlayerIsInited = true;
+      });
+    });
+    _myPlayer.setSubscriptionDuration(Duration(milliseconds: 50));
+    _mPlayerSubscription = _myPlayer.onProgress!.listen((e) {
+      setState(() {
+        pos = e.position.inMilliseconds;
       });
     });
   }
@@ -44,6 +53,18 @@ class _voiceState extends State<voice> {
     setState(() {});
   }
 
+  Future<void> pausePlayer() async {
+    if (_myPlayer != null) {
+      await _myPlayer.pausePlayer();
+    }
+  }
+
+  Future<void> resumePlayer() async {
+    if (_myPlayer != null) {
+      await _myPlayer.resumePlayer();
+    }
+  }
+
   Future<void> stopPlayer() async {
     if (_myPlayer != null) {
       await _myPlayer.stopPlayer();
@@ -58,9 +79,11 @@ class _voiceState extends State<voice> {
           SizedBox(
             height: 80,
           ),
-          ElevatedButton(onPressed: play, child: Text('yped_data')),
-          ElevatedButton(onPressed: stopPlayer, child: Text('yped_data')),
-          Center(child: Text('yped_data')),
+          ElevatedButton(onPressed: play, child: Text('play ')),
+          ElevatedButton(onPressed: stopPlayer, child: Text('stop')),
+          ElevatedButton(onPressed: pausePlayer, child: Text('pause')),
+          ElevatedButton(onPressed: resumePlayer, child: Text('resume')),
+          Center(child: Text('$pos')),
         ],
       ),
     );
