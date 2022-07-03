@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:right/profile/pages/statcomponant/chatcomponant/messagechat.dart';
 
 class dataaudio extends StatefulWidget {
   const dataaudio({Key? key}) : super(key: key);
@@ -12,6 +13,8 @@ class _dataaudioState extends State<dataaudio> {
   final player = AudioPlayer();
   Duration duree = Duration.zero;
   Duration position = Duration.zero;
+  bool playsound = false;
+  Color kPrimaryColor = Colors.blue;
 
   @override
   void initState() {
@@ -34,7 +37,9 @@ class _dataaudioState extends State<dataaudio> {
     await player.play(
         UrlSource(_exampleAudioFilePathMP3)); // will immediately start playing
 
-    setState(() {});
+    setState(() {
+      playsound = true;
+    });
   }
 
   Future<void> pausePlayer() async {
@@ -53,7 +58,9 @@ class _dataaudioState extends State<dataaudio> {
 
   changeinslider(double value) async {
     await player.seek(Duration(milliseconds: value.toInt()));
-    position = Duration(milliseconds: value.toInt());
+    setState(() {
+      position = Duration(milliseconds: value.toInt());
+    });
   }
 
   @override
@@ -75,7 +82,42 @@ class _dataaudioState extends State<dataaudio> {
               value: position.inMilliseconds.toDouble(),
               max: duree.inMilliseconds.toDouble(),
               divisions: 50,
-              onChanged: changeinslider)
+              onChanged: changeinslider),
+          AudioMessage(),
+          Container(
+            width: 300,
+            decoration: BoxDecoration(
+                color: kPrimaryColor.withOpacity(0.7),
+                borderRadius: BorderRadius.circular(30)),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: (() {
+                      playsound == false ? play() : pausePlayer();
+                    }),
+                    icon: Icon(
+                      playsound == true ? Icons.pause : Icons.play_arrow,
+                    ),
+                  ),
+                  Expanded(
+                    child: Slider(
+                        activeColor: kPrimaryColor,
+                        value: position.inMilliseconds.toDouble(),
+                        max: duree.inMilliseconds.toDouble(),
+                        divisions: 50,
+                        onChanged: changeinslider),
+                  ),
+                  Text(
+                    "0.55",
+                    style: TextStyle(
+                        fontSize: 12, color: 2 > 3 ? Colors.white : null),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
