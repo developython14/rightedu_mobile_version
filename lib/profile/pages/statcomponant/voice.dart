@@ -32,7 +32,8 @@ class _voiceState extends State<voice> {
     super.dispose();
   }
 
-  final _exampleAudioFilePathMP3 = 'yped_data';
+  final _exampleAudioFilePathMP3 =
+      'https://programminghead.com/audio/audio.mp3';
   void play() async {
     await _myPlayer.startPlayer(
         fromURI: _exampleAudioFilePathMP3,
@@ -54,6 +55,9 @@ class _voiceState extends State<voice> {
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(
+            height: 80,
+          ),
           ElevatedButton(onPressed: play, child: Text('yped_data')),
           ElevatedButton(onPressed: stopPlayer, child: Text('yped_data')),
           Center(child: Text('yped_data')),
