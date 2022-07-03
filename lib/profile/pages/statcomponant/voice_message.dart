@@ -69,10 +69,11 @@ class _dataaudioState extends State<dataaudio> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.centerLeft,
       width: 300,
       height: 50,
       decoration: BoxDecoration(
-          color: kPrimaryColor.withOpacity(0.7),
+          color: Colors.amber.withOpacity(0.7),
           borderRadius: BorderRadius.circular(30)),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
