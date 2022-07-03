@@ -68,63 +68,41 @@ class _dataaudioState extends State<dataaudio> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('free algerie'),
-        centerTitle: true,
-      ),
-      body: Column(
-        children: [
-          Text('ici c est  belle vue,,/ '),
-          ElevatedButton(onPressed: play, child: Text('play ')),
-          ElevatedButton(onPressed: pausePlayer, child: Text('stop')),
-          ElevatedButton(onPressed: resumePlayer, child: Text('resume')),
-          Text('$duree'),
-          Text('$position'),
-          Slider(
-              value: position.inMilliseconds.toDouble(),
-              max: duree.inMilliseconds.toDouble(),
-              divisions: 50,
-              onChanged: changeinslider),
-          AudioMessage(),
-          Container(
-            width: 300,
-            height: 50,
-            decoration: BoxDecoration(
-                color: kPrimaryColor.withOpacity(0.7),
-                borderRadius: BorderRadius.circular(30)),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: (() {
-                      playsound == false ? play() : pausePlayer();
-                    }),
-                    icon: Icon(
-                      playsound == true ? Icons.pause : Icons.play_arrow,
-                    ),
-                  ),
-                  Expanded(
-                    child: Slider(
-                        activeColor: Colors.white,
-                        inactiveColor: Colors.grey,
-                        value: position.inMilliseconds.toDouble(),
-                        max: duree.inMilliseconds.toDouble(),
-                        divisions: 50,
-                        onChanged: changeinslider),
-                  ),
-                  Text(
-                    "0.55",
-                    style: TextStyle(
-                        fontSize: 12, color: 2 > 3 ? Colors.white : null),
-                  ),
-                ],
+    return Container(
+      width: 300,
+      height: 50,
+      decoration: BoxDecoration(
+          color: kPrimaryColor.withOpacity(0.7),
+          borderRadius: BorderRadius.circular(30)),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: (() {
+                playsound == false ? play() : pausePlayer();
+              }),
+              icon: Icon(
+                playsound == true ? Icons.pause : Icons.play_arrow,
               ),
             ),
-          )
-        ],
+            Expanded(
+              child: Slider(
+                  activeColor: Colors.white,
+                  inactiveColor: Colors.grey,
+                  value: position.inMilliseconds.toDouble(),
+                  max: duree.inMilliseconds.toDouble(),
+                  divisions: 50,
+                  onChanged: changeinslider),
+            ),
+            Text(
+              "0.55",
+              style:
+                  TextStyle(fontSize: 12, color: 2 > 3 ? Colors.white : null),
+            ),
+          ],
+        ),
       ),
     );
   }

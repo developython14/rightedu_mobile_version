@@ -3,6 +3,7 @@ import 'package:right/profile/pages/statcomponant/chatcomponant/chatinput.dart';
 import 'package:right/profile/pages/statcomponant/chatcomponant/messagechat.dart';
 import 'dart:async';
 import 'package:video_player/video_player.dart';
+import 'package:right/profile/pages/statcomponant/mus.dart';
 
 class chatscreen extends StatefulWidget {
   const chatscreen({Key? key}) : super(key: key);
@@ -332,7 +333,8 @@ class _chatscreenState extends State<chatscreen> {
                       "gooll rfasdfdasfsaebgooll rfasdfdasfsaebhna???hna???",
                     ),
                     imagemessage("assets/start_app/1.jpg", true),
-                    AudioMessage()
+                    AudioMessage(),
+                    dataaudio()
                   ],
                 ),
               ),
