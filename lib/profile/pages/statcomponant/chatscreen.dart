@@ -3,7 +3,7 @@ import 'package:right/profile/pages/statcomponant/chatcomponant/chatinput.dart';
 import 'package:right/profile/pages/statcomponant/chatcomponant/messagechat.dart';
 import 'dart:async';
 import 'package:video_player/video_player.dart';
-import 'package:right/profile/pages/statcomponant/mus.dart';
+import 'package:right/profile/pages/statcomponant/voice_message.dart';
 
 class chatscreen extends StatefulWidget {
   const chatscreen({Key? key}) : super(key: key);

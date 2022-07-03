@@ -13,11 +13,10 @@ class recorder extends StatefulWidget {
 class _recorderState extends State<recorder> {
   FlutterSoundRecorder _myRecorder = FlutterSoundRecorder();
   bool _mRecorderIsInited = true;
-  String _mPath = 'free';
+  String _mPath = '';
   @override
   void initState() {
     // TODO: implement initState
-    super.initState();
     _myRecorder.openAudioSession().then((value) {
       setState(() {
         _mRecorderIsInited = true;
@@ -45,11 +44,6 @@ class _recorderState extends State<recorder> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('mss'),
-      ),
-      body: Text('mustaha'),
-    );
+    return Scaffold();
   }
 }
