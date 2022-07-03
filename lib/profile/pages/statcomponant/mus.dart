@@ -44,7 +44,10 @@ class _dataaudioState extends State<dataaudio> {
 
   Future<void> pausePlayer() async {
     if (player != null) {
-      await player.pause(); // will resume where left off
+      await player.pause();
+      setState(() {
+        playsound = false;
+      }); // will resume where left off
 
     }
   }
@@ -86,12 +89,14 @@ class _dataaudioState extends State<dataaudio> {
           AudioMessage(),
           Container(
             width: 300,
+            height: 50,
             decoration: BoxDecoration(
                 color: kPrimaryColor.withOpacity(0.7),
                 borderRadius: BorderRadius.circular(30)),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
                     onPressed: (() {
@@ -103,7 +108,8 @@ class _dataaudioState extends State<dataaudio> {
                   ),
                   Expanded(
                     child: Slider(
-                        activeColor: kPrimaryColor,
+                        activeColor: Colors.white,
+                        inactiveColor: Colors.grey,
                         value: position.inMilliseconds.toDouble(),
                         max: duree.inMilliseconds.toDouble(),
                         divisions: 50,
