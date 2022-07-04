@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
 import 'dart:typed_data';
-import 'package:permission_handler/permission_handler.dart';
 import 'dart:io';
 
 class recorder extends StatefulWidget {
@@ -15,7 +14,7 @@ class recorder extends StatefulWidget {
 class _recorderState extends State<recorder> {
   FlutterSoundRecorder _myRecorder = FlutterSoundRecorder();
   bool _mRecorderIsInited = true;
-  String _mPath = '';
+  String _mPath = 'BELKASSEM.mp3';
   Duration maxDuration = Duration.zero;
   @override
   void initState() {
@@ -31,12 +30,7 @@ class _recorderState extends State<recorder> {
     });
   }
 
-  void initrecorder() async {
-    final status = await Permission.microphone.request();
-    if (status.isDenied) {
-      throw 'permission denided';
-    }
-  }
+  void initrecorder() async {}
 
   @override
   void dispose() {
@@ -68,7 +62,7 @@ class _recorderState extends State<recorder> {
             Text('sound reorder'),
             ElevatedButton(onPressed: record, child: Text('record')),
             ElevatedButton(onPressed: stopRecorder, child: Text('stop record')),
-            Text('$maxDuration')
+            Text('$maxDuration'),
           ],
         ),
       ),
