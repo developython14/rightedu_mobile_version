@@ -98,7 +98,7 @@ class _dataaudioState extends State<dataaudio> {
                   onChanged: changeinslider),
             ),
             Text(
-              "0.55",
+              "0.65",
               style:
                   TextStyle(fontSize: 12, color: 2 > 3 ? Colors.white : null),
             ),
