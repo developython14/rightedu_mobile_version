@@ -94,7 +94,7 @@ class _detailsState extends State<details> with SingleTickerProviderStateMixin {
     // TODO: implement initState
     super.initState();
     _controller =
-        AnimationController(duration: Duration(seconds: 5), vsync: this);
+        AnimationController(duration: Duration(seconds: 3), vsync: this);
     _animationcolor =
         ColorTween(begin: Colors.blue, end: Colors.green).animate(_controller);
     _controller.forward();
@@ -122,7 +122,25 @@ class _detailsState extends State<details> with SingleTickerProviderStateMixin {
                 ),
               )),
           Text(
-              ' dskddlsdls kldsl;dksa;ld kdos;adks dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsla; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;lds  dskddlsdls k  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;lds')
+              ' dskddlsdls kldsl;dksa;ld kdos;adks dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsla; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;lds  dskddlsdls k  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;lds'),
+          AnimatedBuilder(
+            animation: _controller,
+            builder: (
+              BuildContext context,
+              _,
+            ) {
+              return Container(
+                width: 200,
+                height: 90,
+                color: _animationcolor.value,
+              );
+            },
+          ),
+          ElevatedButton(
+              onPressed: () {
+                _controller.forward();
+              },
+              child: Text('multi free'))
         ],
       ),
     );

@@ -55,6 +55,7 @@ dependencies:
   camera:
   path_provider:
   path:
+  local_auth: ^2.1.0
 
   
 
