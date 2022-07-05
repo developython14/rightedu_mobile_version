@@ -75,6 +75,6 @@ void main() async {
     "/camerascreen": (context) => cameracapteur(
           camera: firstCamera,
         ),
-    "/voice": (context) => recorder(),
+    "/voice": (context) => mustapha(),
   }));
 }
