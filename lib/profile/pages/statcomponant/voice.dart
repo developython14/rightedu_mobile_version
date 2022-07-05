@@ -63,6 +63,7 @@ class _recorderState extends State<recorder> {
             ElevatedButton(onPressed: record, child: Text('record')),
             ElevatedButton(onPressed: stopRecorder, child: Text('stop record')),
             Text('$maxDuration'),
+            Text('mustapha animation in flutter'),
           ],
         ),
       ),
