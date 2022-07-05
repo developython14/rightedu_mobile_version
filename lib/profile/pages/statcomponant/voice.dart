@@ -24,66 +24,29 @@ class _mustaphaState extends State<mustapha> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Learn Animation'),
+        title: Text('Learn free'),
       ),
       body: Center(
         child: Column(
           children: [
             SizedBox(
-              height: 100,
+              height: 50,
             ),
-            AnimatedContainer(
-              duration: duree,
-              width: _width,
-              height: _height,
-              color: _color,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  if (isanimated == false) {
-                    setState(() {
-                      _width = 350;
-                      _height = 500;
-                      _color = Color.fromARGB(255, 197, 89, 82);
-                      isanimated = true;
-                    });
-                  } else {
-                    setState(() {
-                      _width = 200;
-                      _height = 300;
-                      _color = Color.fromARGB(255, 184, 255, 186);
-                      isanimated = false;
-                    });
-                  }
-                },
-                child: Text('Animate continer')),
-            SizedBox(
-              height: 20,
-            ),
-            AnimatedOpacity(
-              opacity: _opacity,
-              duration: duree,
-              child: Container(
-                width: 30,
-                height: 50,
-                color: _color,
+            TweenAnimationBuilder(
+              child: Text(
+                'mustapha belkassem ',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  if (isanimated1 == false) {
-                    setState(() {
-                      _opacity = 0;
-                      isanimated1 = true;
-                    });
-                  } else {
-                    setState(() {
-                      _opacity = 1;
-                      isanimated1 = false;
-                    });
-                  }
-                },
-                child: Text('control opacity'))
+              tween: Tween<double>(begin: 0, end: 300),
+              duration: duree,
+              builder: (BuildContext context, double size, Widget? child) {
+                return Container(
+                  color: _color,
+                  width: size,
+                  child: child,
+                );
+              },
+            )
           ],
         ),
       ),
