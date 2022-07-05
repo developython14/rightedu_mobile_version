@@ -55,15 +55,17 @@ class _mustaphaState extends State<mustapha> {
               height: 50,
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/details');
+              },
               title: Text('One-line with leading widget'),
               trailing: Icon(Icons.more_vert),
               leading: Hero(
                   tag: 'free',
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(23),
+                    borderRadius: BorderRadius.circular(25),
                     child: Image.asset(
-                      'assets/start_app/moh.jpg',
+                      'assets/start_app/fares.jpg',
                       height: 80,
                       width: 80,
                     ),
@@ -83,12 +85,46 @@ class details extends StatefulWidget {
   State<details> createState() => _detailsState();
 }
 
-class _detailsState extends State<details> {
+class _detailsState extends State<details> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation _animationcolor;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller =
+        AnimationController(duration: Duration(seconds: 5), vsync: this);
+    _animationcolor =
+        ColorTween(begin: Colors.blue, end: Colors.green).animate(_controller);
+    _controller.forward();
+    _controller.addListener(() {
+      print(_controller.value);
+      print(_animationcolor.value);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('responsabilite')),
-      body: Center(child: Text('cree')),
+      body: Column(
+        children: [
+          ClipRRect(
+              borderRadius: BorderRadius.circular(25),
+              child: Hero(
+                tag: 'free',
+                child: Image.asset(
+                  'assets/start_app/fares.jpg',
+                  height: 360,
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter,
+                ),
+              )),
+          Text(
+              ' dskddlsdls kldsl;dksa;ld kdos;adks dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsal;dska  dskddlsdls kldsla; k;sa;ldsa;ldsal;dska  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;lds  dskddlsdls k  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;ldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;  dskddlsdls kldsl;dksa;ld kdos;adksa; k;sa;ldsa;lds')
+        ],
+      ),
     );
   }
 }
