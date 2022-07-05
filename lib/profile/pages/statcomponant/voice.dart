@@ -37,7 +37,7 @@ class _mustaphaState extends State<mustapha> {
                 'mustapha belkassem ',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              tween: Tween<double>(begin: 0, end: 300),
+              tween: Tween<double>(begin: 0, end: 33),
               duration: duree,
               builder: (BuildContext context, double size, Widget? child) {
                 return Container(
@@ -46,10 +46,49 @@ class _mustaphaState extends State<mustapha> {
                   child: child,
                 );
               },
-            )
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text('Mustapha Belkassem'),
+            SizedBox(
+              height: 50,
+            ),
+            ListTile(
+              onTap: () {},
+              title: Text('One-line with leading widget'),
+              trailing: Icon(Icons.more_vert),
+              leading: Hero(
+                  tag: 'free',
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(23),
+                    child: Image.asset(
+                      'assets/start_app/moh.jpg',
+                      height: 80,
+                      width: 80,
+                    ),
+                  )),
+            ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class details extends StatefulWidget {
+  const details({Key? key}) : super(key: key);
+
+  @override
+  State<details> createState() => _detailsState();
+}
+
+class _detailsState extends State<details> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('responsabilite')),
+      body: Center(child: Text('cree')),
     );
   }
 }
