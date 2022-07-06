@@ -201,11 +201,11 @@ class _animatedlState extends State<animatedl> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('responsabilite')),
+      appBar: AppBar(title: Text('Responsability')),
       body: Center(
         child: AnimatedList(
             key: _listKey,
-            initialItemCount: 4,
+            initialItemCount: 7,
             itemBuilder: (context, index, animation) {
               return SlideTransition(
                 position: animation.drive(_offset),
