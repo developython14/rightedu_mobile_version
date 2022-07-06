@@ -195,12 +195,29 @@ class animatedl extends StatefulWidget {
 }
 
 class _animatedlState extends State<animatedl> {
+  final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
+  Tween<Offset> _offset = Tween(begin: Offset(2, 0), end: Offset(0, 0));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('responsabilite')),
       body: Center(
-        child: AnimatedList(itemBuilder: itemBuilder),
+        child: AnimatedList(
+            key: _listKey,
+            initialItemCount: 4,
+            itemBuilder: (context, index, animation) {
+              return SlideTransition(
+                position: animation.drive(_offset),
+                child: Container(
+                  child: Text('belkassem'),
+                  margin: EdgeInsets.all(20),
+                  width: 200,
+                  height: 50,
+                  color: Color.fromARGB(255, 151, 129, 16),
+                ),
+              );
+            }),
       ),
     );
   }
