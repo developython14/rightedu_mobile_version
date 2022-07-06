@@ -47,7 +47,7 @@ void main() async {
   CameraDescription firstCamera = await getcamera();
 
   // Get a specific camera from the list of available cameras.
-  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/details', routes: {
+  runApp(MaterialApp(title: 'Right Hacker', initialRoute: '/freefire', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -75,7 +75,6 @@ void main() async {
     "/camerascreen": (context) => cameracapteur(
           camera: firstCamera,
         ),
-    "/details": (context) => mustapha(),
-    "/freefire": (context) => MyWidget(),
+    "/freefire": (context) => mustapha(),
   }));
 }
