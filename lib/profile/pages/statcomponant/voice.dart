@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
 import 'dart:typed_data';
 import 'dart:io';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class mustapha extends StatefulWidget {
   const mustapha({Key? key}) : super(key: key);
@@ -142,6 +143,64 @@ class _detailsState extends State<details> with SingleTickerProviderStateMixin {
               },
               child: Text('multi free'))
         ],
+      ),
+    );
+  }
+}
+
+class internetchecker extends StatefulWidget {
+  const internetchecker({Key? key}) : super(key: key);
+
+  @override
+  State<internetchecker> createState() => _internetcheckerState();
+}
+
+class _internetcheckerState extends State<internetchecker> {
+  String te = 'fdg';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('responsabilite')),
+      body: Column(
+        children: [
+          Center(
+            child: Text('mustapha'),
+          ),
+          ElevatedButton(
+              onPressed: (() async {
+                bool result = await InternetConnectionChecker().hasConnection;
+                if (result == true) {
+                  setState(() {
+                    te = 'internet good';
+                  });
+                } else {
+                  setState(() {
+                    te = 'no internet connection';
+                  });
+                }
+              }),
+              child: Text('test')),
+          Text('$te')
+        ],
+      ),
+    );
+  }
+}
+
+class animatedl extends StatefulWidget {
+  const animatedl({Key? key}) : super(key: key);
+
+  @override
+  State<animatedl> createState() => _animatedlState();
+}
+
+class _animatedlState extends State<animatedl> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('responsabilite')),
+      body: Center(
+        child: AnimatedList(itemBuilder: itemBuilder),
       ),
     );
   }
