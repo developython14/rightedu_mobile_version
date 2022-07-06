@@ -15,30 +15,32 @@ class mustapha extends StatefulWidget {
 class _mustaphaState extends State<mustapha>
     with SingleTickerProviderStateMixin {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
-  final AnimationController _controller = AnimationController(
-    vsync: this, // the SingleTickerProviderStateMixin
-    duration: Duration(seconds: 5),
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 5),
+    vsync: this,
   );
-  Animation _animation = _controller.drive(
-    Tween<Offset>(
-      begin: const Offset(100.0, 50.0),
-      end: const Offset(200.0, 300.0),
-    ),
-  );
+
+  late final Animation<Offset> _offsetAnimation = Tween<Offset>(
+    begin: Offset.zero,
+    end: const Offset(1.5, 0.0),
+  ).animate(CurvedAnimation(
+    parent: _controller,
+    curve: Curves.elasticIn,
+  ));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('free text'),
+          title: Text('free hack me'),
         ),
         body: AnimatedList(
           key: _listKey,
           itemBuilder:
               (BuildContext context, int index, Animation<double> animation) {
             return SlideTransition(
-              child: Text('mustapha belkassem'),
-              position: _animation,
+              child: Container(child: Text('BELKASSEM belkassem')),
+              position: _offsetAnimation,
             );
           },
         ));
