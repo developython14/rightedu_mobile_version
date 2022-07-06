@@ -75,7 +75,7 @@ void main() async {
     "/camerascreen": (context) => cameracapteur(
           camera: firstCamera,
         ),
-    "/voice": (context) => mustapha(),
     "/details": (context) => mustapha(),
+    "/freefire": (context) => MyWidget(),
   }));
 }
