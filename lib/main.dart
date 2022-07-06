@@ -76,6 +76,6 @@ void main() async {
           camera: firstCamera,
         ),
     "/voice": (context) => mustapha(),
-    "/details": (context) => animatedl(),
+    "/details": (context) => mustapha(),
   }));
 }
