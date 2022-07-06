@@ -188,15 +188,25 @@ class _internetcheckerState extends State<internetchecker> {
 }
 
 class animatedl extends StatefulWidget {
-  const animatedl({Key? key}) : super(key: key);
-
   @override
   State<animatedl> createState() => _animatedlState();
 }
 
-class _animatedlState extends State<animatedl> {
+class _animatedlState extends State<animatedl>
+    with SingleTickerProviderStateMixin {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
   Tween<Offset> _offset = Tween(begin: Offset(2, 0), end: Offset(0, 0));
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 10),
+    vsync: this,
+  )..repeat(reverse: true);
+  late final Animation<Offset> _offsetAnimation = Tween<Offset>(
+    begin: Offset.zero,
+    end: const Offset(1.5, 0.0),
+  ).animate(CurvedAnimation(
+    parent: _controller,
+    curve: Curves.easeInOut,
+  ));
 
   @override
   Widget build(BuildContext context) {
@@ -205,19 +215,75 @@ class _animatedlState extends State<animatedl> {
       body: Center(
         child: AnimatedList(
             key: _listKey,
-            initialItemCount: 7,
+            initialItemCount: 10,
             itemBuilder: (context, index, animation) {
               return SlideTransition(
-                position: animation.drive(_offset),
-                child: Container(
-                  child: Text('belkassem'),
-                  margin: EdgeInsets.all(20),
-                  width: 200,
-                  height: 50,
-                  color: Color.fromARGB(255, 151, 129, 16),
+                position: _offsetAnimation,
+                child: ListTile(
+                  leading: FlutterLogo(),
+                  title: Text('One-line with both widgets'),
+                  trailing: Icon(Icons.more_vert),
                 ),
               );
             }),
+      ),
+    );
+  }
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  static const String _title = 'Flutter Code Sample';
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: _title,
+      home: Scaffold(
+        appBar: AppBar(title: const Text(_title)),
+        body: const Center(
+          child: MyStatefulWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 2),
+    vsync: this,
+  )..repeat(reverse: true);
+  late final Animation<Offset> _offsetAnimation = Tween<Offset>(
+    begin: Offset.zero,
+    end: const Offset(1.5, 0.0),
+  ).animate(CurvedAnimation(
+    parent: _controller,
+    curve: Curves.elasticIn,
+  ));
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: _offsetAnimation,
+      child: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: FlutterLogo(size: 150.0),
       ),
     );
   }
