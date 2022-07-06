@@ -30,19 +30,6 @@ testava() async {
   final is_avalaible = await _auth.canCheckBiometrics;
 }
 
-testprint() async {
-  print('start correctly');
-  final _auth = LocalAuthentication();
-  try {
-    final bool didAuthenticate = await _auth.authenticate(
-        localizedReason: 'Please authenticate to show account balance',
-        options: const AuthenticationOptions(useErrorDialogs: false));
-    // ···
-  } on PlatformException catch (e) {
-    print(e);
-  }
-}
-
 class mustapha extends StatefulWidget {
   const mustapha({Key? key}) : super(key: key);
 
@@ -51,14 +38,32 @@ class mustapha extends StatefulWidget {
 }
 
 class _mustaphaState extends State<mustapha> {
+  testprint() async {
+    final _auth = LocalAuthentication();
+    try {
+      final bool didAuthenticate = await _auth.authenticate(
+          localizedReason: 'Please authenticate to  verfier ',
+          options: const AuthenticationOptions(useErrorDialogs: false));
+      if (didAuthenticate) {
+        Navigator.pushNamed(context, '/stat');
+      }
+      ;
+
+      // ···
+    } on PlatformException catch (e) {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('free'),
+        title: Text('mustapha belkassem test'),
       ),
       body: Center(
         child: Column(children: [
+          SizedBox(
+            height: 200,
+          ),
           ElevatedButton(onPressed: testava, child: Text('test avalability ')),
           ElevatedButton(onPressed: testprint, child: Text('test footprint '))
         ]),
