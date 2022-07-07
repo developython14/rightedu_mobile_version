@@ -10,6 +10,7 @@ class hacker extends StatefulWidget {
 class _hackerState extends State<hacker> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> animation;
+  GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
   @override
   void initState() {
     // TODO: implement initState
@@ -36,17 +37,40 @@ class _hackerState extends State<hacker> with SingleTickerProviderStateMixin {
           title: Text('learn tomahook'),
         ),
         body: AnimatedList(
+          initialItemCount: 10,
+          key: _listKey,
           itemBuilder: (BuildContext context, index, _animation) {
             return SlideTransition(
               position: animation,
-              child: Card(
-                child: ListTile(
-                  leading: FlutterLogo(),
-                  title: Text('One-line with free fire widget'),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Card(
+                  child: ListTile(
+                    leading: FlutterLogo(),
+                    title: Text('One-line with free fire widget'),
+                  ),
                 ),
               ),
             );
           },
         ));
+  }
+}
+
+class MyWidget extends StatefulWidget {
+  const MyWidget({Key? key}) : super(key: key);
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('text me '),
+      ),
+    );
   }
 }
