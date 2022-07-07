@@ -15,7 +15,7 @@ class _hackerState extends State<hacker> with SingleTickerProviderStateMixin {
     // TODO: implement initState
     super.initState();
     _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 900));
     animation = Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0)).animate(
       CurvedAnimation(parent: _controller, curve: Curves.elasticOut),
     );
