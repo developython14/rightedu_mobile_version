@@ -57,6 +57,8 @@ dependencies:
   path:
   local_auth: ^2.1.0
   internet_connection_checker: ^0.0.1+4
+  google_maps_flutter: ^2.1.8
+
 
   
 
