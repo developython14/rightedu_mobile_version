@@ -34,10 +34,24 @@ class _hackerState extends State<hacker> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('learn tomahook'),
+          centerTitle: true,
+          title: TweenAnimationBuilder(
+            tween: Tween<double>(begin: 0, end: 1),
+            duration: Duration(milliseconds: 500),
+            child: Text(
+              'Mustapha Belkassem',
+              style: TextStyle(color: Colors.red),
+            ),
+            builder: (context, double value, child) {
+              return Opacity(
+                opacity: value,
+                child: child,
+              );
+            },
+          ),
         ),
         body: AnimatedList(
-          initialItemCount: 10,
+          initialItemCount: 20,
           key: _listKey,
           itemBuilder: (BuildContext context, index, _animation) {
             return SlideTransition(
@@ -46,7 +60,16 @@ class _hackerState extends State<hacker> with SingleTickerProviderStateMixin {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Card(
                   child: ListTile(
-                    leading: FlutterLogo(),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/testme');
+                    },
+                    leading: Hero(
+                      tag: 'himus',
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset('assets/start_app/fares.jpg'),
+                      ),
+                    ),
                     title: Text('One-line with free fire widget'),
                   ),
                 ),
@@ -69,7 +92,27 @@ class _MyWidgetState extends State<MyWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('text me '),
+        title: Text('text me'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(children: [
+          SizedBox(
+            height: 30,
+          ),
+          Hero(
+            tag: 'himus',
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset('assets/start_app/fares.jpg'),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+              'belkassem mustapha cest grand gflgfjskglsjgkgflgfjskglsjggflgfjskglsjgklfdjsgklfdgflgfjskglsjgklfdjsgklfdgflgfjskglsjgklfdjsgklfdgflgfjskglsjgklfdjsgklfdklfdjsgklfdgflgfjskglsjgklfdjsgklfdgflgfjskglsjgklfdjsgklfdgflgfjskglsjgklfdjsgklfdgflgfjskglsjgklfdjsgklfdgflgfjskglsjgklfdjsgklfdlfdjsgklfd;gksdfl')
+        ]),
       ),
     );
   }

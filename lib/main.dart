@@ -79,5 +79,6 @@ void main() async {
         ),
     "/biometrics": (context) => biometrics(),
     "/animation": (context) => hacker(),
+    "/testme": (context) => MyWidget(),
   }));
 }
