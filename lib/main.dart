@@ -78,7 +78,7 @@ void main() async {
           camera: firstCamera,
         ),
     "/biometrics": (context) => biometrics(),
-    "/animation": (context) => mustapha(),
+    "/animation": (context) => MapSample(),
     "/testme": (context) => MyWidget(),
   }));
 }
