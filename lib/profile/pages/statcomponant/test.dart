@@ -135,12 +135,7 @@ class _mustaphaState extends State<mustapha> {
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
-                Text('This is a internet alert test.'),
-                Container(
-                  child: CircularProgressIndicator(),
-                  width: 40,
-                  height: 40,
-                ),
+                CircularProgressIndicator(),
               ],
             ),
           ),
