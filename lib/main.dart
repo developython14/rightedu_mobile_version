@@ -26,7 +26,7 @@ import 'package:right/profile/pages/edit_profile/helpprofile.dart';
 import 'package:right/profile_mod/home_mod.dart';
 import 'package:right/profile/pages/statcomponant/cameracapteur.dart';
 import 'package:right/profile/pages/statcomponant/chatscreen.dart';
-import 'package:right/profile/pages/statcomponant/voice.dart';
+import 'package:right/profile/pages/statcomponant/biometrcs_auth.dart';
 import 'package:camera/camera.dart';
 import 'package:right/profile/pages/statcomponant/voice_message.dart';
 
@@ -76,6 +76,6 @@ void main() async {
     "/camerascreen": (context) => cameracapteur(
           camera: firstCamera,
         ),
-    "/biometrics": (context) => mustapha(),
+    "/biometrics": (context) => biometrics(),
   }));
 }

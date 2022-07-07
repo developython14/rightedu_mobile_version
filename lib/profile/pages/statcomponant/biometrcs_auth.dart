@@ -6,38 +6,21 @@ import 'dart:io';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:flutter/services.dart';
-
-class authentifaction {
-  static final _auth = LocalAuthentication();
-
-  static Future<bool> authentifcate() async {
-    final is_avalaible = await _auth.canCheckBiometrics;
-    if (!is_avalaible) {
-      return false;
-    }
-    ;
-
-    try {
-      return await _auth.authenticate(localizedReason: 'scan you foot');
-    } on PlatformException catch (e) {
-      return false;
-    }
-  }
-}
+import 'package:getwidget/getwidget.dart';
 
 testava() async {
   final _auth = LocalAuthentication();
   final is_avalaible = await _auth.canCheckBiometrics;
 }
 
-class mustapha extends StatefulWidget {
-  const mustapha({Key? key}) : super(key: key);
+class biometrics extends StatefulWidget {
+  const biometrics({Key? key}) : super(key: key);
 
   @override
-  State<mustapha> createState() => _mustaphaState();
+  State<biometrics> createState() => _biometricsState();
 }
 
-class _mustaphaState extends State<mustapha> {
+class _biometricsState extends State<biometrics> {
   testprint() async {
     final _auth = LocalAuthentication();
     try {
@@ -57,15 +40,18 @@ class _mustaphaState extends State<mustapha> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('mustapha belkassem test'),
+        title: Text('biometrics test '),
       ),
       body: Center(
         child: Column(children: [
           SizedBox(
             height: 200,
           ),
-          ElevatedButton(onPressed: testava, child: Text('test avalability ')),
-          ElevatedButton(onPressed: testprint, child: Text('test footprint '))
+          GFButton(
+            onPressed: testprint,
+            text: "Biometrics Test",
+            blockButton: true,
+          ),
         ]),
       ),
     );
