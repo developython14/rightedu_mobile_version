@@ -15,8 +15,8 @@ class _hackerState extends State<hacker> with SingleTickerProviderStateMixin {
     // TODO: implement initState
     super.initState();
     _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 100));
-    animation = Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0)).animate(
+        AnimationController(vsync: this, duration: Duration(milliseconds: 900));
+    animation = Tween<Offset>(begin: Offset(1, 1), end: Offset(0, 0)).animate(
       _controller,
     );
     _controller.forward();
@@ -32,40 +32,21 @@ class _hackerState extends State<hacker> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('learn animation'),
-      ),
-      body: Center(
-          child: Column(
-        children: [
-          SizedBox(
-            height: 40,
-          ),
-          SlideTransition(
+        appBar: AppBar(
+          title: Text('learn tomahook'),
+        ),
+        body: AnimatedList(
+          itemBuilder: (BuildContext context, index, _animation) {
+            return SlideTransition(
               position: animation,
-              child: Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: 50,
-                  color: Colors.amber)),
-          SlideTransition(
-              position: animation,
-              child: Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: 50,
-                  color: Colors.deepOrange)),
-          SlideTransition(
-              position: animation,
-              child: Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: 50,
-                  color: Colors.deepPurple)),
-          ElevatedButton(
-              onPressed: () {
-                _controller.forward();
-              },
-              child: Text('push'))
-        ],
-      )),
-    );
+              child: Card(
+                child: ListTile(
+                  leading: FlutterLogo(),
+                  title: Text('One-line with free fire widget'),
+                ),
+              ),
+            );
+          },
+        ));
   }
 }
