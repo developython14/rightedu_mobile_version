@@ -27,6 +27,7 @@ import 'package:right/profile_mod/home_mod.dart';
 import 'package:right/profile/pages/statcomponant/cameracapteur.dart';
 import 'package:right/profile/pages/statcomponant/chatscreen.dart';
 import 'package:right/profile/pages/statcomponant/biometrcs_auth.dart';
+import 'package:right/profile/pages/statcomponant/test.dart';
 import 'package:camera/camera.dart';
 import 'package:right/profile/pages/statcomponant/voice_message.dart';
 
@@ -48,7 +49,7 @@ void main() async {
 
   // Get a specific camera from the list of available cameras.
   runApp(
-      MaterialApp(title: 'Right Hacker', initialRoute: '/biometrics', routes: {
+      MaterialApp(title: 'Right Hacker', initialRoute: '/animation', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),
@@ -77,5 +78,6 @@ void main() async {
           camera: firstCamera,
         ),
     "/biometrics": (context) => biometrics(),
+    "/animation": (context) => hacker(),
   }));
 }
