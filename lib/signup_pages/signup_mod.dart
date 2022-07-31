@@ -731,8 +731,9 @@ class _signupmodState extends State<signupmod> {
                             await savedata();
                             await showDialog(
                               context: context,
-                              builder: (context) =>
-                                  FutureProgressDialog(signupmod()),
+                              builder: (context) => FutureProgressDialog(
+                                  signupmod(),
+                                  message: Text('Loading...')),
                             );
                           }
                         },

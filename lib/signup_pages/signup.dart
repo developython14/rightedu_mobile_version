@@ -4,6 +4,7 @@ import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:future_progress_dialog/future_progress_dialog.dart';
 
 class signup extends StatefulWidget {
   const signup({Key? key}) : super(key: key);
@@ -39,6 +40,32 @@ class _signupState extends State<signup> {
 
     // TODO: implement initState
     super.initState();
+  }
+
+  Future<void> signup() async {
+    final datatosend = {
+      'name': name,
+      'email': email,
+      'password': password,
+      'level': level,
+      'phone': phone,
+      'speciality': spiciality,
+      'gender': gender,
+      'country': country,
+      'faculty': faculty
+    };
+    final url = Uri.parse(
+        'https://evening-savannah-43647.herokuapp.com//api/signup_student');
+    final response0 =
+        await http.post(url, body: convert.jsonEncode(datatosend));
+    var test = Uri.parse(
+        'https://evening-savannah-43647.herokuapp.com//api/signup_student');
+    var response = await http.get(test);
+    if (response.statusCode == 200) {
+      var jsonResponse = convert.jsonDecode(response.body);
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
   }
 
   Future<void> savedata() async {
@@ -343,31 +370,12 @@ class _signupState extends State<signup> {
                         onPressed: () async {
                           if (2 == 2) {
                             savedata();
-                            final datatosend = {
-                              'name': name,
-                              'email': email,
-                              'password': password,
-                              'level': level,
-                              'phone': phone,
-                              'speciality': spiciality,
-                              'gender': gender,
-                              'country': country,
-                              'faculty': faculty
-                            };
-                            final url = Uri.parse(
-                                'https://evening-savannah-43647.herokuapp.com//api/signup_student');
-                            final response0 = await http.post(url,
-                                body: convert.jsonEncode(datatosend));
-                            var test = Uri.parse(
-                                'https://evening-savannah-43647.herokuapp.com//api/signup_student');
-                            var response = await http.get(test);
-                            if (response.statusCode == 200) {
-                              var jsonResponse =
-                                  convert.jsonDecode(response.body);
-                            } else {
-                              print(
-                                  'Request failed with status: ${response.statusCode}.');
-                            }
+                            showDialog(
+                              context: context,
+                              builder: (context) => FutureProgressDialog(
+                                  signup(),
+                                  message: Text('Loading...')),
+                            );
                           } else {
                             _showMyDialog();
                           }
