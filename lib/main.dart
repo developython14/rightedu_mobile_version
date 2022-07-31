@@ -79,6 +79,6 @@ void main() async {
         ),
     "/biometrics": (context) => biometrics(),
     "/animation": (context) => MapSample(),
-    "/testme": (context) => MyWidget(),
+    "/testme": (context) => testload(),
   }));
 }

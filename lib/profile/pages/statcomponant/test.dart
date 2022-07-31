@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:future_progress_dialog/future_progress_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -165,6 +165,12 @@ class MapSampleState extends State<MapSample> {
 
 class testload extends StatelessWidget {
   const testload({Key? key}) : super(key: key);
+  Future getFuture() {
+    return Future(() async {
+      await Future.delayed(Duration(seconds: 5));
+      return 'Hello, Future Progress Dialog!';
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -172,7 +178,13 @@ class testload extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           child: Text('push'),
-          onPressed: () {},
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => FutureProgressDialog(getFuture(),
+                  message: Text('Loading...')),
+            );
+          },
         ),
       ),
     );

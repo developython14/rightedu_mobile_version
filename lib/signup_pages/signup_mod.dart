@@ -9,6 +9,7 @@ import 'dart:async';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter_pw_validator/flutter_pw_validator.dart';
+import 'package:future_progress_dialog/future_progress_dialog.dart';
 
 class Service {
   Service({
@@ -80,6 +81,54 @@ class _signupmodState extends State<signupmod> {
       return;
     }
     _formKey.currentState!.save();
+  }
+
+  Future<void> signupmod() async {
+    print('here fine in frot');
+    savedata();
+    final datatosend = {
+      'username': name.toString(),
+      'email': email.toString(),
+      'password': password.toString(),
+      'phone': phone.toString(),
+      'phone_second': phone_second.toString(),
+      'speciality': spiciality.toString(),
+      'gender': gender.toString(),
+      'country': country.toString(),
+      "city": city.toString(),
+      'faculty': faculty.toString(),
+      "participation": participation.toString(),
+      "degree_title": degree_title.toString(),
+      "avalibality": avalibality.toString(),
+      "date_of_birth": date_of_birth.toString(),
+      "services": _selectedservices.toString(),
+      "language": language.toString(),
+      "job": current_job.toString(),
+      "spicialte_exacte": spiciality_exacte.toString()
+    };
+    final url = Uri.parse(
+        'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
+    var request = http.MultipartRequest('POST', url);
+    final headers = {'Content-type': 'multipart/form-data'};
+    request.headers.addAll(headers);
+    request.fields.addAll(datatosend);
+    final cv_file = http.MultipartFile.fromBytes('cv', await cv!.readAsBytes(),
+        filename: cv!.path.split("/").last);
+    request.files.add(cv_file);
+    final experience_file = http.MultipartFile.fromBytes(
+        'experience', await experience!.readAsBytes(),
+        filename: cv!.path.split("/").last);
+    request.files.add(experience_file);
+    final degree_file = http.MultipartFile.fromBytes(
+        'degree', await experience!.readAsBytes(),
+        filename: cv!.path.split("/").last);
+    request.files.add(degree_file);
+    final identity_file = http.MultipartFile.fromBytes(
+        'identity', await experience!.readAsBytes(),
+        filename: cv!.path.split("/").last);
+    request.files.add(identity_file);
+    var push = await request.send();
+    print('here fine in frot');
   }
 
   Future<void> _showMyDialog() async {
@@ -680,57 +729,11 @@ class _signupmodState extends State<signupmod> {
                       GFButton(
                         onPressed: () async {
                           if (1 == 1) {
-                            savedata();
-                            final datatosend = {
-                              'username': name.toString(),
-                              'email': email.toString(),
-                              'password': password.toString(),
-                              'phone': phone.toString(),
-                              'phone_second': phone_second.toString(),
-                              'speciality': spiciality.toString(),
-                              'gender': gender.toString(),
-                              'country': country.toString(),
-                              "city": city.toString(),
-                              'faculty': faculty.toString(),
-                              "participation": participation.toString(),
-                              "degree_title": degree_title.toString(),
-                              "avalibality": avalibality.toString(),
-                              "date_of_birth": date_of_birth.toString(),
-                              "services": _selectedservices.toString(),
-                              "language": language.toString(),
-                              "job": current_job.toString(),
-                              "spicialte_exacte": spiciality_exacte.toString()
-                            };
-                            final url = Uri.parse(
-                                'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
-                            var request = http.MultipartRequest('POST', url);
-                            final headers = {
-                              'Content-type': 'multipart/form-data'
-                            };
-                            request.headers.addAll(headers);
-                            request.fields.addAll(datatosend);
-                            final cv_file = http.MultipartFile.fromBytes(
-                                'cv', await cv!.readAsBytes(),
-                                filename: cv!.path.split("/").last);
-                            request.files.add(cv_file);
-                            final experience_file =
-                                http.MultipartFile.fromBytes('experience',
-                                    await experience!.readAsBytes(),
-                                    filename: cv!.path.split("/").last);
-                            request.files.add(experience_file);
-                            final degree_file = http.MultipartFile.fromBytes(
-                                'degree', await experience!.readAsBytes(),
-                                filename: cv!.path.split("/").last);
-                            request.files.add(degree_file);
-                            final identity_file = http.MultipartFile.fromBytes(
-                                'identity', await experience!.readAsBytes(),
-                                filename: cv!.path.split("/").last);
-                            request.files.add(identity_file);
-                            var push = await request.send();
-                            print('send it successfly');
-                            print(push);
-                          } else {
-                            _showMyDialog();
+                            await showDialog(
+                              context: context,
+                              builder: (context) =>
+                                  FutureProgressDialog(signupmod()),
+                            );
                           }
                         },
                         text: "Sign Up",
