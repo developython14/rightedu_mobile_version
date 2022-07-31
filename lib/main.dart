@@ -49,7 +49,7 @@ void main() async {
 
   // Get a specific camera from the list of available cameras.
   runApp(
-      MaterialApp(title: 'Right Hacker', initialRoute: '/animation', routes: {
+      MaterialApp(title: 'Right Hacker', initialRoute: '/signupmod', routes: {
     '/login': (context) => login(),
     '/signup': (context) => signup(),
     '/signupmod': (context) => signupmod(),

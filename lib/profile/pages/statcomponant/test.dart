@@ -162,3 +162,19 @@ class MapSampleState extends State<MapSample> {
     controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
 }
+
+class testload extends StatelessWidget {
+  const testload({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          child: Text('push'),
+          onPressed: () {},
+        ),
+      ),
+    );
+  }
+}

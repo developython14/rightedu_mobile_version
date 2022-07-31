@@ -679,7 +679,7 @@ class _signupmodState extends State<signupmod> {
                       SizedBox(height: 20),
                       GFButton(
                         onPressed: () async {
-                          if (password == rpassword) {
+                          if (1 == 1) {
                             savedata();
                             final datatosend = {
                               'username': name.toString(),
@@ -728,17 +728,7 @@ class _signupmodState extends State<signupmod> {
                             request.files.add(identity_file);
                             var push = await request.send();
                             print('send it successfly');
-                            var test = Uri.parse(
-                                'https://evening-savannah-43647.herokuapp.com//api/signup_mod');
-                            var response = await http.get(test);
-                            if (response.statusCode == 200) {
-                              var jsonResponse =
-                                  convert.jsonDecode(response.body);
-                              print(jsonResponse);
-                            } else {
-                              print(
-                                  'Request failed with status: ${response.statusCode}.');
-                            }
+                            print(push);
                           } else {
                             _showMyDialog();
                           }
