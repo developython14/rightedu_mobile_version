@@ -85,7 +85,6 @@ class _signupmodState extends State<signupmod> {
 
   Future<void> signupmod() async {
     print('here fine in frot');
-    savedata();
     final datatosend = {
       'username': name.toString(),
       'email': email.toString(),
@@ -729,6 +728,7 @@ class _signupmodState extends State<signupmod> {
                       GFButton(
                         onPressed: () async {
                           if (1 == 1) {
+                            await savedata();
                             await showDialog(
                               context: context,
                               builder: (context) =>
